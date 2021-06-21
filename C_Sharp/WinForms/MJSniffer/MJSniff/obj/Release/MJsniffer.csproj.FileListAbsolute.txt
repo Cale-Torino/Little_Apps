@@ -1,0 +1,8 @@
+C:\Users\User501\Downloads\MJsniffer\MJSniffer\MJSniff\bin\Release\MJSniff.exe
+C:\Users\User501\Downloads\MJsniffer\MJSniffer\MJSniff\bin\Release\MJSniff.pdb
+C:\Users\User501\Downloads\MJsniffer\MJSniffer\MJSniff\obj\Release\MJsniffer.MJsnifferForm.resources
+C:\Users\User501\Downloads\MJsniffer\MJSniffer\MJSniff\obj\Release\MJSniff.Properties.Resources.resources
+C:\Users\User501\Downloads\MJsniffer\MJSniffer\MJSniff\obj\Release\MJsniffer.csproj.GenerateResource.cache
+C:\Users\User501\Downloads\MJsniffer\MJSniffer\MJSniff\obj\Release\MJsniffer.csproj.CoreCompileInputs.cache
+C:\Users\User501\Downloads\MJsniffer\MJSniffer\MJSniff\obj\Release\MJSniff.exe
+C:\Users\User501\Downloads\MJsniffer\MJSniffer\MJSniff\obj\Release\MJSniff.pdb
