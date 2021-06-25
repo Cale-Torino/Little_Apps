@@ -1,0 +1,64 @@
+h1, .h1 {
+    color: white;
+}
+h2, .h2 {
+  color: white;
+}
+h3, .h3 {
+  color: white;
+}
+p {
+    color: white;
+}
+pre {
+    color: #00ff5e;
+    background: #161616;
+    margin: 1em 10px;
+    padding: 1em 10px;
+}
+ol, ul, dl {
+    color: white;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+    color: white;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #202940;
+}
+/* unvisited link */
+a:link {
+  color: #2196f3;
+}
+
+/* visited link */
+a:visited {
+  color: #1e3df1;
+}
+
+/* mouse over link */
+a:hover {
+  color: #41a7fa;
+  text-decoration: underline;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+blockquote {
+  background: #282828;
+  border-left: 10px solid #135079;
+  margin: 1em 10px;
+  padding: 1em 10px;
+}
+blockquote p {
+  display: inline;
+}
