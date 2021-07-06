@@ -14,6 +14,9 @@ namespace quick1080ptest
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Initiate the app by calling the methods within
+        /// </summary>
         private void Ini()
         {
             try

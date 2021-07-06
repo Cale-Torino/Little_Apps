@@ -1,0 +1,9 @@
+C:\Users\User501\source\repos\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe.config
+C:\Users\User501\source\repos\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe
+C:\Users\User501\source\repos\WindowsService1\WindowsService1\bin\Release\WindowsService1.pdb
+C:\Users\User501\source\repos\WindowsService1\WindowsService1\obj\Release\WindowsService1.ProjectInstaller.resources
+C:\Users\User501\source\repos\WindowsService1\WindowsService1\obj\Release\WindowsService1.Service1.resources
+C:\Users\User501\source\repos\WindowsService1\WindowsService1\obj\Release\WindowsService1.csproj.GenerateResource.cache
+C:\Users\User501\source\repos\WindowsService1\WindowsService1\obj\Release\WindowsService1.csproj.CoreCompileInputs.cache
+C:\Users\User501\source\repos\WindowsService1\WindowsService1\obj\Release\WindowsService1.exe
+C:\Users\User501\source\repos\WindowsService1\WindowsService1\obj\Release\WindowsService1.pdb
