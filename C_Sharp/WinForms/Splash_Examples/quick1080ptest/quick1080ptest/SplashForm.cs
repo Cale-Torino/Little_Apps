@@ -23,31 +23,11 @@ namespace quick1080ptest
             {
                 //Initiate the app by calling these methods
                 CreateFolder();
-                Sleepp();
-                OpenForm();
                 Logger.WriteLine(" *** Ini Complete [SplashForm] ***");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ini Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Logger.WriteLine(" *** Error:" + ex.Message + " [SplashForm] ***");
-                return;
-            }
-        }
-
-        private async void Sleepp()
-        {
-            try
-            {
-                //Create the folders used by the app
-                Logger.WriteLine(" *** Sleeping Start [SplashForm] ***");
-                await Task.Delay(5000);
-                //Thread.Sleep(5000);
-                Logger.WriteLine(" *** Sleeping End [SplashForm] ***");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Create Folder Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Logger.WriteLine(" *** Error:" + ex.Message + " [SplashForm] ***");
                 return;
             }
@@ -71,29 +51,10 @@ namespace quick1080ptest
             }
         }
 
-        private void OpenForm()
-        {
-            try
-            {
-                //Open the Main Form
-                Logger.WriteLine(" *** Open Main Form [SplashForm] ***");
-                Form f = new MainForm();
-                //Hide();
-                f.ShowDialog();
-                Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Open Main Form Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Logger.WriteLine(" *** Error:" + ex.Message + " [SplashForm] ***");
-                return;
-            }
-        }
-
         private void SplashForm_Load(object sender, EventArgs e)
         {
             Ini();
+            label2.Text = Application.ProductVersion;//Get version from AssemblyInfo.cs [assembly: AssemblyFileVersion("1.0.1")]
         }
     }
 }

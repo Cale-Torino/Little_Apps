@@ -16,5 +16,12 @@ namespace quick1080ptest
         {
             InitializeComponent();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            Focus();
+            toolStripStatusLabel1.Text = "Application, Ver:" + Application.ProductVersion;
+            button1.Focus();
+        }
     }
 }
