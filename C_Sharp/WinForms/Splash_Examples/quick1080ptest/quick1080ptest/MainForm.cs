@@ -30,7 +30,7 @@ namespace quick1080ptest
             try
             {
                 //Initiate the app by calling these methods
-                string FileName = Application.StartupPath + "\\" + "temp.log";
+                string FileName = Application.StartupPath + @"\" + "temp.log";
                 if (File.Exists(FileName))
                 {
                     File.Delete(FileName);
@@ -52,7 +52,7 @@ namespace quick1080ptest
             {
                 //Create the folders used by the app
                 string path = Application.StartupPath;
-                Directory.CreateDirectory(path + "\\Logs");
+                Directory.CreateDirectory(path + @"\Logs");
                 Logger.WriteLine(" *** Application Start [SplashForm] ***");
                 Logger.WriteLine(" *** CreateDirectory Success [SplashForm] ***");
             }
