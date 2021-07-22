@@ -1,6 +1,6 @@
-::START THE SERVER
+::START THE APPLICATION
 @ECHO OFF
-start cmd /k java main
-
-::java -cp C:\Users\Matt\workspace\HelloWorld2\bin HelloWorld2
+::start cmd /k java main
+::java main
+"C:\Program Files\Java\jdk-16.0.2\bin\java" main
 pause
