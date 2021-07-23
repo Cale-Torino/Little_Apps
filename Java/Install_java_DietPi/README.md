@@ -126,9 +126,11 @@ cat > run.sh
 JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-armhf
 #Java class path
 CLASSPATH=/usr/bin/a_java_app/apptest
+#Class name
+CLASSNAME=main
 ##Run
 echo "*********************"
-echo "Starting Run.sh"
+echo "Starting run.sh"
 echo "@Author: C.A Torino"
 echo "@Author: 23 July 2021"
 echo "*********************"
@@ -137,9 +139,9 @@ echo ""
 ## sudo chmod +x /usr/bin/a_java_app/apptest/run.sh
 ## crontab -l
 ## reboot
-$JAVA_HOME/bin/java -cp $CLASSPATH main
-exit 0
+$JAVA_HOME/bin/java -cp $CLASSPATH $CLASSNAME
 echo "Done"
+exit 0
 ```
 
 2. copy the script in `/usr/bin/a_java_app/apptest`
