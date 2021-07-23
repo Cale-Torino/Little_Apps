@@ -1,14 +1,17 @@
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-/**
- * https://stackoverflow.com/questions/24104313/how-do-i-make-a-delay-in-java
- */
+//https://stackoverflow.com/questions/24104313/how-do-i-make-a-delay-in-java
+//https://stackoverflow.com/questions/3324717/sending-http-post-request-in-java
+
 
 /**
  * @author C.A Torino
@@ -18,6 +21,7 @@ public  class main {
 
 	/**
 	 * @param args
+	 * @throws IOException 
 	 */
 	public static void main(String[] args) {
     	LogWindow(" ***********************************");
@@ -30,10 +34,18 @@ public  class main {
         LogWindow(" *** Ini Complete [Main] ***");
 		LoggerClass.WriteLine("Test write to log file");
 		LoggerClass.WriteLine("Test write to log file again");
-		
+		String Request_JSON = HTTP_Requests.HTTP_Request_JSON("https://url.co.za/java/test/java_in.php?API_KEY=java1234&USERNAME=java&DATA=testing_data", "{\"username\":\"root\",\"password\":\"password\"}");
+		LocalDateTime myDateObj = LocalDateTime.now();
+  	    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy_HH:mm:ss");
+		String HTTP_Request = HTTP_Requests.HTTP_Request("https://url.co.za/java/test/java_in.php?API_KEY=java1234&USERNAME=java&DATA=" + myDateObj.format(myFormatObj) );
+		LogWindow(" *** HTTP_Request=>Response: " + HTTP_Request);
+		LogWindow(" *** HTTP_Request_JSON=>Response: " + Request_JSON);
+		//LogWindow(" *** HTTP_Request=>Response: " + result);
 		//SleepFunc();
 		//LoggerClass.DeleteLog();
 	}
+	
+
 	
 	public static void SleepFunc()
     {

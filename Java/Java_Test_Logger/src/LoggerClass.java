@@ -29,7 +29,7 @@ public class LoggerClass {
       try
       {
   	    LocalDateTime myDateObj = LocalDateTime.now();
-  	    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");  	    
+  	    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
       	Files.write(Paths.get(LogFile), ("["+myDateObj.format(myFormatObj)+"] : " + txt + System.lineSeparator()).getBytes(),StandardOpenOption.CREATE,StandardOpenOption.APPEND);
       }
       catch (Exception ex)
