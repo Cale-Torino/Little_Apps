@@ -190,4 +190,6 @@ crontab -u username -l
 reboot
 ```
 
+DietPi 100% CPU usage on PIZERO for about 5s; Higest RAM about 44MB
 
+[<img src="img/dietpicronjava.gif" width="1000"/>](img/dietpicronjava.gif)
