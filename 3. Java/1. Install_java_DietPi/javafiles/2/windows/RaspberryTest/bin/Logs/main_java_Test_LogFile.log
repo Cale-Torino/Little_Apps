@@ -1,0 +1,4 @@
+[24-07-2021 03:04:53] : Raspberypi time: 24-07-2021_03:04:52
+[24-07-2021 03:04:53] : Server reply HTTP_Request:{"result":0,"message":"data inserted successfully","data":"24-07-2021_03:04:52","bytes":"19","time":"July-24-2021_3-04_am"}
+[24-07-2021 03:07:27] : Raspberypi time: 24-07-2021_03:07:27
+[24-07-2021 03:07:27] : Server reply HTTP_Request:{"result":0,"message":"data inserted successfully","data":"24-07-2021_03:07:27","bytes":"19","time":"July-24-2021_3-07_am"}
