@@ -1,0 +1,27 @@
+
+#
+#  GENERATE_FILELIST
+#  MADE BY C.A.TORINO FOR TRUCK ASSIST PTY LTD
+#  PYTHON 2.7 GENERATED
+#  (filename)    (filesize)    (flags)    md5    (major_version)    (minor_version)
+#
+
+filelist.md5.txt         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+hello.bat         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+hello.py         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+LICENSE.txt         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+MD5.bat         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+MD5.py         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+MD5test.bat         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+MD5test.py         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+MD5v1.bat         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+MD5v1.py         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+MD5v2.bat         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+MD5v2.py         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+NEWS.txt         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+python.exe         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+pythonw.exe         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+README.txt         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+server.bat         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+server.py         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
+w9xpopen.exe         filesize      0        57452be2b12676e5053da3b1843d4c20     ----          ----
