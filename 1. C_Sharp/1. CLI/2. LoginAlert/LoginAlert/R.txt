@@ -1,0 +1,12 @@
+https://anotheritguy.com/index.php/2018/06/filtering-event-id-4624-by-logon-type/
+
+http://woshub.com/rdp-connection-logs-forensics-windows/
+
+
+
+Authentication shows whether an RDP user has been successfully authenticated on the server or not. 
+The log is located in “Windows -> Security”. 
+So you may be interested in the events with the EventID 4624 (An account was successfully logged on) or 4625 (An account failed to log on). 
+Please, pay attention to the LogonType value in the event description. 
+If the Remote Desktop service has been use to create new session during log on, LogonType = 10. 
+If the LogonType = 7, it means that a user has reconnected to the existing RDP session.
