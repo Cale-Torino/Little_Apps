@@ -21,7 +21,7 @@ namespace LoginAlert
             //HideConsole();
             //ShowConsole();
             //IniApp();
-            //RunHTTPQuery("2001106660:AAFxExt9vUnswmDBkJcQnGA4xUKzsMl_5II", "561168703");
+            //RunHTTPQuery("TELEGRAM_BOT_TOKEN", "CHAT_ID");
         }
         private static void HideConsole()
         {
