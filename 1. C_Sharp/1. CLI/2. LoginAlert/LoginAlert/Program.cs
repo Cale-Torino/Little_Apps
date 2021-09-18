@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net.Http;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using static LoginAlert.LoggerClass;
 
@@ -13,24 +14,21 @@ namespace LoginAlert
 
         [DllImport("kernel32.dll")]
         static extern IntPtr GetConsoleWindow();
-
-        const int SW_HIDE = 0;
-        const int SW_SHOW = 5;
         static void Main(string[] args)
         {
-            HideConsole();
+            AboutClass AC = new AboutClass();
+            AC.Author_Details();
+            //HideConsole();
             //ShowConsole();
-            //Console.WriteLine($"[{DateTime.Now}] => {Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)}");
-            //Console.ReadKey();
-            IniApp();
-            RunHTTPQuery();
+            //IniApp();
+            //RunHTTPQuery("2001106660:AAFxExt9vUnswmDBkJcQnGA4xUKzsMl_5II", "561168703");
         }
         private static void HideConsole()
         {
             try
             {
                 var handle = GetConsoleWindow();
-                ShowWindow(handle, SW_HIDE);
+                ShowWindow(handle, 0);
             }
             catch (Exception ex)
             {
@@ -45,7 +43,7 @@ namespace LoginAlert
             try
             {
                 var handle = GetConsoleWindow();
-                ShowWindow(handle, SW_SHOW);
+                ShowWindow(handle, 5);
             }
             catch (Exception ex)
             {
@@ -79,7 +77,7 @@ namespace LoginAlert
             try
             {
                 //Create the folders used by the app
-                string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                 Directory.CreateDirectory(path + @"\Logs");
                 Logger.WriteLine(" *** Application Start [Main] ***");
                 Console.WriteLine($"[{DateTime.Now}] => Application Start");
@@ -92,13 +90,13 @@ namespace LoginAlert
                 return;
             }
         }
-        private static void RunHTTPQuery()
+        private static void RunHTTPQuery(string _Token, string _Chat_id)
         {
             using (HttpClient client = new HttpClient())
             {
                 try
                 {
-                    HttpResponseMessage response = client.GetAsync("https://api.telegram.org/botYOUR_TOKEN_HERE/sendMessage?chat_id=-YOUR_CHAT_ID_HERE&parse_mode=HTML&text=%F0%9F%9A%A8+<b>Alert</b>%0A<i>+64.42.181.26</i><u>+USDedicated+Server</u>%0A" + Environment.MachineName + "+" + Environment.UserName + "%0ALogin+to+server+at+this+servertime+[" + DateTime.Now + "]").Result;
+                    HttpResponseMessage response = client.GetAsync("https://api.telegram.org/bot"+ _Token + "/sendMessage?chat_id=-" + _Chat_id + "&parse_mode=HTML&text=%F0%9F%9A%A8+<b>Alert</b>%0A<i>+64.42.181.26</i><u>+USDedicated+Server</u>%0A" + Environment.MachineName + "+" + Environment.UserName + "%0ALogin+to+server+at+this+servertime+[" + DateTime.Now + "]").Result;
                     if (response.IsSuccessStatusCode)
                     {
                         Console.WriteLine($"Result: {response.Content.ReadAsStringAsync().Result} ");

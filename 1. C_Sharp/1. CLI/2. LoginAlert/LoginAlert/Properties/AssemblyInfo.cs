@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("C.A Torino")]
 [assembly: AssemblyProduct("LoginAlert")]
-[assembly: AssemblyCopyright("Copyright ©  2021, C.A TORINO")]
+[assembly: AssemblyCopyright("Copyright ©  2021, C.A Torino")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
