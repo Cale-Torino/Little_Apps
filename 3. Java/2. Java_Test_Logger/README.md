@@ -16,10 +16,6 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**
- * https://stackoverflow.com/questions/24104313/how-do-i-make-a-delay-in-java
- */
-
-/**
  * @author C.A Torino
  *
  */
