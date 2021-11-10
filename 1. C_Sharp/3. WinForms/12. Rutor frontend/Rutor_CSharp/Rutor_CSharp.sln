@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rutor_CSharp", "Rutor_CSharp\Rutor_CSharp.csproj", "{A5FDB4DA-095F-4054-AEC5-0C7AAF24A6D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5FDB4DA-095F-4054-AEC5-0C7AAF24A6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5FDB4DA-095F-4054-AEC5-0C7AAF24A6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5FDB4DA-095F-4054-AEC5-0C7AAF24A6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5FDB4DA-095F-4054-AEC5-0C7AAF24A6D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82EBAAB9-A768-49BD-842F-ADEAC8608A03}
+	EndGlobalSection
+EndGlobal
