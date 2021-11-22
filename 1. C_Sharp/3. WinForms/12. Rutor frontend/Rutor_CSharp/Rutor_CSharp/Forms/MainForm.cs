@@ -16,5 +16,10 @@ namespace Rutor_CSharp
         {
             InitializeComponent();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
