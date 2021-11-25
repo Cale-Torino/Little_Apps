@@ -1,0 +1,10 @@
+C:\Users\User501\source\repos\Winchester_Rangers\Winchester_Rangers\bin\Debug\Winchester_Rangers.exe.config
+C:\Users\User501\source\repos\Winchester_Rangers\Winchester_Rangers\bin\Debug\Winchester_Rangers.exe
+C:\Users\User501\source\repos\Winchester_Rangers\Winchester_Rangers\bin\Debug\Winchester_Rangers.pdb
+C:\Users\User501\source\repos\Winchester_Rangers\Winchester_Rangers\obj\Debug\Winchester_Rangers.csproj.AssemblyReference.cache
+C:\Users\User501\source\repos\Winchester_Rangers\Winchester_Rangers\obj\Debug\Winchester_Rangers.MainForm.resources
+C:\Users\User501\source\repos\Winchester_Rangers\Winchester_Rangers\obj\Debug\Winchester_Rangers.Properties.Resources.resources
+C:\Users\User501\source\repos\Winchester_Rangers\Winchester_Rangers\obj\Debug\Winchester_Rangers.csproj.GenerateResource.cache
+C:\Users\User501\source\repos\Winchester_Rangers\Winchester_Rangers\obj\Debug\Winchester_Rangers.csproj.CoreCompileInputs.cache
+C:\Users\User501\source\repos\Winchester_Rangers\Winchester_Rangers\obj\Debug\Winchester_Rangers.exe
+C:\Users\User501\source\repos\Winchester_Rangers\Winchester_Rangers\obj\Debug\Winchester_Rangers.pdb
