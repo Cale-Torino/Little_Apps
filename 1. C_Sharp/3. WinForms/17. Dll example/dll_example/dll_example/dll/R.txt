@@ -1,0 +1,4 @@
+
+
+
+add dll_example_class_library.dll as a reference in VS 2019.
