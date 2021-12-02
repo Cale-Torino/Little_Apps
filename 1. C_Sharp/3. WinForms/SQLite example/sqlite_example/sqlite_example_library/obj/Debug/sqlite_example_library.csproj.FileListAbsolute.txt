@@ -1,0 +1,11 @@
+C:\Users\fitgirl\source\repos\sqlite_example\sqlite_example_library\bin\Debug\sqlite_example_library.dll
+C:\Users\fitgirl\source\repos\sqlite_example\sqlite_example_library\bin\Debug\sqlite_example_library.pdb
+C:\Users\fitgirl\source\repos\sqlite_example\sqlite_example_library\bin\Debug\Dapper.dll
+C:\Users\fitgirl\source\repos\sqlite_example\sqlite_example_library\bin\Debug\System.Data.SQLite.dll
+C:\Users\fitgirl\source\repos\sqlite_example\sqlite_example_library\bin\Debug\Dapper.xml
+C:\Users\fitgirl\source\repos\sqlite_example\sqlite_example_library\bin\Debug\System.Data.SQLite.xml
+C:\Users\fitgirl\source\repos\sqlite_example\sqlite_example_library\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\fitgirl\source\repos\sqlite_example\sqlite_example_library\obj\Debug\sqlite_example_library.csproj.CoreCompileInputs.cache
+C:\Users\fitgirl\source\repos\sqlite_example\sqlite_example_library\obj\Debug\sqlite_example_library.csproj.CopyComplete
+C:\Users\fitgirl\source\repos\sqlite_example\sqlite_example_library\obj\Debug\sqlite_example_library.dll
+C:\Users\fitgirl\source\repos\sqlite_example\sqlite_example_library\obj\Debug\sqlite_example_library.pdb
