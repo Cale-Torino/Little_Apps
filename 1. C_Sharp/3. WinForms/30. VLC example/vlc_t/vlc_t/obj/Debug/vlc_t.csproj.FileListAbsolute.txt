@@ -1,0 +1,13 @@
+C:\Users\fitgirl\source\repos\vlc_t\vlc_t\bin\Debug\vlc_t.exe.config
+C:\Users\fitgirl\source\repos\vlc_t\vlc_t\bin\Debug\vlc_t.exe
+C:\Users\fitgirl\source\repos\vlc_t\vlc_t\bin\Debug\vlc_t.pdb
+C:\Users\fitgirl\source\repos\vlc_t\vlc_t\bin\Debug\Vlc.DotNet.Core.dll
+C:\Users\fitgirl\source\repos\vlc_t\vlc_t\bin\Debug\Vlc.DotNet.Core.Interops.dll
+C:\Users\fitgirl\source\repos\vlc_t\vlc_t\bin\Debug\Vlc.DotNet.Forms.dll
+C:\Users\fitgirl\source\repos\vlc_t\vlc_t\obj\Debug\vlc_t.Form1.resources
+C:\Users\fitgirl\source\repos\vlc_t\vlc_t\obj\Debug\vlc_t.Properties.Resources.resources
+C:\Users\fitgirl\source\repos\vlc_t\vlc_t\obj\Debug\vlc_t.csproj.GenerateResource.cache
+C:\Users\fitgirl\source\repos\vlc_t\vlc_t\obj\Debug\vlc_t.csproj.CoreCompileInputs.cache
+C:\Users\fitgirl\source\repos\vlc_t\vlc_t\obj\Debug\vlc_t.csproj.CopyComplete
+C:\Users\fitgirl\source\repos\vlc_t\vlc_t\obj\Debug\vlc_t.exe
+C:\Users\fitgirl\source\repos\vlc_t\vlc_t\obj\Debug\vlc_t.pdb
