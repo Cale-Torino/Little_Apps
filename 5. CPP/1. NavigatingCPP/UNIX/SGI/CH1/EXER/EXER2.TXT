@@ -1,0 +1,34 @@
+
+                              Exercise 2
+
+A phoneme is a meaningful sound.  
+It may be spelled differently in different words or contexts.
+To form a plural noun in English, add the suffix phoneme 's'.
+
+Examples:
+
+   boy        boys
+   girl       girls
+   monkey     monkeys
+   computer   computers
+   plant      plants
+   pony       ponies  (not an exception, just a spelling change)
+
+If the noun has an ending 's-like' sound, add the suffix phoneme 'es'.
+These are not exceptions. Note that for some words, you must add 'es' while
+other words just add 's' because the final silent 'e' is already there.
+
+   bunch      bunches
+   branch     branches
+   space      spaces
+   horse      horses
+   pass       passes
+   class      classes
+
+Exceptions include the following examples.
+
+   child      children
+   man        men
+   woman      women
+   sheep      sheep
+   octopus    octopi (octopuses is also acceptable)

@@ -1,0 +1,56 @@
+# Makefile for Chapter 1 Programs
+# Getting Started
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = flight customer seat company taxes house vehicle motorh machine \
+answer library
+
+all: $(PGMS)
+#################################################################
+# classes, associations
+flight: PtrList.h List.h List.C
+
+customer: customer.C
+seat: List.h List.C
+
+# classes, link attributes, roles
+company: company.o String.o
+	$(CC) $(CFLAGS) company.o String.o -o company
+company.o: Array.h Array.C String.h
+String.o: String.h
+
+# classes, qualifications
+taxes: taxes.o String.o
+	$(CC) $(CFLAGS) taxes.o String.o -o taxes
+taxes.o: Assoc.h Assoc.C Array.h Array.C String.h
+
+# aggregation
+house: house.C
+
+# generalization
+vehicle: vehicle.C
+
+# multiple inheritance, virtual bases
+motorh: motorh.C
+machine: machine.C
+
+# Exception Handling
+answer: answer.o String.o
+	$(CC) $(CFLAGS) answer.o String.o -o answer
+answer.o: Message.h List.h List.C PtrList.h String.h
+
+# Object modeling
+library: library.o String.o
+	$(CC) $(CFLAGS) library.o String.o -o library
+library.o: Library.h ListCopy.h List.h List.C PtrList.h String.h \
+Assoc.h Assoc.C Array.h Array.C
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

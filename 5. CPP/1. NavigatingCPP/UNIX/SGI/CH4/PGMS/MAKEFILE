@@ -1,0 +1,67 @@
+# Makefile for Chapter 4 Programs
+# Classes
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = cfifo1 cfifo2 cfifo3 cfifo4 cfifo5 file1 file2 movies \
+	  point1 point2 circle act1 act s1 record record2
+
+all: $(PGMS)
+#################################################################
+# Fifo class
+cfifo1: Fifo1.h
+cfifo2: Fifo2.h
+cfifo3: Fifo3.h
+
+cfifo4: cfifo4.o Fifo4.o
+	$(CC) $(CFLAGS) cfifo4.o Fifo4.o -o cfifo4
+cfifo4.o Fifo4.o: Fifo4.h
+
+cfifo5: cfifo5.o Fifo5.o
+	$(CC) $(CFLAGS) cfifo5.o Fifo5.o -o cfifo5
+cfifo5.o Fifo5.o: Fifo5.h
+#################################################################
+# File class
+file1: File1.h
+file2: File2.h
+#################################################################
+# Roman class
+movies: movies.o Roman.o
+	$(CC) $(CFLAGS) movies.o Roman.o -o movies
+movies.o Roman.o: Roman.h
+#################################################################
+# Point class
+point1: point1.C
+point2: point2.C
+#################################################################
+# StringN and Record class
+s1: s1.o StringN.o
+	$(CC) $(CFLAGS) s1.o StringN.o -o s1
+s1.o StringN.o: StringN.h
+
+record: record.o StringN.o
+	$(CC) $(CFLAGS) record.o StringN.o -o record
+record.o: Record.h StringN.h
+
+record2: record2.o StringN.o
+	$(CC) $(CFLAGS) record2.o StringN.o -o record2
+record2.o: Record2.h StringN.h
+#################################################################
+circle: circle.C
+
+act: act.o Roman.o Fifo5.o
+	$(CC) $(CFLAGS) act.o Roman.o Fifo5.o -o act
+act.o: Roman.h Fifo5.h
+
+act1: act1.o Roman.o Fifo5.o
+	$(CC) $(CFLAGS) act1.o Roman.o Fifo5.o -o act1
+act1.o: Roman.h Fifo5.h
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

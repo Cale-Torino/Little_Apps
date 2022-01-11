@@ -1,0 +1,143 @@
+# Makefile for Chapter 10 Programs
+# Template Classes
+
+CC = bcc
+CFLAGS = -P -O
+.c.obj:
+	$(CC) $(CFLAGS) -c $<
+.c.exe:
+	$(CC) $(CFLAGS) $<
+
+all: istack tstack store node1 node2 \
+block1 block2 kernel gfifo tcomp a1d a1ds a2d a3d binit \
+buf1 buf2 invest1 invest2 fclass pixel nest map zip zip2 plist3 plist4
+#################################################################
+# check template parameter list in 5.0
+# font
+#################################################################
+# Stack class
+istack: istack.exe
+istack.exe: StackInt.h
+
+tstack: tstack.exe
+tstack.exe: Stack.h
+#################################################################
+# Class Instantiations
+store: store.exe
+store.exe: store.obj String.obj
+	$(CC) $(CFLAGS) store.obj String.obj
+store.obj: Stack.h String.h
+String.obj: String.h
+
+node1: node1.exe
+node1.exe: node1.obj String.obj
+	$(CC) $(CFLAGS) node1.obj String.obj
+node1.obj: String.h
+
+node2: node2.exe
+node2.exe: node2.obj String.obj
+	$(CC) $(CFLAGS) node2.obj String.obj
+node2.obj: String.h
+#################################################################
+# Template constant expression parameters
+binit: binit.exe
+
+block1: block1.exe
+block1.exe: block1.obj String.obj
+	$(CC) $(CFLAGS) block1.obj String.obj
+block1.obj: String.h Block1.h
+
+block2: block2.exe
+block2.exe: block2.obj String.obj
+	$(CC) $(CFLAGS) block2.obj String.obj
+block2.obj: String.h Block2.h
+#################################################################
+# containment - Fifo class
+kernel: kernel.exe
+kernel.exe: kernel.obj String.obj
+	$(CC) $(CFLAGS) kernel.obj String.obj
+kernel.obj: Stack.h String.h Array.h Array.C
+
+gfifo: gfifo.exe
+gfifo.exe: gfifo.obj String.obj
+	$(CC) $(CFLAGS) gfifo.obj String.obj
+gfifo.obj: Fifo.h String.h Array.h Array.C
+
+tcomp: tcomp.exe
+tcomp.exe: String.h
+#################################################################
+# Constant expression parameters
+buf1: buf1.exe
+buf1.exe: buf1.obj String.obj
+	$(CC) $(CFLAGS) buf1.obj String.obj
+buf1.obj: Buffer.h String.h
+
+buf2: buf2.exe
+buf2.exe: Buffer.h Array.h Array.C
+#################################################################
+# Template friend functions
+invest1: invest1.exe
+invest2: invest2.exe
+#################################################################
+# Template friend classes
+fclass: fclass.exe
+#################################################################
+# Template default types
+pixel: pixel.exe
+pixel.exe: pixel.obj String.obj
+	$(CC) $(CFLAGS) pixel.obj String.obj
+pixel.obj: Point5.h String.h
+#################################################################
+# Template nested classes
+nest: nest.exe
+nest.exe: nest.obj String.obj
+	$(CC) $(CFLAGS) nest.obj String.obj
+nest.obj: String.h Fifo.h Array.h Array.C
+#################################################################
+# Templates with typedefs and enumerations
+font: font.exe
+font.exe: Buffer.h
+#################################################################
+# Array classes
+a1d: a1d.exe
+a1d.exe: Array.h Array.C
+
+a1ds: a1ds.exe
+a1ds.exe: Arrays.h Arrays.C
+
+a2d: a2d.exe
+a2d.exe: Array.h Array.C Array2d.h
+
+a3d: a3d.exe
+a3d.exe: Array.h Array.C Array2d.h Array3d.h
+#################################################################
+# Assoc class
+map: map.exe
+map.exe: map.obj String.obj
+	$(CC) $(CFLAGS) map.obj String.obj 
+map.obj: Assoc.h String.h Assoc.C Complex.h Polar.h
+
+zip: zip.exe
+zip.exe: zip.obj String.obj
+	$(CC) $(CFLAGS) zip.obj String.obj
+zip.obj: Assoc.h Array.h String.h Assoc.C Array.C
+
+zip2: zip2.exe
+zip2.exe: zip2.obj String.obj
+	$(CC) $(CFLAGS) zip2.obj String.obj
+zip2.obj: Assoc.h Array.h String.h Assoc.C Array.C
+#################################################################
+# List class - Iterators
+plist3: plist3.exe
+plist3.obj: List.h List.C String.h
+plist3.exe: plist3.obj String.obj
+	$(CC) $(CFLAGS) plist3.obj String.obj
+
+plist4: plist4.exe
+plist4.obj: List.h List.C String.h
+plist4.exe: plist4.obj String.obj
+	$(CC) $(CFLAGS) plist4.obj String.obj
+#################################################################
+clean:
+	del *.obj
+	del *.exe

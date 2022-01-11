@@ -1,0 +1,68 @@
+
+                                 Exercise 5
+
+Library System
+
+Note that the importance of separating an entity outside of the Library
+System versus an entity that is part of the Library System. 
+For example, a person walking into the library and requesting a book is
+outside the system. However, when this person uses the computer-based
+searching tool, he or she in interacting with the Library System.
+We will try to differentiate external and internal entities as much as possible.
+
+Scenario 1
+In this scenario, the person is external to the system but is represented by a
+LibraryMember object inside the system's database.
+
+   1. A person who is a Library Member wants to check out a book 
+      for which she has the author and title.
+
+   2. She searches for the book using the author's name.
+
+   3. The search returns with a list of six books; two match the 
+      desired title.
+
+   4. The display also indicates that both books are currently checked out,
+      with the books return due dates.
+
+   5. The system asked the user is she wants to be notified when the 
+      book is returned.
+
+   6. She responds yes, and the system then asks her to supply either 
+      her library cardID or her name. This implies that she must be a 
+      LibraryMember to reserve a book.
+
+   7. After looking up her record, the system asks her to verify her address 
+      (or perhaps telephone number) for notification.
+
+Scenario 2
+
+   1. A library member returns five books to the library and wants to 
+      renew three of them.
+
+   2. The library clerk scans each book. For each book, the system
+      retrieves the LibraryBook record.
+
+   3. The system also retrieves the record of the LibraryMember.
+
+   4. If the library book is overdue, the clerk collects the appropriate fine.
+      When the fine is collected, the overdue charge is cleared.
+
+   5. If for some reason the clerk does not collect the fine, the overdue charge
+      remains with the LibraryMember record.
+
+   6. The library member can only renew a book if there are no outstanding 
+      overdue charges associated with that book for that member 
+      and if no other library member is waiting to check out the book.
+
+   7. The system processes the renewal request for the three books.
+   
+         Book1 is not overdue and has no other members waiting to check it out.
+         Book1 is renewable.
+
+         Book2 is overdue and the library member can't pay the fee today.
+         Book2 is not renewable.
+
+         Book3 is not overdue, but another library member is waiting for it.
+         The user can option to keep it until the original due date, but
+         Book3 is not renewable.

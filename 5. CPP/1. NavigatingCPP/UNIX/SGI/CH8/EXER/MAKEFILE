@@ -1,0 +1,48 @@
+# Makefile for Chapter 8 Exercises
+# Object Storage Management
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = mp1 mleak ctext cassign s1
+
+all: $(PGMS)
+#################################################################
+# Exercise 1
+# see exer1.txt
+
+# Exercise 2
+mp1: A1.h Mpool.h
+
+# Exercise 3
+mleak: mleak.o New.o
+	$(CC) $(CFLAGS) mleak.o New.o -o mleak
+mleak.o: New.h mleak.C
+	$(CC) $(CFLAGS) -c -DMLEAK mleak.C
+New.o: New.h New.C
+	$(CC) $(CFLAGS) -c -DMLEAK New.C
+
+# Exercise 4
+ctext: ctext.o String.o
+	$(CC) $(CFLAGS) ctext.o String.o -o ctext
+ctext.o: cText.h Text.h String.h
+String.o: String.h
+
+# Exercise 5
+cassign: cassign.o String.o
+	$(CC) $(CFLAGS) cassign.o String.o -o cassign
+cassign.o: cText.h Text.h String.h
+
+# Exercise 6
+s1: s1.o StringN.o
+	$(CC) $(CFLAGS) s1.o StringN.o -o s1
+s1.o: cStringN.h StringN.h
+StringN.o: StringN.h
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

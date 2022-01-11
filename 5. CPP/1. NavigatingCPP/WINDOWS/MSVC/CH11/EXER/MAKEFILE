@@ -1,0 +1,70 @@
+# Makefile for Chapter 11 Exercises
+# Inheritance
+
+CC = cl
+CFLAGS = -O -GX -GR -nologo
+.c.obj:
+	$(CC) $(CFLAGS) -c -Tp $<
+.c.exe:
+	$(CC) $(CFLAGS) -Tp $<
+
+all: ship4 a2d a3d solids gfifo freq g3 blockr
+#################################################################
+# Exercise 1
+ship4: ship4.exe
+ship4.exe: ship4.obj String.obj
+	$(CC) $(CFLAGS) ship4.obj String.obj
+ship4.obj: Package.h String.h
+String.obj: String.h
+
+# Exercise 2
+# see exer2.txt
+
+# Exercise 3
+a2d: a2d.exe
+a2d.exe: Arrayp.h Arrayp.C Array2d.h
+
+# Exercise 4
+a3d: a3d.exe
+a3d.exe: Arrayp.h Arrayp.C Array2d.h Array3d.h 
+
+# Exercise 5
+# see exer5.txt
+
+# Exercise 6
+# see exer6.txt
+
+# Exercise 7
+# see exer7.txt
+
+# Exercise 8
+solids: solids.exe
+solids.exe: solids.obj String.obj
+	$(CC) $(CFLAGS) solids.obj String.obj
+solids.obj: Solid.h List.h List.C String.h PtrList.h
+
+# Exercise 9
+gfifo: gfifo.exe
+gfifo.exe: gfifo.obj String.obj
+	$(CC) $(CFLAGS) gfifo.obj String.obj
+gfifo.obj: Fifo.h String.h Array.h Array.C
+
+# Exercise 10 
+freq: freq.exe
+freq.exe: freq.obj String.obj
+	$(CC) $(CFLAGS) freq.obj String.obj
+freq.obj: BArray.h Array.h Array.C String.h
+
+# Exercise 11 
+g3: g3.exe
+g3.exe: SGrid.h Grid.h Array2d.h Arrayp.h Arrayp.C
+
+# Exercise 12
+blockr: blockr.exe
+blockr.exe: blockr.obj String.obj
+	$(CC) $(CFLAGS) blockr.obj String.obj
+blockr.obj: Block2.h String.h
+#################################################################
+clean:
+	del *.obj
+	del *.exe

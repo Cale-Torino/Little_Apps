@@ -1,0 +1,58 @@
+# Makefile for Chapter 2 Programs
+# C++ Basics
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = wchart cast1 cast6 cast7 comma comma2 block scope switch1 switch2 \
+goto lvrv macro1 macro2 typeid void2 fruits
+
+all: $(PGMS)
+#################################################################
+# data types
+wchart: wchart.C
+
+# cast and conversions
+cast1: cast1.C
+cast6: cast6.C
+cast7: cast7.C
+
+# comma operator
+comma: comma.C
+comma2: comma2.C
+
+# blocks, scope operator
+block: block.C
+scope: scope.C
+
+# switch construct
+switch1: switch1.C
+switch2: switch2.C
+
+# goto
+goto: goto.C
+
+# lvalues and rvalues
+lvrv: lvrv.C
+	$(CC) $(CFLAGS) -use_readwrite_const lvrv.C -o lvrv
+
+# macros
+macro1: macro1.C
+macro2: macro2.C
+
+# typeid operator
+typeid: typeid.C
+
+# void pointers
+void2: void2.C
+
+# Putting It All Together
+fruits: fruits.C
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

@@ -1,0 +1,55 @@
+# Makefile for Chapter 8 Programs
+# Object Storage Management
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = gnd1 gnd2 gnd3 sgplace fsplace aplace pd1 pd2 \
+	  pd3 mp1 fastm fstore refcount ctext mleak
+
+all: $(PGMS)
+#################################################################
+# Overloading new and delete
+gnd1: gnd1.C
+gnd2: gnd2.C
+gnd3: gnd3.C
+
+sgplace: sgplace.C
+fsplace: fsplace.C
+aplace: aplace.C
+
+pd1: pd1.C
+pd2: pd2.C
+pd3: pd3.C
+
+mp1: A1.h Mpool.h
+
+fastm: fastm.C
+
+fstore: Newd.h fstore.C
+	$(CC) $(CFLAGS) -DNEW fstore.C -o fstore
+#################################################################
+# Refernce Counts
+refcount: refcount.o String.o
+	$(CC) $(CFLAGS) refcount.o String.o -o refcount
+refcount.o String.o: String.h
+
+ctext: ctext.o String.o
+	$(CC) $(CFLAGS) ctext.o String.o -o ctext
+ctext.o: cText.h Text.h
+#################################################################
+# Memory Leak Detector
+mleak: mleak.o New.o
+	$(CC) $(CFLAGS) mleak.o New.o -o mleak
+mleak.o: New.h mleak.C
+	$(CC) $(CFLAGS) -c -DMLEAK mleak.C
+New.o: New.h New.C
+	$(CC) $(CFLAGS) -c -DMLEAK New.C
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

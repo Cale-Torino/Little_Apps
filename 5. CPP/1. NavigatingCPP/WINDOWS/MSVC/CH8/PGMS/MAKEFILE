@@ -1,0 +1,59 @@
+# Makefile for Chapter 8 Programs
+# Object Storage Management
+
+CC = cl
+CFLAGS = -O -GX -GR -nologo
+.c.obj:
+	$(CC) $(CFLAGS) -c -Tp $<
+.c.exe:
+	$(CC) $(CFLAGS) -Tp $<
+
+all: gnd1 gnd2 gnd3 sgplace fsplace aplace pd1 pd2 \
+	  pd3 mp1 fastm fstore refcount ctext mleak
+#################################################################
+# Overloading new and delete
+gnd1: gnd1.exe
+gnd2: gnd2.exe
+gnd3: gnd3.exe
+
+sgplace: sgplace.exe
+fsplace: fsplace.exe
+aplace: aplace.exe
+
+pd1: pd1.exe
+pd2: pd2.exe
+pd3: pd3.exe
+
+mp1: mp1.exe
+mp1.exe: A1.h Mpool.h
+
+fastm: fastm.exe
+
+fstore: fstore.exe
+fstore.exe: Newd.h fstore.c
+	$(CC) $(CFLAGS) -DNEW -Tp fstore.c
+#################################################################
+# Refernce Counts
+refcount: refcount.exe
+refcount.obj String.obj: String.h
+refcount.exe: refcount.obj String.obj
+	$(CC) $(CFLAGS) refcount.obj String.obj
+
+ctext: ctext.exe
+ctext.obj: cText.h Text.h
+ctext.exe: cText.obj String.obj
+	$(CC) $(CFLAGS) cText.obj String.obj
+#################################################################
+# Memory Leak Detector
+mleak: mleak.exe
+mleak.obj: New.h mleak.c
+	$(CC) $(CFLAGS) -c -DMLEAK -Tp mleak.c
+mleak.exe: mleak.obj New.obj
+	$(CC) $(CFLAGS) mleak.obj New.obj
+
+New.obj: New.h New.c
+	$(CC) $(CFLAGS) -c -DMLEAK -Tp New.c
+#################################################################
+clean:
+	del *.obj
+	del *.exe

@@ -1,0 +1,97 @@
+# Makefile for Chapter 14 Programs 
+# Multiple Inheritance
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = bci ambig dom1 dom2 polym mh1 mh2 mh3 dev1 dev2 dev3 \
+fax1 fax2 fax3 fax4 multi1 multi2 multi3 multi4 stack mp1 mp2 v1
+
+all: $(PGMS)
+#################################################################
+# Base class initialization
+bci: bci.C
+#################################################################
+# Ambiguiies
+ambig: ambig.C
+#################################################################
+# Dominance
+dom1: dom1.o String.o
+	$(CC) $(CFLAGS) dom1.o String.o -o dom1
+dom1.o String.o: String.h
+
+dom2: dom2.o String.o
+	$(CC) $(CFLAGS) dom2.o String.o -o dom2
+dom2.o: String.h
+#################################################################
+# Polymorphism
+polym: polym.C
+#################################################################
+# Distinct Base Classes (Pattern 1)
+mh1: mh1.o String.o
+	$(CC) $(CFLAGS) mh1.o String.o -o mh1
+mh1.o: Motorhme.h Vehicle.h Resident.h PtrList.h List.h List.C String.h
+
+mh2: mh2.o String.o
+	$(CC) $(CFLAGS) mh2.o String.o -o mh2
+mh2.o: Motorhme.h Vehicle.h Resident.h PtrList.h List.h List.C String.h
+
+mh3: mh3.o String.o
+	$(CC) $(CFLAGS) mh3.o String.o -o mh3
+mh3.o: Motorhme.h Vehicle.h Resident.h PtrList.h List.h List.C String.h
+#################################################################
+# Multiple Inclusion (Pattern 2)
+dev1: Device.h PtrList.h List.h List.C
+dev2: Device.h PtrList.h List.h List.C
+dev3: Device.h PtrList.h List.h List.C
+#################################################################
+# Virtual Base Classes (Pattern 3)
+fax1: fax1.o String.o
+	$(CC) $(CFLAGS) fax1.o String.o -o fax1
+fax1.o: Machine.h String.h PtrList.h List.h List.C
+
+fax2: fax2.o String.o
+	$(CC) $(CFLAGS) fax2.o String.o -o fax2
+fax2.o: Machine2.h String.h PtrList.h List.h List.C
+
+fax3: fax3.o String.o
+	$(CC) $(CFLAGS) fax3.o String.o -o fax3
+fax3.o: Machine.h String.h PtrList.h List.h List.C
+
+fax4: fax4.o String.o
+	$(CC) $(CFLAGS) fax4.o String.o -o fax4
+fax4.o: Machine3.h String.h PtrList.h List.h List.C
+#################################################################
+# Multiple Inheritance Programs
+multi1: Multi1.h 
+multi2: Multi2.h 
+multi3: Multi3.h 
+multi4: Multi4.h 
+#################################################################
+# Stack - Bounded (Array) & Unbounded (List) stack
+stack: stack.o String.o
+	$(CC) $(CFLAGS) stack.o String.o -o stack
+stack.o: Stack.h UBStack.h BStack.h Array.h Array.C String.h List.h List.C
+#################################################################
+# Multiple inheritance, Persistent Strings and Shapes
+mp1: mp1.o Persist.o String.o
+	$(CC) $(CFLAGS) mp1.o Persist.o String.o -o mp1 -lm
+mp1.o: PShape.h Shape.h List.h List.C PtrList.h String.h \
+Assoc.h Assoc.C Array.h Array.C Persist.h PString.h
+Persist.o: PShape.h Shape.h Persist.h PString.h String.h Persist.C
+
+mp2: mp2.o Persist.o String.o
+	$(CC) $(CFLAGS) mp2.o Persist.o String.o -o mp2 -lm
+mp2.o: PShape.h Shape.h List.h List.C PtrList.h String.h \
+Assoc.h Assoc.C Array.h Array.C Persist.h PString.h
+#################################################################
+# Multiple Inheritance Virtual Function Implementaion
+v1: V1.h
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

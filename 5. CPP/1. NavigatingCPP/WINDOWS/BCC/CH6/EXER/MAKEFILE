@@ -1,0 +1,34 @@
+# Makefile for Chapter 6 Exercises
+# Overloading
+
+CC = bcc
+CFLAGS = -P -O
+.c.obj:
+	$(CC) $(CFLAGS) -c $<
+.c.exe:
+	$(CC) $(CFLAGS) $<
+
+all: min1 min2 ex3 ex4 isect cpx
+#################################################################
+# Exercise 1
+min1: min1.exe
+
+# Exercise 2
+min2: min2.exe
+
+# Exercise 3
+ex3: ex3.exe
+
+# Exercise 4
+ex4: ex4.exe
+
+# Exercise 5
+isect: isect.exe
+
+# Exercise 6
+cpx: cpx.exe
+cpx.exe: Complex.h
+#################################################################
+clean:
+	del *.obj
+	del *.exe

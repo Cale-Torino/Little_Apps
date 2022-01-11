@@ -1,0 +1,38 @@
+# Makefile for Chapter 2 Exercises
+# C++ Basics
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = ex1 ex2 ex3 ex4 ex5 ex6 ex7
+
+all: $(PGMS)
+#################################################################
+# Exercise 1
+ex1: ex1.C
+
+# Exercise 2
+ex2: ex2.C
+
+# Exercise 3
+ex3: ex3.C
+
+# Exercise 4
+ex4: ex4.C
+
+# Exercise 5
+ex5: ex5.C
+
+# Exercise 6
+ex6: ex6.C
+
+# Exercise 7
+ex7: ex7.C
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

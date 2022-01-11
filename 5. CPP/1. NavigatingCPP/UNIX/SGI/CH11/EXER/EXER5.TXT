@@ -1,0 +1,34 @@
+
+                                 Exercise 5
+
+1. Containment vs. inheritance for Array2d design.
+
+   a. The inheritance version of Array2d requires access to the
+      protected section of its Array base class. This is how the
+      Array2d constructor updates v[i].  The containment version of
+      Array2d does not need to update its Array base class.
+
+   b. The inheritance version requires Array2d to manage ncols in its
+      private section.  This is not necessary in the containment version.
+
+   c. The containment version requires overloaded operator[]() functions.
+      The inheritance version does not, since Array2d inherits operator[]()
+      from Array.
+
+   d. The inheritance version requires a virtual print() function that is
+      called from operator<<() in the Array class. Why? Because Array2d
+      is publicly derived from Array, it's not possible to provide
+      separate operator<<() functions with Array and Array2d signatures
+      (ambiguities will occur).  
+
+      The containment version has separate operator<<() functions for
+      Array and Array2d.
+
+2.  Advantages and Disadvantages
+
+   a. The containment version has tighter encapsulation than the
+      inheritance version.
+
+   b. Ostream output is faster with the containment version, due to
+      static binding. In the inheritance version, the virtual print()
+      function makes execution slower, due to dynamic binding.

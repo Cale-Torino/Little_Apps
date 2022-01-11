@@ -1,0 +1,56 @@
+# Makefile for Chapter 9 Exercises
+# Template Functions
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = reverse move1 move2 realloc1 realloc2 ptf3 transp dim3
+
+all: $(PGMS)
+#################################################################
+# Exercise 1
+reverse: reverse.o String.o
+	$(CC) $(CFLAGS) reverse.o String.o -o reverse
+reverse.o: String.h
+String.o: String.h
+
+# Exercise 2
+move1: move1.o String.o
+	$(CC) $(CFLAGS) move1.o String.o -o move1
+move1.o: String.h
+
+# Exercise 3
+move2: move2.o String.o
+	$(CC) $(CFLAGS) move2.o String.o -o move2
+move2.o: String.h
+
+# Exercise 4
+realloc1: realloc1.o String.o
+	$(CC) $(CFLAGS) realloc1.o String.o -o realloc1
+realloc1.o: String.h Rnew1.h
+
+# Exercise 5
+realloc2: realloc2.o String.o
+	$(CC) $(CFLAGS) realloc2.o String.o -o realloc2
+realloc2.o: String.h Rnew2.h
+
+# Exercise 6
+ptf3: ptf3.o String.o
+	$(CC) $(CFLAGS) ptf3.o String.o -o ptf3
+ptf3.o: String.h
+
+# Exercise 7
+transp: transp.o String.o
+	$(CC) $(CFLAGS) transp.o String.o -o transp
+transp.o: String.h dim2.h transpos.h
+
+# Exercise 8
+dim3: dim3.h
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

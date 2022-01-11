@@ -1,0 +1,80 @@
+# Makefile for Chapter 7 Programs
+# Class Design
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = square s1 s2 s3 s4 coins sfriend friend1 \
+nt r0 r1 r2 r3 r4 r5 lvrv
+
+all: $(PGMS)
+#################################################################
+# Assignment
+square: square.C
+#################################################################
+# String class
+s1: s1.o String.o
+	$(CC) $(CFLAGS) s1.o String.o -o s1
+s1.o String.o: String.h
+
+s2: s2.o String.o
+	$(CC) $(CFLAGS) s2.o String.o -o s2
+s2.o String.o: String.h
+
+s3: s3.o String.o
+	$(CC) $(CFLAGS) s3.o String.o -o s3
+s3.o String.o: String.h
+
+s4: s4.o String.o
+	$(CC) $(CFLAGS) s4.o String.o -o s4
+s4.o String.o: String.h
+
+lvrv: lvrv.o String.o
+	$(CC) $(CFLAGS) lvrv.o String.o -o lvrv
+lvrv.o String.o: String.h
+#################################################################
+# Friends
+coins: coins.C
+
+sfriend: sfriend.o String2.o
+	$(CC) $(CFLAGS) sfriend.o String2.o -o sfriend
+sfriend.o String2.o: String2.h
+
+friend1: friend1.C
+#################################################################
+# Range Int class
+nt: nt.o Rint.o
+	$(CC) $(CFLAGS) nt.o Rint.o -o nt
+nt.o Rint.o: Rint.h
+
+r0: r0.o Rint.o
+	$(CC) $(CFLAGS) r0.o Rint.o -o r0
+r0.o Rint.o: Rint.h
+
+r1: r1.o Rint.o
+	$(CC) $(CFLAGS) r1.o Rint.o -o r1
+r1.o Rint.o: Rint.h
+
+r2: r2.o Rint.o
+	$(CC) $(CFLAGS) r2.o Rint.o -o r2 -lm
+r2.o Rint.o: Rint.h
+
+r3: r3.o Rint.o
+	$(CC) $(CFLAGS) r3.o Rint.o -o r3
+r3.o Rint.o: Rint.h
+
+r4: r4.o Rint.o
+	$(CC) $(CFLAGS) r4.o Rint.o -o r4
+r4.o Rint.o: Rint.h
+
+r5: r5.o Rint.o
+	$(CC) $(CFLAGS) r5.o Rint.o -o r5
+r5.o Rint.o: Rint.h
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

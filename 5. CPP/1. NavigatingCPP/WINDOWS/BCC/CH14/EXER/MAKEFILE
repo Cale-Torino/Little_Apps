@@ -1,0 +1,82 @@
+# Makefile for Chapter 14 Exercises 
+# Multiple Inheritance
+
+CC = bcc
+CFLAGS = -P -O -ml
+.c.obj:
+	$(CC) $(CFLAGS) -c $<
+.c.exe:
+	$(CC) $(CFLAGS) $<
+
+all: mh2 mh3 mh4 dev1 fax2 fax3 pstack1 mp1 mp2 v1
+#################################################################
+# Exercise 1
+mh2: mh2.exe
+mh2.exe: mh2.obj String.obj
+	$(CC) $(CFLAGS) mh2.obj String.obj 
+mh2.obj: Motorhm1.h Vehicle.h Resident.h PtrList.h \
+List.h List.C String.h
+String.obj: String.h
+
+# Exercise 2
+mh3: mh3.exe
+mh3.exe: mh3.obj String.obj
+	$(CC) $(CFLAGS) mh3.obj String.obj 
+mh3.obj: Motorhm1.h Vehicle.h Resident.h PtrList.h \
+List.h List.C String.h
+
+# Exercise 3
+mh4: mh4.exe
+mh4.exe: mh4.obj String.obj
+	$(CC) $(CFLAGS) mh4.obj String.obj 
+mh4.obj: Motorhm2.h Vehicle.h Resident.h PtrList.h \
+List.h List.C String.h
+
+# Exercise 4
+dev1: dev1.exe
+dev1.exe: Device.h PtrList.h List.h List.C
+
+# Exercise 5
+# see exer5.txt
+
+# Exercise 6
+fax2: fax2.exe
+fax2.exe: fax2.obj String.obj
+	$(CC) $(CFLAGS) fax2.obj String.obj 
+fax2.obj: Machine4.h String.h PtrList.h List.h List.C
+
+# Exercise 7
+fax3: fax3.exe
+fax3.exe: fax3.obj String.obj
+	$(CC) $(CFLAGS) fax3.obj String.obj 
+fax3.obj: Machine.h String.h PtrList.h List.h List.C
+
+# Exercise 8
+pstack1: pstack1.exe
+pstack1.exe: BPStack.h UBPStack.h PtrStack.h \
+Array.h Array.C PtrList.h List.h List.C
+
+# Exercise 9
+mp1: mp1.exe
+mp1.exe: mp1.obj Persist.obj String.obj
+	$(CC) $(CFLAGS) mp1.obj Persist.obj String.obj 
+mp1.obj: PShape.h Shape.h List.h List.C PtrList.h String.h \
+Assoc.h Assoc.C Array.h Array.C Persist.h PString.h
+Persist.obj: PShape.h Shape.h Persist.h PString.h String.h Persist.C
+
+mp2: mp2.exe
+mp2.exe: mp2.obj Persist.obj String.obj
+	$(CC) $(CFLAGS) mp2.obj Persist.obj String.obj 
+mp2.obj: PShape.h Shape.h List.h List.C PtrList.h String.h \
+Assoc.h Assoc.C Array.h Array.C Persist.h PString.h
+
+# Exercise 10 
+# see exer10.txt
+
+# Exercise 11 
+v1: v1.exe
+v1.exe: V1.h
+#################################################################
+clean:
+	del *.obj
+	del *.exe

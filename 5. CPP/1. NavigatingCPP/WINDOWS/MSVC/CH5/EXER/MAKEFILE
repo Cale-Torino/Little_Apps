@@ -1,0 +1,36 @@
+# Makefile for Chapter 5 Exercises
+# Working with Classes
+
+CC = cl
+CFLAGS = -O -GX -GR -nologo
+.c.obj:
+	$(CC) $(CFLAGS) -c -Tp $<
+.c.exe:
+	$(CC) $(CFLAGS) -Tp $<
+
+all: smem count pm1 pm2 mleak cfifo5
+#################################################################
+# Exercise 1
+smem: smem.exe
+
+# Exercise 2
+count: count.exe
+
+# Exercise 3
+pm1: pm1.exe
+
+# Exercise 4
+pm2: pm2.exe
+
+# Exercise 5
+mleak: mleak.exe
+
+# Exercise 6
+cfifo5: cfifo5.exe
+cfifo5.obj Fifo5.obj: Fifo5.h
+cfifo5.exe: cfifo5.obj Fifo5.obj
+	$(CC) $(CFLAGS) cfifo5.obj Fifo5.obj
+#################################################################
+clean:
+	del *.obj
+	del *.exe

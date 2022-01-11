@@ -1,0 +1,32 @@
+
+                              Exercise 5
+
+Instantiating a pointer-base template container with Device is
+problematic for the following reasons.
+
+   *  When you add a multiply derived object pointer (Disk *) to the list,
+      you must cast it to the read or write side of the hierarchy. Disk
+      has two Device parts, making the conversion to Disk * ambiguous.
+
+   *  When you loop through the list, if you invoke a function that is
+      in the Device interface (for example, reset()) the compiler will invoke
+      the reset() from the side of the tree that you cast to when you
+      add the multiply derived Disk. For example:
+
+         PtrList<Device> dlist;
+         dlist.append(static_cast<ReadDevice *>(new Disk));
+
+         for (PtrIterator<Device> d_iter(dlist); !d_iter; d_iter++)
+            d_iter()->reset();         // call ReadDevice's reset()
+   
+      To invoke WriteDevice's reset(), you must use a cast 
+      (dynamic is always safer).
+
+         WriteDevice *wp = dynamic_cast<WriteDevice *>(d_iter);
+         if (wp) wp->reset();         // calls WriteDevices' reset()
+
+   *  In summary, don't instantiate a template container with a 
+      multiple-included base class pointer. You will be casting constantly 
+      to resolve ambiguities or forcing the compiler to use the "other side" 
+      of the hierarchy.  A better strategy involves instantiating multiple 
+      containers with bases that are not ambiguous.

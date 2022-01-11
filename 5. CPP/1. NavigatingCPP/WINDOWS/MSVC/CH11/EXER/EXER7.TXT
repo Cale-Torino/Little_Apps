@@ -1,0 +1,43 @@
+
+                                Exercise 7
+
+A container class that provides pointer semantics offers the following 
+advantages:
+
+   *  When objects are stored in a container by pointer, you can put 
+      the same object in more than one container. With value semantics, 
+      an object can only appear in one container. You must make a copy 
+      of it to put it in another container.
+
+   *  If you need to perform many manipulations of the objects in 
+      the container, pointers are more efficient.
+
+   *  A container that stores objects by value must store objects of the 
+      type that matches the template only. This precludes storing objects
+      in an inheritance structure (like Circle and Square) and invoking
+      virtual functions for polymorphic programming.
+      You cannot instantiate a template container class that stores objects
+      by value with an abstract type.
+
+   *  When you create a template container class with pointer semantics,
+      the class can make decisions on how to handle the pointer objects
+      at destruction time. As the user, you can tell the class to delete
+      the objects or leave them alone. This is particularly important
+      when you expect to put a pointer object in more than one container.
+
+   *  Pointer semantics support a polymorphic programming style because
+      you can instantiate the container with an abstract class name
+      (the class uses pointers internally).
+      You can add pointer objects of any type publicly derived from the
+      abstract base. Since the iterator returns a pointer, you
+      can easily invoke virtual functions by looping with the iterator.
+
+The disadvantages include the following.
+
+   *  You have to decide what to do with the pointer objects when the 
+      pointer based container is destructed (who deletes the objects?).
+
+   *  You cannot provide copy and assignment semantics that will work with
+      all instantiations of the container. (See "Container Classes, Pointers,
+      and Copy Semantics" in this chapter for a detailed explanation.)
+      You must use a different algorithm for abstract and concrete classes.

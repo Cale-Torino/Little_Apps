@@ -1,0 +1,165 @@
+# Makefile for Chapter 13 Programs
+# Exception Handling
+
+CC = cl
+CFLAGS = -O -GX -GR -nologo
+.c.obj:
+	$(CC) $(CFLAGS) -c -Tp $<
+.c.exe:
+	$(CC) $(CFLAGS) -Tp $<
+
+all: nest avg1 avg2 fract catch1 catch2 catch3 catch4 catch5 \
+	catch6 dbase array1 array2 amax \
+	db0 db0t db1 db2 db3 db4 mycp lock1 lock2 lock3 lock4 \
+	uc1 uc2 uc3 uc4 esp1 esp2 esp3 esp4 esp5 esp6 esp7 esp8 ste \
+	ue1 ue2 ue3 ue4 ue5 rint1
+#################################################################
+nest: nest.exe
+avg1: avg1.exe
+avg2: avg2.exe
+
+fract: fract.exe
+fract.exe: Fraction.h
+
+catch1: catch1.exe
+catch2: catch2.exe
+catch3: catch3.exe
+catch3.exe: Fraction.h
+
+catch4: catch4.exe
+catch4.exe: Fraction.h
+
+catch5: catch5.exe
+catch5.exe: Fraction.h
+
+catch6: catch6.exe
+catch6.exe: catch6.obj String.obj
+	$(CC) $(CFLAGS) catch6.obj String.obj
+catch6.obj String.obj: String.h
+
+catch7: catch7.exe
+catch8: catch8.exe
+dbase: dbase.exe
+
+array1: array1.exe
+array1.exe: Array.h Array.C
+
+array2: array2.exe
+array2.exe: Array.h Array.C
+
+rint1: rint1.exe
+rint1.exe: rint1.obj Rint.obj
+	$(CC) $(CFLAGS) rint1.obj Rint.obj
+rint1.obj: Rint.h
+Rint.obj: Rint.h
+
+amax: amax.exe
+amax.exe: Array.h Array.C
+
+db0: db0.exe
+db0.exe: db0.obj String.obj 
+	$(CC) $(CFLAGS) db0.obj String.obj
+db0.obj: Dbase1.h String.h
+
+db0t: db0t.exe
+db0t.exe: db0t.obj String.obj 
+	$(CC) $(CFLAGS) db0t.obj String.obj
+db0t.obj: Dbase1.h String.h
+
+db1: db1.exe
+db1.exe: db1.obj String.obj 
+	$(CC) $(CFLAGS) db1.obj String.obj
+db1.obj: Dbase1.h String.h autoptr.h
+
+db2: db2.exe
+db2.exe: db2.obj  String.obj
+	$(CC) $(CFLAGS) db2.obj String.obj
+db2.obj: Dbase2.h String.h autoptr.h
+
+db3: db3.exe
+db3.exe: db3.obj  String.obj
+	$(CC) $(CFLAGS) db3.obj String.obj
+db3.obj: Dbase3.h String.h autoptr.h
+
+db4: db4.exe
+db4.exe: db4.obj  String.obj
+	$(CC) $(CFLAGS) db4.obj String.obj
+db4.obj: Dbase4.h String.h autoptr.h
+
+mycp: mycp.exe
+mycp.exe: mycp.obj String.obj
+	$(CC) $(CFLAGS) mycp.obj String.obj
+mycp.obj: File.h FilePtr.h String.h
+
+lock1: lock1.exe
+lock1.exe: Record1.h
+
+lock2: lock2.exe
+lock2.exe: Record2.h
+
+lock3: lock3.exe
+lock3.exe: Record3.h
+
+lock4: lock4.exe
+lock4.exe: Record4.h
+
+uc1: uc1.exe
+
+uc2: uc2.exe
+uc2.exe: Terminat.h
+
+uc3: uc3.exe
+uc3.exe: Terminat.h
+
+uc4: uc4.exe
+uc4.exe: Terminat.h
+
+esp1: esp1.exe
+esp2: esp2.exe
+esp3: esp3.exe
+esp4: esp4.exe
+esp5: esp5.exe
+esp5.exe: esp5.obj String.obj 
+	$(CC) $(CFLAGS) esp5.obj String.obj
+esp5.obj: String.h
+esp6: esp6.exe
+esp7: esp7.exe
+esp7.exe: esp7.obj String.obj 
+	$(CC) $(CFLAGS) esp7.obj String.obj
+esp7.obj: Dbase4.h String.h
+esp8: esp8.exe
+esp8.exe: esp8.obj String.obj 
+	$(CC) $(CFLAGS) esp8.obj String.obj
+esp8.obj: Dbase4.h String.h
+
+ste: ste.exe
+ste.exe: except.h
+
+ue1: ue1.exe
+ue1.exe: ue1.obj String.obj 
+	$(CC) $(CFLAGS) ue1.obj String.obj
+ue1.obj: String.h
+
+ue2: ue2.exe
+ue2.exe: ue2.obj String.obj 
+	$(CC) $(CFLAGS) ue2.obj String.obj
+ue2.obj: String.h
+
+ue3: ue3.exe
+ue3.exe: ue3.obj String.obj 
+	$(CC) $(CFLAGS) ue3.obj String.obj
+ue3.obj: String.h
+
+ue4: ue4.exe
+ue4.exe: ue4.obj String.obj 
+	$(CC) $(CFLAGS) ue4.obj String.obj
+ue4.obj: String.h
+
+ue5: ue5.exe
+ue5.exe: ue5.obj String.obj 
+	$(CC) $(CFLAGS) ue5.obj String.obj
+ue5.obj: String.h
+#################################################################
+clean:
+	del *.obj
+	del *.exe

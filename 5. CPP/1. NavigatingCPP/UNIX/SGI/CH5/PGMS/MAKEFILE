@@ -1,0 +1,61 @@
+# Makefile for Chapter 5 Programs
+# Working with Classes
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = efifo iblock point3 point4 point5 decades objects arrays concalls \
+plist1 plistn plistn2 local
+
+all: $(PGMS)
+
+#################################################################
+# Explicit
+efifo: efifo.o Fifo5.o
+	$(CC) $(CFLAGS) efifo.o Fifo5.o -o efifo
+efifo.o Fifo5.o: Fifo5.h
+iblock: iblock.C
+
+# Roman class
+decades: decades.o Roman2.o
+	$(CC) $(CFLAGS) decades.o Roman2.o -o decades
+decades.o Roman2.o: Roman2.h
+
+objects: objects.o Roman3.o
+	$(CC) $(CFLAGS) objects.o Roman3.o -o objects
+objects.o Roman3.o: Roman3.h
+
+arrays: arrays.o Roman4.o
+	$(CC) $(CFLAGS) arrays.o Roman4.o -o arrays
+arrays.o Roman4.o: Roman4.h
+
+concalls: concalls.C
+#################################################################
+# Point class
+point3: Point3.h
+point4: point4.C
+point5: Point5.h
+#################################################################
+# List class
+plist1: plist1.o List1.o
+	$(CC) $(CFLAGS) plist1.o List1.o -o plist1
+plist1.o List1.o: List1.h
+
+plistn: plistn.o Listn.o
+	$(CC) $(CFLAGS) plistn.o Listn.o -o plistn
+plistn.o Listn.o: Listn.h
+
+plistn2: plistn2.o Listn2.o
+	$(CC) $(CFLAGS) plistn2.o Listn2.o -o plistn2
+plistn2.o Listn2.o: Listn2.h
+#################################################################
+# Local classes
+local: local.C
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

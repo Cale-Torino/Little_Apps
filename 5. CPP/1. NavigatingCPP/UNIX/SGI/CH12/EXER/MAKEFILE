@@ -1,0 +1,53 @@
+# Makefile for Chapter 12 Exercises
+# RTTI (Run Time Type Identification)
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = invest fig shape1 pitems pwrite pread assign
+
+all: $(PGMS)
+#################################################################
+# Exercise 1
+invest: Invest.h
+
+# Exercise 2
+fig: fig.o String.o
+	$(CC) $(CFLAGS) fig.o String.o -o fig
+fig.o: Figure.h String.h
+String.o: String.h
+
+# Exercise 3
+shape1: shape1.o String.o
+	$(CC) $(CFLAGS) shape1.o String.o -o shape1 -lm
+shape1.o: Shape.h List.h List.C PtrList.h
+
+# Exercise 4
+pitems: pitems.o String.o
+	$(CC) $(CFLAGS) pitems.o String.o -o pitems
+pitems.o: Publish.h String.h
+
+# Exercise 5
+pwrite: pwrite.o Persist.o String.o
+	$(CC) $(CFLAGS) pwrite.o Persist.o String.o -o pwrite
+pwrite.o: Solid.h List.h List.C PtrList.h String.h Assoc.h \
+Assoc.C Array.h Array.C Persist.h pwrite.C
+Persist.o: Solid.h Persist.h Persist.C
+
+pread: pread.o Persist.o String.o
+	$(CC) $(CFLAGS) pread.o Persist.o String.o -o pread
+pread.o: Solid.h List.h List.C PtrList.h String.h Assoc.h \
+Assoc.C Array.h Array.C Persist.h pread.C
+
+# Exercise 6
+assign: assign.o String.o
+	$(CC) $(CFLAGS) assign.o String.o -o assign
+assign.o: Window3.h Point5.h String.h
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

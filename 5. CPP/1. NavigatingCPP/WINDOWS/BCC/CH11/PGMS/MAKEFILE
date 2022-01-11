@@ -1,0 +1,221 @@
+# Makefile for Chapter 11 Programs
+# Inheritance
+
+CC = bcc
+CFLAGS = -P -O
+.c.obj:
+	$(CC) $(CFLAGS) -c $<
+.c.exe:
+	$(CC) $(CFLAGS) $<
+
+all: ship1 ship2 ship3 scope p1 p2 p3 p4 p5 p6 p7 p9 vf1 vf4 \
+vd1 vd2 polym pro1 pro2 pro3 a2d polym2 abs shapes \
+using1 using2 using3 bound pd1 pd2 pd3 pd4 intarray pixel blockr \
+vfi1 vfi2 vc1 vc2 vc3 vc4 vcall
+#################################################################
+# check protected derivation in 5.0
+# p8 g1 g2 g3 lcopy1 lcopy2
+#################################################################
+# Package control system
+ship1: ship1.exe
+ship1.exe: ship1.obj String.obj
+	$(CC) $(CFLAGS) ship1.obj String.obj
+ship1.obj: String.h
+String.obj: String.h
+
+ship2: ship2.exe
+ship2.exe: ship2.obj String.obj
+	$(CC) $(CFLAGS) ship2.obj String.obj
+ship2.obj: String.h
+
+ship3: ship3.exe
+ship3.exe: ship3.obj String.obj
+	$(CC) $(CFLAGS) ship3.obj String.obj
+ship3.obj: Package.h String.h
+#################################################################
+# Scope rules, dominance
+scope: scope.exe
+scope.exe: scope.obj String.obj
+	$(CC) $(CFLAGS) scope.obj String.obj
+scope.obj: String.h
+#################################################################
+# Person programs
+p1: p1.exe
+p1.exe: p1.obj String.obj 
+	$(CC) $(CFLAGS) p1.obj String.obj
+p1.obj: Person1.h
+
+p2: p2.exe
+p2.exe: p2.obj String.obj 
+	$(CC) $(CFLAGS) p2.obj String.obj
+p2.obj: Person2.h
+
+p3: p3.exe
+p3.exe: p3.obj String.obj
+	$(CC) $(CFLAGS) p3.obj String.obj
+p3.obj: Person2.h
+
+p4: p4.exe
+p4.exe: p4.obj String.obj
+	$(CC) $(CFLAGS) p4.obj String.obj
+p4.obj: Person2.h
+
+p5: p5.exe
+p5.exe: p5.obj String.obj
+	$(CC) $(CFLAGS) p5.obj String.obj
+p5.obj: Person2.h
+
+p6: p6.exe
+p6.exe: p6.obj String.obj
+	$(CC) $(CFLAGS) p6.obj String.obj
+p6.obj: Person3.h
+
+p7: p7.exe
+p7.exe: p7.obj String.obj
+	$(CC) $(CFLAGS) p7.obj String.obj
+p7.obj: Person4.h
+
+p8: p8.exe
+p8.exe: p8.obj String.obj
+	$(CC) $(CFLAGS) p8.obj String.obj
+p8.obj: Person4.h List.h PtrList.h
+
+p9: p9.exe
+p9.exe: p9.obj String.obj
+	$(CC) $(CFLAGS) p9.obj String.obj
+p9.obj: Person5.h
+#################################################################
+# Polymorphic programming
+polym: polym.exe
+polym.exe: polym.obj String.obj
+	$(CC) $(CFLAGS) polym.obj String.obj
+polym.obj: Person4.h Array.h
+
+polym2: polym2.exe
+polym2.exe: polym2.obj String.obj
+	$(CC) $(CFLAGS) polym2.obj String.obj
+polym2.obj: Person4.h PtrList.h List.h List.C
+#################################################################
+# Private programs (private derivation)
+pd1: pd1.exe
+
+pd2: pd2.exe
+pd2.exe: Array.h Array.C BArray.h
+
+pd3: pd3.exe
+pd3.exe: Array.h Array.C BArray.h
+
+pd4: pd4.exe
+pd4.exe: Array.h Array.C BArray.h
+
+bound: bound.exe
+bound.exe: bound.obj String.obj
+	$(CC) $(CFLAGS) bound.obj String.obj
+bound.obj: BArray.h Array.h Array.C String.h
+#################################################################
+# Protected programs (protected derivation)
+g1: g1.exe
+g1.exe: Grid.h Array2dp.h Array.h Array.C
+
+g2: g2.exe
+g2.exe: Sgrid.h Grid.h Array2dp.h Array.h Array.C
+
+g3: g3.exe
+g3.exe: Sgrid.h Grid.h Array2dp.h Array.h Array.C
+#################################################################
+# Shape programs, abstract base classes
+shapes: shapes.exe
+shapes.exe: shapes.obj String.obj
+	$(CC) $(CFLAGS) shapes.obj String.obj
+shapes.obj: Shape.h List.h List.C String.h PtrList.h
+
+abs: abs.exe
+abs.exe: abs.obj String.obj
+	$(CC) $(CFLAGS) abs.obj String.obj
+abs.obj: Shape.h String.h
+#################################################################
+# Virtual destructors
+vd1: vd1.exe
+vd1.exe: Base1.h Array.h
+
+vd2: vd2.exe
+vd2.exe: Base2.h Array.h
+#################################################################
+# Virtual functions
+vf1: vf1.exe
+vf1.exe: Base.h
+
+vf4: vf4.exe
+vf4.exe: Base4.h
+#################################################################
+# Virtual function implementation
+vfi1: vfi1.exe
+
+vfi2: vfi2.exe
+vfi2.exe: vfi2.obj String.obj
+	$(CC) $(CFLAGS) vfi2.obj String.obj
+vfi2.obj: Person4.h String.h
+#################################################################
+# Using Declarations
+using1: using1.exe
+using1.exe: using1.obj String.obj
+	$(CC) $(CFLAGS) using1.obj String.obj
+using1.obj: String.h
+using2: using2.exe
+using3: using3.exe
+using3.exe: using3.obj String.obj
+	$(CC) $(CFLAGS) using3.obj String.obj
+using3.obj: String.h
+#################################################################
+# Virtual constructors
+vc1: vc1.exe
+vc1.exe: Window1.h Point5.h
+
+vc2: vc2.exe
+vc2.exe: Window2.h Point5.h
+
+vc3: vc3.exe
+vc3.exe: Window3.h Point5.h
+
+vc4: vc4.exe
+vc4.exe: Window3.h Point5.h
+
+vcall: vcall.exe
+#################################################################
+# Protected access
+pro1: pro1.obj
+pro2: pro2.obj
+pro3: pro3.obj
+pro3.obj: String.h
+
+a2d: a2d.exe
+a2d.exe: Arrayp.h Arrayp.C Array2d.h
+#################################################################
+# Templates with Inheritance
+intarray: intarray.exe
+intarray.exe: Array.h Array.C
+
+pixel: pixel.exe
+pixel.exe: pixel.obj String.obj
+	$(CC) $(CFLAGS) pixel.obj String.obj
+pixel.obj: Point3.h String.h
+
+blockr: blockr.exe
+blockr.exe: blockr.obj String.obj
+	$(CC) $(CFLAGS) blockr.obj String.obj
+blockr.obj: Block2.h String.h
+#################################################################
+# Deep copy semantics for List, PtrList, ListCopyA, ListCopyC classes
+lcopy1: lcopy1.exe
+lcopy1.exe: lcopy1.obj String.obj
+	$(CC) $(CFLAGS) lcopy1.obj String.obj
+lcopy1.obj: List.h List.C PtrList.h String.h ListCopy.h
+
+lcopy2: lcopy2.exe
+lcopy2.exe: lcopy2.obj String.obj
+	$(CC) $(CFLAGS) lcopy2.obj String.obj
+lcopy2.obj: Shape.h List.h List.C String.h PtrList.h ListCopy.h
+#################################################################
+clean:
+	del *.obj
+	del *.exe

@@ -1,0 +1,28 @@
+
+                               Exercise 6
+
+Private or protected derivation means that the base class appears in either
+the private or protected section, respectively, of the derived class.
+The reason for doing this is to hide, or encapsulate, the base class.
+
+If the C++ compiler allowed a standard conversion from a derived class pointer
+to a base class pointer for private or protected derivation, the conversion
+would break the encapsulation.
+
+For example,
+
+class Base {
+   public:
+   void f();
+};
+
+class Derived : private Base { ... };
+
+Derived d;
+d.f();                 // illegal for private inheritance
+Base *bp = &d;         // illegal for private inheritance
+bp->f();               // breaks encapsulation
+
+Derived object d cannot call base public function f().
+A conversion from derived pointer (&d) to base pointer (bp) would allow
+access to base public function f() through bp.

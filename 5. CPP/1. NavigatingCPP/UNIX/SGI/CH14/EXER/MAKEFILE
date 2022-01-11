@@ -1,0 +1,74 @@
+# Makefile for Chapter 14 Exercises 
+# Multiple Inheritance
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = mh2 mh3 mh4 dev1 fax2 fax3 pstack1 mp1 mp2 v1
+
+all: $(PGMS)
+#################################################################
+# Exercise 1
+mh2: mh2.o String.o
+	$(CC) $(CFLAGS) mh2.o String.o -o mh2
+mh2.o: Motorhm1.h Vehicle.h Resident.h PtrList.h \
+List.h List.C String.h
+String.o: String.h
+
+# Exercise 2
+mh3: mh3.o String.o
+	$(CC) $(CFLAGS) mh3.o String.o -o mh3
+mh3.o: Motorhm1.h Vehicle.h Resident.h PtrList.h \
+List.h List.C String.h
+
+# Exercise 3
+mh4: mh4.o String.o
+	$(CC) $(CFLAGS) mh4.o String.o -o mh4
+mh4.o: Motorhm2.h Vehicle.h Resident.h PtrList.h \
+List.h List.C String.h
+
+# Exercise 4
+dev1: Device.h PtrList.h List.h List.C
+
+# Exercise 5
+# see exer5.txt
+
+# Exercise 6
+fax2: fax2.o String.o
+	$(CC) $(CFLAGS) fax2.o String.o -o fax2
+fax2.o: Machine4.h String.h PtrList.h List.h List.C
+
+# Exercise 7
+fax3: fax3.o String.o
+	$(CC) $(CFLAGS) fax3.o String.o -o fax3
+fax3.o: Machine.h String.h PtrList.h List.h List.C
+
+# Exercise 8
+pstack1: BPStack.h UBPStack.h PtrStack.h \
+Array.h Array.C PtrList.h List.h List.C
+
+# Exercise 9
+mp1: mp1.o Persist.o String.o
+	$(CC) $(CFLAGS) mp1.o Persist.o String.o -o mp1 -lm
+mp1.o: PShape.h Shape.h List.h List.C PtrList.h String.h \
+Assoc.h Assoc.C Array.h Array.C Persist.h PString.h
+Persist.o: PShape.h Shape.h Persist.h PString.h String.h Persist.C
+
+mp2: mp2.o Persist.o String.o
+	$(CC) $(CFLAGS) mp2.o Persist.o String.o -o mp2 -lm
+mp2.o: PShape.h Shape.h List.h List.C PtrList.h String.h \
+Assoc.h Assoc.C Array.h Array.C Persist.h PString.h
+
+# Exercise 10 
+# see exer10.txt
+
+# Exercise 11 
+v1: V1.h
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

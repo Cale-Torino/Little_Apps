@@ -1,0 +1,56 @@
+// mt2.C - member templates, specialization
+#include <iostream.h>
+#include <typeinfo.h>
+#include "String.h"
+
+template <class TYPE>
+class Act {
+public:
+	void f(double);								// non-template prototype
+	template <class NEWTYPE>					// member template prototype
+	void f(const NEWTYPE &) {
+		cout << typeid(*this).name() << " template member" << endl;
+	}
+};
+
+template <class TYPE> 
+void Act<TYPE>::f(double) {					// template definition
+	cout << typeid(*this).name() << " non-template member" << endl;
+}
+
+template <> 
+void Act<String>::f(double) {					// specialized non-template definition
+	cout << "Act<String> specialized non-template member" << endl;
+}
+
+//template<>
+//template<>
+//void Act<String>::f(const String &) {	// specialized member template 
+	//cout << "Act<String> specialized template member" << endl;
+//}
+
+int main()
+{
+	Act<String> play;
+	play.f(3.4);					// Act<String> specialized non-template member
+
+	String middle = "Act III";
+	play.f(middle);				// Act<String> specialized template member
+
+	Act<int> m1;
+	m1.f(3.4);									// Act<int> non-template member
+	m1.f(middle);								// Act<int> template member
+	m1.f(100);									// Act<int> template member
+	return 0;
+}
+
+/*************************************************************************
+
+$ mt2
+Act<String> specialized non-template member
+class Act<class String> template member
+class Act<int> non-template member
+class Act<int> template member
+class Act<int> template member
+
+*/

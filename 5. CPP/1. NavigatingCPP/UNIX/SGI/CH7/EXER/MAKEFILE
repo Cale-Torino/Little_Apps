@@ -1,0 +1,65 @@
+# Makefile for Chapter 7 Exercises
+# Class Design
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = cfifo fract menu count rom1 range s1 s2 s3 bit1 bit2
+
+all: $(PGMS)
+#################################################################
+# Exercise 1
+cfifo: cfifo.o Fifo.o
+	$(CC) $(CFLAGS) cfifo.o Fifo.o -o cfifo
+cfifo.o Fifo.o: Fifo.h
+
+# Exercise 2
+fract: Fraction.h
+
+# Exercise 3
+menu: menu.o String.o
+	$(CC) $(CFLAGS) menu.o String.o -o menu
+menu.o String.o: String.h
+
+# Exercise 4
+count: count.C
+
+# Exercise 5
+rom1: rom1.o Roman.o
+	$(CC) $(CFLAGS) rom1.o Roman.o -o rom1
+rom1.o Roman.o: Roman.h
+
+# Exercise 6
+range: range.o Rint.o
+	$(CC) $(CFLAGS) range.o Rint.o -o range
+range.o Rint.o: Rint.h
+
+# Exercise 7
+s1: s1.o String1.o
+	$(CC) $(CFLAGS) s1.o String1.o -o s1
+s1.o String1.o: String1.h
+
+# Exercise 8 
+s2: s2.o
+
+# Exercise 9 
+s3: s3.o String3.o
+	$(CC) $(CFLAGS) s3.o String3.o -o s3
+s3.o String3.o: String3.h
+
+# Exercise 10 
+bit1: bit1.o Bit.o
+	$(CC) $(CFLAGS) bit1.o Bit.o -o bit1
+bit1.o Bit.o: Bit.h
+
+bit2: bit2.o Bit.o
+	$(CC) $(CFLAGS) bit2.o Bit.o -o bit2
+bit2.o Bit.o: Bit.h
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

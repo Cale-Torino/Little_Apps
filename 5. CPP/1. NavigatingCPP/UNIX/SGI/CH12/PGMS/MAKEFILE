@@ -1,0 +1,69 @@
+# Makefile for Chapter 12 Programs
+# RTTI (Run Time Type Identification)
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = invest1 invest2 invest3 invest4 invest5 \
+typ1 typ2 typ3 typ4 \
+shape1 shape2 pitems \
+pwrite pread
+
+all: $(PGMS)
+#################################################################
+# Investment class
+invest1: Invest1.h
+invest2: Invest2.h
+invest3: Invest3.h
+invest4: Invest4.h
+invest5: Invest5.h
+#################################################################
+# Typeid() operator
+typ1: typ1.o String.o
+	$(CC) $(CFLAGS) typ1.o String.o -o typ1
+typ1.o: String.h Complex.h Array.h Array.C
+String.o: String.h
+
+typ2: Invest4.h
+
+typ3: typ3.o String.o
+	$(CC) $(CFLAGS) typ3.o String.o -o typ3
+typ3.o: Invest5.h String.h
+
+typ4: typ4.o String.o
+	$(CC) $(CFLAGS) typ4.o String.o -o typ4
+typ4.o: Array.h Array.C String.h
+#################################################################
+# Shape programs
+shape1: shape1.o String.o
+	$(CC) $(CFLAGS) shape1.o String.o -o shape1 -lm
+shape1.o: Shape.h List.h List.C PtrList.h
+
+shape2: shape2.o String.o
+	$(CC) $(CFLAGS) shape2.o String.o -o shape2 -lm
+shape2.o: Shape.h List.h List.C PtrList.h
+#################################################################
+# Publish items
+pitems: pitems.o String.o
+	$(CC) $(CFLAGS) pitems.o String.o -o pitems
+pitems.o: Publish.h String.h
+#################################################################
+# Persistence programs
+pwrite: pwrite.o Persist.o String.o
+	$(CC) $(CFLAGS) pwrite.o Persist.o String.o -o pwrite
+pwrite.o: Solid.h List.h List.C PtrList.h String.h Assoc.h \
+Assoc.C Array.h Array.C Persist.h pwrite.C
+Persist.o: Solid.h Persist.h Persist.C
+
+pread: pread.o Persist.o String.o
+	$(CC) $(CFLAGS) pread.o Persist.o String.o -o pread
+pread.o: Solid.h List.h List.C PtrList.h String.h Assoc.h \
+Assoc.C Array.h Array.C Persist.h pread.C
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

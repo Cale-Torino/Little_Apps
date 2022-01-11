@@ -1,0 +1,51 @@
+# Makefile for Appendix A
+# iostream Library
+
+CC = bcc
+CFLAGS = -O -P
+.c.obj:
+	$(CC) $(CFLAGS) -c $<
+.c.exe:
+	$(CC) $(CFLAGS) $<
+
+all: ts1 ex1 ex2 ex3 ex4 ioprec readf writef replace append \
+wordcnt t1 t2 t3 t4
+#################################################################
+ts1: ts1.exe
+
+ex1: ex1.exe
+ex2: ex2.exe
+ex3: ex3.exe
+ex3.exe: ex3.obj String.obj
+	$(CC) $(CFLAGS) ex3.obj String.obj
+ex3.obj: String.h 
+ex4: ex4.exe
+
+t1: t1.exe
+t2: t2.exe
+t3: t3.exe
+t4: t4.exe
+
+wordcnt: wordcnt.exe
+wordcnt2: wordcnt2.exe
+wordcnt3: wordcnt3.exe
+
+ioprec: ioprec.exe
+
+writef: writef.exe
+writef: writef.exe
+writef.exe: Hue.h
+
+readf: readf.exe
+readf: readf.exe
+readf.exe: Hue.h
+
+replace: replace.exe
+replace.exe: Hue.h
+
+append: append.exe
+append.exe: Hue.h
+#################################################################
+clean:
+	del *.obj
+	del *.exe

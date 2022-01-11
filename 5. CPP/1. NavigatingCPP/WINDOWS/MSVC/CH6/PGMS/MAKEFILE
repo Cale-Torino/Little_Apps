@@ -1,0 +1,68 @@
+# Makefile for Chapter 6 Programs
+# Overloading
+
+CC = cl
+CFLAGS = -O -GX -GR -nologo
+.c.obj:
+	$(CC) $(CFLAGS) -c -Tp $<
+.c.exe:
+	$(CC) $(CFLAGS) -Tp $<
+
+all: classx classy classz date1 date2 point1 point2 maxlen vp1 args \
+	  margs1 margs2 cpx int cast1 cast2 cast3 smartp plist2 name1 name2
+#################################################################
+# Overloading global/static/member functions
+classx: classx.exe
+classy: classy.exe
+classz: classz.exe
+#################################################################
+# Default args vs. function overloading
+date1: date1.exe
+date2: date2.exe
+point1: point1.exe
+point2: point2.exe
+#################################################################
+# Const * conversions
+maxlen: maxlen.exe
+#################################################################
+# Void Pointers
+vp1: vp1.exe
+#################################################################
+# Ellipsis Rule
+args: args.exe
+args.obj Roman.obj: Roman.h
+args.exe: args.obj Roman.obj
+	$(CC) $(CFLAGS) args.obj Roman.obj
+#################################################################
+# Intersection Rule
+margs1: margs1.exe
+margs2: margs2.exe
+#################################################################
+# Complex class
+cpx: cpx.exe
+cpx.exe: Complex.h
+#################################################################
+# Integer class
+int: int.exe
+#################################################################
+# Overloaded casts
+cast1: cast1.exe
+cast2: cast2.exe
+cast3: cast3.exe
+#################################################################
+# Smart Pointers
+smartp: smartp.exe
+#################################################################
+# List class
+plist2: plist2.exe
+plist2.obj List2.obj: List2.h
+plist2.exe: plist2.obj List2.obj
+	$(CC) $(CFLAGS) plist2.obj List2.obj
+#################################################################
+# Overloading and Namespaces
+name1: name1.exe
+name2: name2.exe
+#################################################################
+clean:
+	del *.obj
+	del *.exe

@@ -1,0 +1,62 @@
+# Makefile for Chapter 3 Exercises
+# C++ Program Structure
+
+CC = cl
+CFLAGS = -O -GX -GR -nologo
+.c.obj:
+	$(CC) $(CFLAGS) -c -Tp $<
+.c.exe:
+	$(CC) $(CFLAGS) -Tp $<
+
+all: itoh1 itoh2 nextday rotate joins names ex7 bmove2 d1 d2 d3 d4
+#################################################################
+# Exercise 1
+itoh1: itoh1.exe
+
+# Exercise 2
+itoh2: itoh2.exe
+
+# Exercise 3
+nextday: nextday.exe
+
+# Exercise 4
+rotate: rotate.exe
+rotate.exe: rotate.c
+	$(CC) $(CFLAGS) -DDRIVER -Tp rotate.c
+
+# Exercise 5
+joins: joins.exe
+
+# Exercise 6
+names: names.exe
+
+# Exercise 7
+ex7: ex7.exe
+
+# Exercise 8
+bmove2: bmove2.exe
+
+# Exercise 9
+d1: d1.exe
+d1.exe: d1.obj ndim.obj
+	$(CC) $(CFLAGS) d1.obj ndim.obj
+d1.obj ndim.obj: ndim.h
+
+d2: d2.exe
+d2.exe: d2.obj ndim.obj
+	$(CC) $(CFLAGS) d2.obj ndim.obj
+d2.obj ndim.obj: ndim.h
+
+d3: d3.exe
+d3.exe: d3.obj ndim.obj
+	$(CC) $(CFLAGS) d3.obj ndim.obj
+d3.obj ndim.obj: ndim.h
+
+d4: d4.exe
+d4.exe: d4.obj ndim.obj
+	$(CC) $(CFLAGS) d4.obj ndim.obj
+d4.obj ndim.obj: ndim.h
+#################################################################
+clean:
+	del *.obj
+	del *.exe

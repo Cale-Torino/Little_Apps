@@ -1,0 +1,64 @@
+# Makefile for Chapter 9 Exercises
+# Template Functions
+
+CC = cl
+CFLAGS = -O -GX -GR -nologo
+.c.obj:
+	$(CC) $(CFLAGS) -c -Tp $<
+.c.exe:
+	$(CC) $(CFLAGS) -Tp $<
+
+all: reverse move1 move2 realloc1 realloc2 \
+#ptf3 
+transp dim3
+#################################################################
+# Exercise 1
+reverse: reverse.exe
+reverse.exe: reverse.obj String.obj
+	$(CC) $(CFLAGS) reverse.obj String.obj
+reverse.obj: String.h
+String.obj: String.h
+
+# Exercise 2
+move1: move1.exe
+move1.exe: move1.obj String.obj
+	$(CC) $(CFLAGS) move1.obj String.obj
+move1.obj: String.h
+
+# Exercise 3
+move2: move2.exe
+move2.exe: move2.obj String.obj
+	$(CC) $(CFLAGS) move2.obj String.obj
+move2.obj: String.h
+
+# Exercise 4
+realloc1: realloc1.exe
+realloc1.exe: realloc1.obj String.obj
+	$(CC) $(CFLAGS) realloc1.obj String.obj
+realloc1.obj: String.h Rnew1.h
+
+# Exercise 5
+realloc2: realloc2.exe
+realloc2.exe: realloc2.obj String.obj
+	$(CC) $(CFLAGS) realloc2.obj String.obj
+realloc2.obj: String.h Rnew2.h
+
+# Exercise 6
+ptf3: ptf3.exe
+ptf3.exe: ptf3.obj String.obj
+	$(CC) $(CFLAGS) ptf3.obj String.obj
+ptf3.obj: String.h
+
+# Exercise 7
+transp: transp.exe
+transp.exe: transp.obj String.obj
+	$(CC) $(CFLAGS) transp.obj String.obj
+transp.obj: String.h dim2.h transpos.h
+
+# Exercise 8
+dim3: dim3.exe
+dim3.exe: dim3.h
+#################################################################
+clean:
+	del *.obj
+	del *.exe

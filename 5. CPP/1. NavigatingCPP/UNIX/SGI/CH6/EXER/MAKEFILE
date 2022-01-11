@@ -1,0 +1,35 @@
+# Makefile for Chapter 6 Programs
+# Overloading
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = min1 min2 ex3 ex4 isect cpx
+
+all: $(PGMS)
+#################################################################
+# Exercise 1
+min1: min1.C
+
+# Exercise 2
+min2: min2.C
+
+# Exercise 3
+ex3: ex3.C
+
+# Exercise 4
+ex4: ex4.C
+
+# Exercise 5
+isect: isect.C
+
+# Exercise 6
+cpx: Complex.h
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

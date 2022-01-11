@@ -1,0 +1,47 @@
+# Makefile for Appendix B
+# Standard Template Library (STL)
+
+CC = cl
+CFLAGS = -O -GX -GR -nologo
+.c.obj:
+	$(CC) $(CFLAGS) -c -Tp $<
+.c.exe:
+	$(CC) $(CFLAGS) -Tp $<
+
+PGMS = find1 algo1 vec1 list1 list2 deque1 map1 ptrlist1 queue1 stack1
+
+all: $(PGMS)
+#####################################################################
+# vec2 - does not compiler with default args in vector constructor
+#####################################################################
+# Generic Algorithms
+find1: find1.exe
+algo1: algo1.exe
+
+# Vector
+vec1: vec1.exe
+vec2: vec2.exe
+
+# List
+list1: list1.exe
+list2: list2.exe
+
+# Deque
+deque1: deque1.exe
+
+# Queue
+queue1: queue1.exe
+
+# Stack
+stack1: stack1.exe
+
+# Map
+map1: map1.exe
+ 
+# Pointer List
+ptrlist1: ptrlist1.exe
+ptrlist1.exe: Shape.h
+#####################################################################
+clean:
+	del *.obj
+	del *.exe

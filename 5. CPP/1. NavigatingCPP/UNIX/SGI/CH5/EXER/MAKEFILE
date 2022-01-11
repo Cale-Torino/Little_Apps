@@ -1,0 +1,37 @@
+# Makefile for Chapter 5 Exercises
+# Working with Classes
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = smem count pm1 pm2 mleak cfifo5
+
+all: $(PGMS)
+#################################################################
+# Exercise 1
+smem: smem.C
+
+# Exercise 2
+count: count.C
+
+# Exercise 3
+pm1: pm1.C
+
+# Exercise 4
+pm2: pm2.C
+
+# Exercise 5
+mleak: mleak.C
+
+# Exercise 6
+cfifo5: cfifo5.o Fifo5.o
+	$(CC) $(CFLAGS) cfifo5.o Fifo5.o -o cfifo5
+cfifo5.o Fifo5.o: Fifo5.h
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

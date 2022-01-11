@@ -1,0 +1,127 @@
+# Makefile for Chapter 13 Programs
+# Exception Handling
+
+CC = CC
+CFLAGS = -O -ptused -n32 -experimental
+.C.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CC) $(CFLAGS) $< -o $@
+
+PGMS = nest avg1 avg2 fract catch1 catch2 catch3 catch4 catch5 \
+	catch6 dbase array1 array2 amax \
+	db0 db0t db1 db2 db3 db4 mycp lock1 lock2 lock3 lock4 \
+	uc1 uc2 uc3 uc4 esp1 esp2 esp3 esp4 esp5 esp6 esp7 esp8 ste \
+	ue1 ue2 ue3 ue4 ue5 rint1
+
+all: $(PGMS)
+#################################################################
+nest: nest.C
+avg1: avg1.C
+avg2: avg2.C
+fract: Fraction.h
+
+catch1: catch1.C
+catch2: catch2.C
+catch3: Fraction.h
+catch4: Fraction.h
+catch5: Fraction.h
+
+catch6: catch6.o String.o
+	$(CC) $(CFLAGS) catch6.o String.o -o catch6
+catch6.o String.o: String.h
+
+catch7: catch7.C
+catch8: catch8.C
+dbase: dbase.C
+
+array1: Array.h Array.C
+array2: Array.h Array.C
+
+rint1: rint1.o Rint.o
+	$(CC) $(CFLAGS) rint1.o Rint.o -o rint1
+rint1.o Rint.o: Rint.h
+
+amax: Array.h Array.C
+
+db0: db0.o String.o 
+	$(CC) $(CFLAGS) db0.o String.o -o db0
+db0.o: Dbase1.h String.h
+
+db0t: db0t.o String.o 
+	$(CC) $(CFLAGS) db0t.o String.o -o db0t
+db0t.o: Dbase1.h String.h
+
+db1: db1.o String.o 
+	$(CC) $(CFLAGS) db1.o String.o -o db1
+db1.o: Dbase1.h String.h autoptr.h
+
+db2: db2.o String.o
+	$(CC) $(CFLAGS) db2.o String.o -o db2
+db2.o: Dbase2.h String.h autoptr.h
+
+db3: db3.o String.o
+	$(CC) $(CFLAGS) db3.o String.o -o db3
+db3.o: Dbase3.h String.h autoptr.h
+
+db4: db4.o String.o
+	$(CC) $(CFLAGS) db4.o String.o -o db4
+db4.o: Dbase4.h String.h autoptr.h
+
+mycp: mycp.o String.o
+	$(CC) $(CFLAGS) mycp.o String.o -o mycp
+mycp.o: File.h FilePtr.h String.h
+
+lock1: Record1.h
+lock2: Record2.h
+lock3: Record3.h
+lock4: Record4.h
+
+uc1: uc1.C
+uc2: Terminat.h
+uc3: Terminat.h
+uc4: Terminat.h
+
+esp1: esp1.C
+esp2: esp2.C
+esp3: esp3.C
+esp4: esp4.C
+esp5: esp5.o String.o 
+	$(CC) $(CFLAGS) esp5.o String.o -o esp5
+esp5.o: String.h
+
+esp6: esp6.C
+
+esp7: esp7.o String.o 
+	$(CC) $(CFLAGS) esp7.o String.o -o esp7
+esp7.o: Dbase4.h String.h
+
+esp8: esp8.o String.o 
+	$(CC) $(CFLAGS) esp8.o String.o -o esp8
+esp8.o: Dbase4.h String.h
+
+ste: except.h
+
+ue1: ue1.o String.o 
+	$(CC) $(CFLAGS) ue1.o String.o -o ue1
+ue1.o: String.h
+
+ue2: ue2.o String.o 
+	$(CC) $(CFLAGS) ue2.o String.o -o ue2
+ue2.o: String.h
+
+ue3: ue3.o String.o 
+	$(CC) $(CFLAGS) ue3.o String.o -o ue3
+ue3.o: String.h STC.h
+
+ue4: ue4.o String.o 
+	$(CC) $(CFLAGS) ue4.o String.o -o ue4
+ue4.o: String.h STC.h
+
+ue5: ue5.o String.o 
+	$(CC) $(CFLAGS) ue5.o String.o -o ue5
+ue5.o: String.h STC.h
+#################################################################
+clean:
+	rm -rf $(PGMS)
+	rm -rf a.out core *.o ii_files

@@ -1,0 +1,34 @@
+
+                                 Exercise 10 
+
+1. Why must the List of Strings be declared PtrList<Persist_String> in mp1.C?
+
+   a. Suppose we modified mp1.C as follows:
+
+      void build_list(PtrList<String> & list) {
+         list.append(new Persist_String("harpo"));
+         list.append(new Persist_String("groucho"));
+         list.append(new Persist_String("chico"));
+      }
+
+      PtrList<String> stringlist;
+      build_list(stringlist);
+
+      This compiles fine, since Persist_String is derived from String.
+
+   b. With these changes, the dynamic cast in save_list() fails, however.
+
+      template <class TYPE> 
+      void save_list(const PtrList<TYPE> & list, const String & fname) {
+         ofstream to(fname);
+         if (!to) 
+            throw PersistError("Can't open output file " + fname);
+         for (PtrIterator<TYPE> iter(list); !iter; iter++) {
+            Persist *pobj = dynamic_cast<Persist *>(iter());      // error
+            if (pobj)
+               to << *pobj << endl;               // virtual save
+         }
+
+      The reason is that the operand of a runtime dynamic_cast MUST be
+      a polymorphic class type (at least one virtual function). 
+      Note that Shape is polymorphic, but String is not.

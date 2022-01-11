@@ -1,0 +1,58 @@
+# Makefile for Chapter 12 Exercises
+# RTTI (Run Time Type Identification)
+
+CC = bcc
+CFLAGS = -P -O -ml
+.c.obj:
+	$(CC) $(CFLAGS) -c $<
+.c.exe:
+	$(CC) $(CFLAGS) $<
+
+all: invest fig shape1 pitems pwrite pread assign
+#################################################################
+# Exercise 1
+invest: invest.exe
+invest.exe: Invest.h
+
+# Exercise 2
+fig: fig.exe
+fig.exe: fig.obj String.obj
+	$(CC) $(CFLAGS) fig.obj String.obj
+fig.obj: String.h Figure.h 
+String.obj: String.h
+
+# Exercise 3
+shape1: shape1.exe
+shape1.exe: shape1.obj String.obj
+	$(CC) $(CFLAGS) shape1.obj String.obj
+shape1.obj: Shape.h List.h List.C PtrList.h
+
+# Exercise 4
+pitems: pitems.exe
+pitems.exe: pitems.obj String.obj
+	$(CC) $(CFLAGS) pitems.obj String.obj
+pitems.obj: Publish.h String.h
+
+# Exercise 5
+pwrite: pwrite.exe
+pwrite.exe: pwrite.obj persist.obj String.obj
+	$(CC) $(CFLAGS) pwrite.obj persist.obj String.obj
+pwrite.obj: Solid.h List.h List.C PtrList.h String.h Assoc.h \
+Assoc.C Array.h Array.C Persist.h pwrite.C
+persist.obj: Solid.h Persist.h persist.C
+
+pread: pread.exe
+pread.exe: pread.obj persist.obj String.obj
+	$(CC) $(CFLAGS) pread.obj persist.obj String.obj
+pread.obj: Solid.h List.h List.C PtrList.h String.h Assoc.h \
+Assoc.C Array.h Array.C Persist.h pread.C
+
+# Exercise 6
+assign: assign.exe
+assign.exe: assign.obj String.obj
+	$(CC) $(CFLAGS) assign.obj String.obj
+assign.obj: Window3.h Point5.h String.h
+#################################################################
+clean:
+	del *.obj
+	del *.exe
