@@ -1,3 +1,5 @@
+# Moving Steam
+
    The following instructions are a simple way to move your Steam installation along with your games:
 
 1. Exit the Steam client application.
