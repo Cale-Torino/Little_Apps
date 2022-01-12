@@ -9,4 +9,4 @@ A repository containing many small example apps to be used in bigger projects
 |2.|HTML_PHP_JavaScript|*[HTML_PHP_JavaScript Link](https://github.com/Cale-Torino/Little_Apps/tree/main/2.%20HTML_PHP_JavaScript)*|
 |3.|Java|*[Java Link](https://github.com/Cale-Torino/Little_Apps/tree/main/3.%20Java)*|
 |4.|Python|*[Python Link](https://github.com/Cale-Torino/Little_Apps/tree/main/4.%20Python)*|
-|5.|0|*[Misc Link](0)*|
+|5.|Misc|*[Misc Link](https://github.com/Cale-Torino/Little_Apps/tree/main/5.%20Misc)*|

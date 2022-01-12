@@ -1,9 +1,9 @@
-# Java
-All docs, walk-throughs and files etc. relating to Java programming with Eclipse.
+# Misc
+Miscellaneous, walk-throughs and files etc.
 
 ### Folder Structure
 
 |ID|Description|Link|
 | :------------| :------------ | :------------ |
-|1.|Install_java_DietPi|*[Install_java_DietPi Link](https://github.com/Cale-Torino/Little_Apps/tree/main/3.%20Java/1.%20Install_java_DietPi)*|
+|1.|Moving_Steam|*[Moving_Steam Link](https://github.com/Cale-Torino/Little_Apps/tree/main/5.%20Misc/1.%20Moving%20Steam)*|
 |0.|0|*[0 Link](0)*|
