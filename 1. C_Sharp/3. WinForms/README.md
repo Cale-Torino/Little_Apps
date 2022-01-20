@@ -31,5 +31,6 @@
 |27.|Embedded cmd example|*[Embedded cmd example Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/27.%20Embedded%20cmd%20example/embedcmd)*|
 |28.|Ini file RW example|*[Ini file RW example Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/28.%20Ini%20file%20RW%20example/ini_reader_writer)*|
 |29.|Cursor example|*[Cursor example Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/29.%20Cursor%20example/cursor)*|
+|30.|VLC example|*[VLC example Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/30.%20VLC%20example/vlc_t)*|
 
-|00.|frontend|*[ Link]()*|
+|00.|0|*[ Link]()*|
