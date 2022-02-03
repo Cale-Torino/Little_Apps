@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "56121105-8bae-4e3c-ac5a-f3a540d6c429": {
+      "ProjectGuid": "56121105-8bae-4e3c-ac5a-f3a540d6c429",
+      "DisplayName": "Alien",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
