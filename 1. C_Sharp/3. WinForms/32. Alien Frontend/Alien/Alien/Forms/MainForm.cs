@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Alien.LoggerClass;
 
 namespace Alien
 {
@@ -15,6 +16,11 @@ namespace Alien
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            Logger.WriteLine(" *** MainForm has loaded: [MainForm_Load] ***");
         }
     }
 }
