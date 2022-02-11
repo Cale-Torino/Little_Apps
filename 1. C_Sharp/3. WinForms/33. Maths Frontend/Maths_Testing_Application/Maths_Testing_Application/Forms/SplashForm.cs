@@ -19,7 +19,7 @@ namespace Maths_Testing_Application
             label2.Text = "Version: " + Application.ProductVersion;//Get version from AssemblyInfo.cs [assembly: AssemblyFileVersion("1.0.1")]
 
             myTimer.Elapsed += new ElapsedEventHandler(TimeUp);
-            myTimer.Interval = 3000;
+            myTimer.Interval = 10000;
             myTimer.Start();//start timer
         }
 

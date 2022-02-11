@@ -16,7 +16,7 @@ namespace Maths_Testing_Application
         public static class Logger
         {
             //Create logfile log. file
-            private static string LogFile = Application.StartupPath + @"\Logs\Alien_" + DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss") + ".log";
+            private static string LogFile = Application.StartupPath + @"\Logs\Maths_Testing_Application_" + DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss") + ".log";
 
             public static void WriteLine(string txt)
             {

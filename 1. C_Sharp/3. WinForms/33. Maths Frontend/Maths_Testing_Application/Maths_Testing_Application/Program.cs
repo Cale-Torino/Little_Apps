@@ -19,7 +19,7 @@ namespace Maths_Testing_Application
             Application.SetCompatibleTextRenderingDefault(false);
             Thread t = new Thread(new ThreadStart(DoSplash));// Point to method
             t.Start();// Start splash thread
-            Thread.Sleep(3000);// 3 seconds
+            Thread.Sleep(10000);// 6 seconds
             Application.Run(new MainForm());
         }
 

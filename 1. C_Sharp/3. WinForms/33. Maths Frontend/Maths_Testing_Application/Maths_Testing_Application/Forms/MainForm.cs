@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,30 @@ namespace Maths_Testing_Application
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            CreateFolder();
             Logger.WriteLine(" *** MainForm has loaded: [MainForm_Load] ***");
         }
+
+        private void CreateFolder()
+        {
+            try
+            {
+                //Create the folders used by the app
+                string path = Application.StartupPath;
+                Directory.CreateDirectory(path + @"\Logs");
+                Logger.WriteLine(" *** Application Start [MainForm] ***");
+                //Logs_richTextBox.AppendText("[" + DateTime.Now.ToString() + "] : Application Start" + Environment.NewLine);
+                Logger.WriteLine(" *** CreateDirectory Success [MainForm] ***");
+                //Logs_richTextBox.AppendText("[" + DateTime.Now.ToString() + "] : Logs Create Directory Success" + Environment.NewLine);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Create Folder Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                //Logs_richTextBox.AppendText("[" + DateTime.Now.ToString() + "] : Error:" + ex.Message + Environment.NewLine);
+                return;
+            }
+        }
+
     }
 }
