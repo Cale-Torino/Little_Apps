@@ -46,5 +46,11 @@ namespace Maths_Testing_Application
             }
         }
 
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Open the about form
+            Form f = new AboutForm();
+            f.ShowDialog();
+        }
     }
 }
