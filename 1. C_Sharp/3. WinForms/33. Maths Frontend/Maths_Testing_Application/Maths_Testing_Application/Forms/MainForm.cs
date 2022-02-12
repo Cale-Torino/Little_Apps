@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Maths_Testing_Application.LoggerClass;
+using static Maths_Testing_Application.SystemClass;
 
 namespace Maths_Testing_Application
 {
@@ -51,6 +52,12 @@ namespace Maths_Testing_Application
             //Open the about form
             Form f = new AboutForm();
             f.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            richTextBox.AppendText(DeviceSpecs.OSsys() + Environment.NewLine);
+            richTextBox.AppendText(DeviceSpecs.GetAll() + Environment.NewLine);
         }
     }
 }
