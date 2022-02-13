@@ -23,7 +23,9 @@ namespace Maths_Testing_Application
         private void MainForm_Load(object sender, EventArgs e)
         {
             CreateFolder();
+            tabControl1.TabPages.Remove(tabPage4);
             Logger.WriteLine(" *** MainForm has loaded: [MainForm_Load] ***");
+            richTextBox.AppendText($"[{DateTime.Now}] : Application Started" + Environment.NewLine);
         }
 
         private void CreateFolder()
@@ -58,6 +60,35 @@ namespace Maths_Testing_Application
         {
             richTextBox.AppendText(DeviceSpecs.OSsys() + Environment.NewLine);
             richTextBox.AppendText(DeviceSpecs.GetAll() + Environment.NewLine);
+        }
+
+        private void Nextbutton_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(1);
+        }
+
+        private void StartTestbutton_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(2);  // 0-based index, this shows the second tab
+        }
+
+        private void Nextquestionbutton1_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Remove(tabPage3);
+            tabControl1.TabPages.Add(tabPage4);
+            tabControl1.SelectTab(tabPage4);
+        }
+
+        private void Nextquestionbutton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Backbutton2_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Remove(tabPage4);
+            tabControl1.TabPages.Add(tabPage3);
+            tabControl1.SelectTab(tabPage3);
         }
     }
 }

@@ -25,8 +25,7 @@ namespace Maths_Testing_Application
 
                 string cpu = cpuCounter.NextValue()+" %";
                 string ram = ramCounter.NextValue()+" MB";
-                string username = Environment.UserName;
-                return "CPU:"+cpu+",Ram:"+ ram+", Username:"+ username;
+                return $"CPU:{cpu}, Ram:{ram}, Username:{Environment.UserName}";
             }
             public static async void Get_IP()
             {
