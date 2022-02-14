@@ -37,8 +37,9 @@ namespace SuperSimpleTCP
             Invoke((MethodInvoker)delegate ()
             {
                 //LogstextBox.AppendText($"{DateTime.Now} : {e.IpPort} | {Encoding.UTF8.GetString(e.Data)}{Environment.NewLine}");
-                string[] data = Encoding.UTF8.GetString(e.Data).Split(',');
-                string ID = data[1];
+                //string[] data = Encoding.UTF8.GetString(e.Data).Split(',');
+                //string ID = data[1];
+                string ID = Encoding.UTF8.GetString(e.Data);
                 LogstextBox.AppendText($"{DateTime.Now} : {e.IpPort} | {ID}{Environment.NewLine}");
             });
             
@@ -62,7 +63,6 @@ namespace SuperSimpleTCP
                 listBox.Items.Add(e.IpPort);
                 //server.Send(e.IpPort, "Pinging...");
             });
-
         }
 
         private void Sendbutton_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleTcp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace Maths_Testing_Application
 {
     public partial class MainForm : Form
     {
+        SimpleTcpClient client;
         public MainForm()
         {
             InitializeComponent();
@@ -25,9 +27,55 @@ namespace Maths_Testing_Application
         {
             CreateFolder();
             LoadText();
+            LoadTCP();
             tabControl1.TabPages.Remove(tabPage4);
             Logger.WriteLine(" *** MainForm has loaded: [MainForm_Load] ***");
             richTextBox.AppendText($"[{DateTime.Now}] : Application Started" + Environment.NewLine);
+        }
+        
+        private void LoadTCP()
+        {
+            try
+            {
+                //Check if your machine is listening on port '4953' that you specified by running the command netstat -an
+                //within command prompt.
+                //If it is not listening on that port,
+                //either change the port you are sending the packet to to a port that is listening or open the port for listening.
+                // instantiate
+                client = new SimpleTcpClient("127.0.0.1:4953");//0.0.0.0:4953
+                // set events
+                client.Events.Connected += Connected;
+                client.Events.Disconnected += Disconnected;
+                client.Events.DataReceived += DataReceived;
+
+                // let's go!
+                client.Connect();
+
+                // once connected to the server...
+                client.Send("Hello7 world!");
+
+                Logger.WriteLine(" *** Load TCP [MainForm] ***");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Load Text Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                return;
+            }
+        }
+        static void Connected(object sender, ConnectionEventArgs e)
+        {
+            Console.WriteLine("*** Server " + e.IpPort + " connected");
+        }
+
+        static void Disconnected(object sender, ConnectionEventArgs e)
+        {
+            Console.WriteLine("*** Server " + e.IpPort + " disconnected");
+        }
+
+        static void DataReceived(object sender, DataReceivedEventArgs e)
+        {
+            Console.WriteLine("[" + e.IpPort + "] " + Encoding.UTF8.GetString(e.Data));
         }
 
         private void LoadText()
@@ -81,6 +129,7 @@ namespace Maths_Testing_Application
 
         private void Nextbutton_Click(object sender, EventArgs e)
         {
+            client.Send("Hello, world infinate!");
             tabControl1.SelectTab(1);
         }
 
