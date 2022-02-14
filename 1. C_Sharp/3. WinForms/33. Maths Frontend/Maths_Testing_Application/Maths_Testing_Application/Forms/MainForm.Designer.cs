@@ -38,9 +38,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Nextbutton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Nextbutton = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.StartTestbutton = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -50,13 +50,18 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.Backbutton2 = new System.Windows.Forms.Button();
             this.Nextquestionbutton2 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -149,6 +154,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(85)))));
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
@@ -156,18 +165,15 @@
             this.tabPage1.Size = new System.Drawing.Size(1125, 443);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Home";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // panel1
             // 
-            this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1125, 443);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "T&C\'s";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.panel1.Controls.Add(this.Nextbutton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(3, 398);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1119, 42);
+            this.panel1.TabIndex = 0;
             // 
             // Nextbutton
             // 
@@ -183,14 +189,16 @@
             this.Nextbutton.UseVisualStyleBackColor = false;
             this.Nextbutton.Click += new System.EventHandler(this.Nextbutton_Click);
             // 
-            // panel1
+            // tabPage2
             // 
-            this.panel1.Controls.Add(this.Nextbutton);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(3, 398);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1119, 42);
-            this.panel1.TabIndex = 0;
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(85)))));
+            this.tabPage2.Controls.Add(this.panel2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1125, 443);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "T&C\'s";
             // 
             // panel2
             // 
@@ -217,6 +225,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(85)))));
+            this.tabPage3.Controls.Add(this.groupBox2);
             this.tabPage3.Controls.Add(this.panel3);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
@@ -224,7 +234,6 @@
             this.tabPage3.Size = new System.Drawing.Size(1125, 443);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Q1";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -251,6 +260,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(85)))));
+            this.tabPage4.Controls.Add(this.groupBox3);
             this.tabPage4.Controls.Add(this.panel4);
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
@@ -258,7 +269,6 @@
             this.tabPage4.Size = new System.Drawing.Size(1125, 443);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Q2";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -298,6 +308,57 @@
             this.Nextquestionbutton2.UseVisualStyleBackColor = false;
             this.Nextquestionbutton2.Click += new System.EventHandler(this.Nextquestionbutton2_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(8, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1109, 386);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Question 1";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(8, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1109, 386);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Question 2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(111, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 32);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Heading";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(113, 138);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Paragraph1";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(113, 211);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Paragraph2";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -321,8 +382,9 @@
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -356,6 +418,11 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button Backbutton2;
         private System.Windows.Forms.Button Nextquestionbutton2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

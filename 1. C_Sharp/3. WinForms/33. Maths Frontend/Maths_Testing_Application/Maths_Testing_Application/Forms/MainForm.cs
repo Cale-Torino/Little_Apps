@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Maths_Testing_Application.LoggerClass;
 using static Maths_Testing_Application.SystemClass;
+using static Maths_Testing_Application.TextClass;
 
 namespace Maths_Testing_Application
 {
@@ -23,9 +24,25 @@ namespace Maths_Testing_Application
         private void MainForm_Load(object sender, EventArgs e)
         {
             CreateFolder();
+            LoadText();
             tabControl1.TabPages.Remove(tabPage4);
             Logger.WriteLine(" *** MainForm has loaded: [MainForm_Load] ***");
             richTextBox.AppendText($"[{DateTime.Now}] : Application Started" + Environment.NewLine);
+        }
+
+        private void LoadText()
+        {
+            try
+            {
+                EngLan.HomeText(label1);
+                Logger.WriteLine(" *** Load Text [MainForm] ***");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Load Text Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                return;
+            }
         }
 
         private void CreateFolder()
