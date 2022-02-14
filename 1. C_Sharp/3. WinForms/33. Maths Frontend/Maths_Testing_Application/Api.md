@@ -1,7 +1,7 @@
 # Maths Testing Application API Doc
 
 *Developed by C.A Torino, TECHRAD*
-* Links to SAFE-TVIGIL(llc) USA.
+* Links to TECHRAD(ZA).
     * [Website](https://techrad.co.za)
     * [Tutorials site](https://tutorials.techrad.co.za)
     * [API site](https://tutorials.techrad.co.za/api)
