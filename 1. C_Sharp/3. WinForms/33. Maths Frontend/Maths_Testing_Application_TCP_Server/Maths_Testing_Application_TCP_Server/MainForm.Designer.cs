@@ -80,7 +80,9 @@ namespace SuperSimpleTCP
             this.MSGcomboBox.FormattingEnabled = true;
             this.MSGcomboBox.Items.AddRange(new object[] {
             "callGPIO",
-            "callRESTART"});
+            "callRESTART",
+            "Maths",
+            "Wiskunde"});
             this.MSGcomboBox.Location = new System.Drawing.Point(14, 109);
             this.MSGcomboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MSGcomboBox.Name = "MSGcomboBox";

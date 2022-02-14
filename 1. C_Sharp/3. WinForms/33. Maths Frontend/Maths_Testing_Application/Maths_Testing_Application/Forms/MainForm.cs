@@ -52,7 +52,12 @@ namespace Maths_Testing_Application
                 client.Connect();
 
                 // once connected to the server...
-                client.Send("Hello7 world!");
+                string greeting = "Hello Server";
+                string jSon = "{\"MachineName\":\""+ Environment.MachineName +
+                    "\",\"Message\":\"" + greeting +
+                    "\",\"UserName\":\"" + Environment.UserName +
+                    "\",\"DateTime\":\"" + DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss") + "\"}";
+                client.Send($"{jSon}");
 
                 Logger.WriteLine(" *** Load TCP [MainForm] ***");
             }
@@ -63,19 +68,37 @@ namespace Maths_Testing_Application
                 return;
             }
         }
-        static void Connected(object sender, ConnectionEventArgs e)
-        {
-            Console.WriteLine("*** Server " + e.IpPort + " connected");
+        private void Connected(object sender, ConnectionEventArgs e)
+        {     
+            Invoke((MethodInvoker)delegate ()
+            {
+                richTextBox.AppendText($"[{DateTime.Now}] : ***Server { e.IpPort} connected" + Environment.NewLine);
+            });
         }
 
-        static void Disconnected(object sender, ConnectionEventArgs e)
-        {
-            Console.WriteLine("*** Server " + e.IpPort + " disconnected");
+        private void Disconnected(object sender, ConnectionEventArgs e)
+        {       
+            Invoke((MethodInvoker)delegate ()
+            {
+                richTextBox.AppendText($"[{DateTime.Now}] : ***Server { e.IpPort} disconnected" + Environment.NewLine);
+            });
         }
 
-        static void DataReceived(object sender, DataReceivedEventArgs e)
+        private void DataReceived(object sender, DataReceivedEventArgs e)
         {
-            Console.WriteLine("[" + e.IpPort + "] " + Encoding.UTF8.GetString(e.Data));
+            Invoke((MethodInvoker)delegate ()
+            {
+                richTextBox.AppendText($"[{DateTime.Now}] : [{e.IpPort}] { Encoding.UTF8.GetString(e.Data)}" + Environment.NewLine);
+                if (Encoding.UTF8.GetString(e.Data) == "Maths")
+                {
+                    label1.Text = "Maths";
+                } 
+                else if (Encoding.UTF8.GetString(e.Data) == "Wiskunde") 
+                {
+                    label1.Text = "Wiskunde";
+                }
+            });
+
         }
 
         private void LoadText()
