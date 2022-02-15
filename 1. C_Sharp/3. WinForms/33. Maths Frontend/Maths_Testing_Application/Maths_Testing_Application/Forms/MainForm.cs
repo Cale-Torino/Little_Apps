@@ -1,4 +1,5 @@
-﻿using SimpleTcp;
+﻿using Newtonsoft.Json;
+using SimpleTcp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,9 @@ namespace Maths_Testing_Application
             CreateFolder();
             LoadText();
             LoadTCP();
+            string json = "{\"data1\":\"dataOne\",\"data2\":\"dataTwo\"}";
+            var Request = JsonConvert.DeserializeObject<RequestClass>(json);
+            Invoke(new MethodInvoker(() => richTextBox.AppendText($"[{DateTime.Now}] : {Request.data1} => {Request.data2} {Environment.NewLine}")));
             tabControl1.TabPages.Remove(tabPage4);
             Logger.WriteLine(" *** MainForm has loaded: [MainForm_Load] ***");
             richTextBox.AppendText($"[{DateTime.Now}] : Application Started" + Environment.NewLine);
@@ -63,7 +67,7 @@ namespace Maths_Testing_Application
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Load Text Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Load TCP Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
                 return;
             }
