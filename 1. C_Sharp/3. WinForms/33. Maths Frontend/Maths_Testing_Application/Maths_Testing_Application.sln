@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maths_Testing_Application", "Maths_Testing_Application\Maths_Testing_Application.csproj", "{726C2EBD-9D59-4676-9D2A-19EABAFB1C93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{00F89692-EF46-42DF-8A25-047025E95F68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{726C2EBD-9D59-4676-9D2A-19EABAFB1C93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{726C2EBD-9D59-4676-9D2A-19EABAFB1C93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{726C2EBD-9D59-4676-9D2A-19EABAFB1C93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00F89692-EF46-42DF-8A25-047025E95F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00F89692-EF46-42DF-8A25-047025E95F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00F89692-EF46-42DF-8A25-047025E95F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00F89692-EF46-42DF-8A25-047025E95F68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

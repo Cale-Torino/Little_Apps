@@ -5,7 +5,6 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Maths_Testing_Application.LoggerClass;
 
 namespace Maths_Testing_Application
 {
@@ -45,7 +44,7 @@ namespace Maths_Testing_Application
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message, "Could not test Telegram API", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Logger.WriteLine(" *** Error:" + ex.Message + " [TelegramAPIForm] ***");
+                        Logger.LoggerClass.Logger.WriteLine(" *** Error:" + ex.Message + " [TelegramAPIForm] ***");
                         return;
                     }
                 }

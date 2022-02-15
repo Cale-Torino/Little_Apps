@@ -7,7 +7,6 @@ using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using static Maths_Testing_Application.LoggerClass;
 
 namespace Maths_Testing_Application
 {
@@ -36,12 +35,12 @@ namespace Maths_Testing_Application
                     //JObject response = JObject.Parse(ip);
                     //string _sig = (string)response["signature"];
                     //new WebClient().DownloadString("http://ip.domain.com/device_manager/api/get/setNetworkData.php?Networkdata=" + ip);
-                    Logger.WriteLine(" *** Current Network: " + ip);
+                    Logger.LoggerClass.Logger.WriteLine(" *** Current Network: " + ip);
                 }
                 catch (Exception ex)
                 {
                     //MessageBox.Show(ex.Message);
-                    Logger.WriteLine(" *** Current Network: " + ex);
+                    Logger.LoggerClass.Logger.WriteLine(" *** Current Network: " + ex);
                     return;
                 }
             }

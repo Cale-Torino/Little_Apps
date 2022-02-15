@@ -7,10 +7,10 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Maths_Testing_Application.LoggerClass;
 using static Maths_Testing_Application.SystemClass;
 using static Maths_Testing_Application.TextClass;
 
@@ -29,14 +29,31 @@ namespace Maths_Testing_Application
             CreateFolder();
             LoadText();
             LoadTCP();
+            LoadLoggerClassDLL();
+
             string json = "{\"data1\":\"dataOne\",\"data2\":\"dataTwo\"}";
             var Request = JsonConvert.DeserializeObject<RequestClass>(json);
             Invoke(new MethodInvoker(() => richTextBox.AppendText($"[{DateTime.Now}] : {Request.data1} => {Request.data2} {Environment.NewLine}")));
             tabControl1.TabPages.Remove(tabPage4);
-            Logger.WriteLine(" *** MainForm has loaded: [MainForm_Load] ***");
+            int _result = Logger.LoggerClass.Logger.WriteLine(" *** MainForm has loaded: [MainForm_Load] ***");
             richTextBox.AppendText($"[{DateTime.Now}] : Application Started" + Environment.NewLine);
         }
-        
+
+        private void LoadLoggerClassDLL()
+        {
+            try
+            {
+                //call the class
+                int _result = Logger.LoggerClass.Logger.WriteLine("");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Load Logger Class DLL Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.LoggerClass.Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                return;
+            }
+        }
+
         private void LoadTCP()
         {
             try
@@ -62,13 +79,12 @@ namespace Maths_Testing_Application
                     "\",\"UserName\":\"" + Environment.UserName +
                     "\",\"DateTime\":\"" + DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss") + "\"}";
                 client.Send($"{jSon}");
-
-                Logger.WriteLine(" *** Load TCP [MainForm] ***");
+                Logger.LoggerClass.Logger.WriteLine(" *** Load TCP [MainForm] ***");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Load TCP Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                Logger.LoggerClass.Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
                 return;
             }
         }
@@ -110,12 +126,12 @@ namespace Maths_Testing_Application
             try
             {
                 EngLan.HomeText(label1);
-                Logger.WriteLine(" *** Load Text [MainForm] ***");
+                Logger.LoggerClass.Logger.WriteLine(" *** Load Text [MainForm] ***");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Load Text Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                Logger.LoggerClass.Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
                 return;
             }
         }
@@ -127,15 +143,15 @@ namespace Maths_Testing_Application
                 //Create the folders used by the app
                 string path = Application.StartupPath;
                 Directory.CreateDirectory(path + @"\Logs");
-                Logger.WriteLine(" *** Application Start [MainForm] ***");
+                Logger.LoggerClass.Logger.WriteLine(" *** Application Start [MainForm] ***");
                 //Logs_richTextBox.AppendText("[" + DateTime.Now.ToString() + "] : Application Start" + Environment.NewLine);
-                Logger.WriteLine(" *** CreateDirectory Success [MainForm] ***");
+                Logger.LoggerClass.Logger.WriteLine(" *** CreateDirectory Success [MainForm] ***");
                 //Logs_richTextBox.AppendText("[" + DateTime.Now.ToString() + "] : Logs Create Directory Success" + Environment.NewLine);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Create Folder Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                Logger.LoggerClass.Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
                 //Logs_richTextBox.AppendText("[" + DateTime.Now.ToString() + "] : Error:" + ex.Message + Environment.NewLine);
                 return;
             }
