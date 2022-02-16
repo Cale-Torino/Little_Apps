@@ -83,7 +83,8 @@ namespace Maths_Testing_Application
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Load TCP Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(ex.Message, "Load TCP Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                richTextBox.AppendText($"Load TCP Error!{Environment.NewLine} {ex.Message} {Environment.NewLine}");
                 Logger.LoggerClass.Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
                 return;
             }
@@ -172,7 +173,11 @@ namespace Maths_Testing_Application
 
         private void Nextbutton_Click(object sender, EventArgs e)
         {
-            client.Send("Hello, world infinate!");
+            if (client.IsConnected)
+            {
+                client.Send("Hello, world infinate!");
+            }
+            
             tabControl1.SelectTab(1);
         }
 

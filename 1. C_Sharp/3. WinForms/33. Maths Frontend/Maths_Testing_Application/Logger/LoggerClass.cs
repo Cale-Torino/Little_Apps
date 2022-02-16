@@ -15,7 +15,7 @@ namespace Logger
             //Create logfile log. file
             private static string assemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             private static string LogFile = assemblyFolder + @"\Logs\Maths_Testing_Application_" + DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss") + ".log";
-            private static FileStream fs = File.Create(LogFile);
+           //private static FileStream fs = File.Create(LogFile);
             //private static string assemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             //private static string LogFile = Path.Combine(assemblyFolder, @"\Logs\Maths_Testing_Application_" + DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss") + ".log");
             //private static string LogFile = Application.StartupPath + @"\Logs\Maths_Testing_Application_" + DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss") + ".log";

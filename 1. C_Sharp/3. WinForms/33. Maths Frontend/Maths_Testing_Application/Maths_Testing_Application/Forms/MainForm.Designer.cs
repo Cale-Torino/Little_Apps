@@ -38,23 +38,26 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Nextbutton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.StartTestbutton = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Nextquestionbutton1 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Backbutton2 = new System.Windows.Forms.Button();
             this.Nextquestionbutton2 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tCPConnectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hTTPConnectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -72,10 +75,10 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(56)))), ((int)(((byte)(85)))));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1133, 33);
@@ -166,6 +169,37 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Home";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(113, 211);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Paragraph2";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(113, 138);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Paragraph1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(111, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 32);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Heading";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.Nextbutton);
@@ -235,6 +269,16 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Q1";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(8, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1109, 386);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Question 1";
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.Nextquestionbutton1);
@@ -269,6 +313,16 @@
             this.tabPage4.Size = new System.Drawing.Size(1125, 443);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Q2";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(8, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1109, 386);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Question 2";
             // 
             // panel4
             // 
@@ -308,56 +362,30 @@
             this.Nextquestionbutton2.UseVisualStyleBackColor = false;
             this.Nextquestionbutton2.Click += new System.EventHandler(this.Nextquestionbutton2_Click);
             // 
-            // groupBox2
+            // settingsToolStripMenuItem
             // 
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(8, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1109, 386);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Question 1";
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tCPConnectionToolStripMenuItem,
+            this.hTTPConnectionToolStripMenuItem});
+            this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.settingsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("settingsToolStripMenuItem.Image")));
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 29);
+            this.settingsToolStripMenuItem.Text = "Settings";
             // 
-            // groupBox3
+            // tCPConnectionToolStripMenuItem
             // 
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(8, 6);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1109, 386);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Question 2";
+            this.tCPConnectionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tCPConnectionToolStripMenuItem.Image")));
+            this.tCPConnectionToolStripMenuItem.Name = "tCPConnectionToolStripMenuItem";
+            this.tCPConnectionToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.tCPConnectionToolStripMenuItem.Text = "TCP Connection";
             // 
-            // label1
+            // hTTPConnectionToolStripMenuItem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(111, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 32);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Heading";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(113, 138);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Paragraph1";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(113, 211);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Paragraph2";
+            this.hTTPConnectionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("hTTPConnectionToolStripMenuItem.Image")));
+            this.hTTPConnectionToolStripMenuItem.Name = "hTTPConnectionToolStripMenuItem";
+            this.hTTPConnectionToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.hTTPConnectionToolStripMenuItem.Text = "HTTP Connection";
             // 
             // MainForm
             // 
@@ -423,6 +451,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tCPConnectionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hTTPConnectionToolStripMenuItem;
     }
 }
 
