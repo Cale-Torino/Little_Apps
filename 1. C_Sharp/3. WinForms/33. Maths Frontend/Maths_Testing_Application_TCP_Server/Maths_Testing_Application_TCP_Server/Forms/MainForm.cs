@@ -1,11 +1,12 @@
 ﻿using SimpleTcp;
 using System;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
 //https://github.com/jchristn/simpletcp
 
-namespace SuperSimpleTCP
+namespace Maths_Testing_Application_TCP_Server
 {
     public partial class MainForm : Form
     {
@@ -17,19 +18,56 @@ namespace SuperSimpleTCP
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            IPtextBox.Text = "0.0.0.0:4953";//4953 6608
-            Sendbutton.Enabled = false;
-            Disconnectbutton.Enabled = false;
+            CreateFolder();
+            SetupTCP();
+            Logger.LoggerClass.Logger.WriteLine(" *** Main Form Load Complete [MainForm] ***");
+        }
 
-            server = new SimpleTcpServer(IPtextBox.Text);
-            server.Keepalive.EnableTcpKeepAlives = true;
-            server.Keepalive.TcpKeepAliveInterval = 30;      // seconds to wait before sending subsequent keepalive
-            server.Keepalive.TcpKeepAliveTime = 30;          // seconds to wait before sending a keepalive
-            server.Keepalive.TcpKeepAliveRetryCount = 5;    // number of failed keepalive probes before terminating connection
+        private void CreateFolder()
+        {
+            try
+            {
+                //Create the folders used by the app
+                string path = Application.StartupPath;
+                Directory.CreateDirectory(path + @"\Logs");
+                Logger.LoggerClass.Logger.WriteLine(" *** Application Start [MainForm] ***");
+                //Logs_richTextBox.AppendText("[" + DateTime.Now.ToString() + "] : Application Start" + Environment.NewLine);
+                Logger.LoggerClass.Logger.WriteLine(" *** CreateDirectory Success [MainForm] ***");
+                //Logs_richTextBox.AppendText("[" + DateTime.Now.ToString() + "] : Logs Create Directory Success" + Environment.NewLine);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Create Folder Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.LoggerClass.Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                //Logs_richTextBox.AppendText("[" + DateTime.Now.ToString() + "] : Error:" + ex.Message + Environment.NewLine);
+                return;
+            }
+        }
 
-            server.Events.ClientConnected += Events_ClientConnected;
-            server.Events.ClientDisconnected += Events_ClientDisconnected;
-            server.Events.DataReceived += Events_DataReceived;
+        private void SetupTCP()
+        {
+            try
+            {
+                IPtextBox.Text = "0.0.0.0:4953";//4953 6608
+                Sendbutton.Enabled = false;
+                Disconnectbutton.Enabled = false;
+
+                server = new SimpleTcpServer(IPtextBox.Text);
+                server.Keepalive.EnableTcpKeepAlives = true;
+                server.Keepalive.TcpKeepAliveInterval = 30;      // seconds to wait before sending subsequent keepalive
+                server.Keepalive.TcpKeepAliveTime = 30;          // seconds to wait before sending a keepalive
+                server.Keepalive.TcpKeepAliveRetryCount = 5;    // number of failed keepalive probes before terminating connection
+
+                server.Events.ClientConnected += Events_ClientConnected;
+                server.Events.ClientDisconnected += Events_ClientDisconnected;
+                server.Events.DataReceived += Events_DataReceived;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Load Logger Class DLL Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.LoggerClass.Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                return;
+            }
         }
 
         private void Events_DataReceived(object sender, DataReceivedEventArgs e)
@@ -106,6 +144,20 @@ namespace SuperSimpleTCP
                 }
                 server.Stop();
             }
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Open the about form
+            Form f = new AboutForm();
+            f.ShowDialog();
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Open the settings form
+            Form f = new SettingsForm();
+            f.ShowDialog();
         }
     }
 }

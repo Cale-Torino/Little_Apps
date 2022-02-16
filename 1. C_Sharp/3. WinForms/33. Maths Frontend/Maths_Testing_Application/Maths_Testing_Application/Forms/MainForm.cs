@@ -29,7 +29,6 @@ namespace Maths_Testing_Application
             CreateFolder();
             LoadText();
             LoadTCP();
-            LoadLoggerClassDLL();
 
             string json = "{\"data1\":\"dataOne\",\"data2\":\"dataTwo\"}";
             var Request = JsonConvert.DeserializeObject<RequestClass>(json);
@@ -37,21 +36,6 @@ namespace Maths_Testing_Application
             tabControl1.TabPages.Remove(tabPage4);
             int _result = Logger.LoggerClass.Logger.WriteLine(" *** MainForm has loaded: [MainForm_Load] ***");
             richTextBox.AppendText($"[{DateTime.Now}] : Application Started" + Environment.NewLine);
-        }
-
-        private void LoadLoggerClassDLL()
-        {
-            try
-            {
-                //call the class
-                int _result = Logger.LoggerClass.Logger.WriteLine("");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Load Logger Class DLL Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Logger.LoggerClass.Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
-                return;
-            }
         }
 
         private void LoadTCP()
