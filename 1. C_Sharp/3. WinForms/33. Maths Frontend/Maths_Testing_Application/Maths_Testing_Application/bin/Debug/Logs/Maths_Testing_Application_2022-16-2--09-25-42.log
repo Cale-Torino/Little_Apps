@@ -1,6 +1,0 @@
-[2/16/2022 9:25:42 AM] :  *** Application Start [MainForm] ***
-[2/16/2022 9:25:42 AM] :  *** CreateDirectory Success [MainForm] ***
-[2/16/2022 9:25:42 AM] :  *** Load Text [MainForm] ***
-[2/16/2022 9:25:46 AM] :  *** Error:No connection could be made because the target machine actively refused it 127.0.0.1:4953 [MainForm] ***
-[2/16/2022 9:25:46 AM] : 
-[2/16/2022 9:25:46 AM] :  *** MainForm has loaded: [MainForm_Load] ***
