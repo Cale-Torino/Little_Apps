@@ -35,6 +35,9 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8_maths_64_Cld_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="SimpleTcp, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SuperSimpleTcp.2.4.0\lib\net461\SimpleTcp.dll</HintPath>
@@ -110,10 +113,17 @@
     <Folder Include="Classes\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EncryptionLib\EncryptionLib.csproj">
+      <Project>{95d62eaf-b9c7-461c-985e-6c4ccaf7568d}</Project>
+      <Name>EncryptionLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logger\Logger.csproj">
       <Project>{de89f22d-34c6-4a8f-922e-187dede061c2}</Project>
       <Name>Logger</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons8_maths_64_Cld_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

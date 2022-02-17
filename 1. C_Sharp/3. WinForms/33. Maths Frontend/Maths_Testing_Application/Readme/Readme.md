@@ -49,8 +49,16 @@ All events are logged in a log file for further analysis.
 
 ![Logo](img/Add_the_logger_dll_to_the_application.jpg)
 
+Basic encryption is used for the TCP commands between the clients and the server.
+
+This encryption encrypts the data via a salt present on the server and on all the clients.
+
+This is just an example method in future a propper Diffie–Hellman key exchange end to end method will be implemented.
 
 
+![Logo](img/serverclient.jpg)
 
+
+![Logo](img/encr.jpg)
 
 

@@ -62,7 +62,8 @@ namespace Maths_Testing_Application
                     "\",\"Message\":\"" + greeting +
                     "\",\"UserName\":\"" + Environment.UserName +
                     "\",\"DateTime\":\"" + DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss") + "\"}";
-                client.Send($"{jSon}");
+                string encrypt = EncryptionLib.EncryptionClass.EncryptString(EncryptionLib.EncryptionClass.ToSecureString($"{jSon}"));
+                client.Send(encrypt);
                 Logger.LoggerClass.Logger.WriteLine(" *** Load TCP [MainForm] ***");
             }
             catch (Exception ex)
@@ -93,12 +94,13 @@ namespace Maths_Testing_Application
         {
             Invoke((MethodInvoker)delegate ()
             {
-                richTextBox.AppendText($"[{DateTime.Now}] : [{e.IpPort}] { Encoding.UTF8.GetString(e.Data)}" + Environment.NewLine);
-                if (Encoding.UTF8.GetString(e.Data) == "Maths")
+                string decrypt = EncryptionLib.EncryptionClass.ToInsecureString(EncryptionLib.EncryptionClass.DecryptString(Encoding.UTF8.GetString(e.Data)));
+                richTextBox.AppendText($"[{DateTime.Now}] : [{e.IpPort}] { decrypt}" + Environment.NewLine);
+                if (decrypt == "Maths")
                 {
                     label1.Text = "Maths";
                 } 
-                else if (Encoding.UTF8.GetString(e.Data) == "Wiskunde") 
+                else if (decrypt == "Wiskunde") 
                 {
                     label1.Text = "Wiskunde";
                 }
@@ -159,6 +161,8 @@ namespace Maths_Testing_Application
         {
             if (client.IsConnected)
             {
+                //string encrypt = EncryptionLib.EncryptionClass.EncryptString(EncryptionLib.EncryptionClass.ToSecureString("Hello, world infinate!"));
+                //client.Send(encrypt);
                 client.Send("Hello, world infinate!");
             }
             

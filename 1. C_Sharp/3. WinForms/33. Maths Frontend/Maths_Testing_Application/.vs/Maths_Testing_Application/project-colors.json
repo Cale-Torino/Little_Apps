@@ -15,7 +15,12 @@
       "ProjectGuid": "00f89692-ef46-42df-8a25-047025e95f68",
       "DisplayName": "Logger",
       "ColorIndex": 1
+    },
+    "e333567e-8f10-43d9-980c-1ea3cfcbdfb4": {
+      "ProjectGuid": "e333567e-8f10-43d9-980c-1ea3cfcbdfb4",
+      "DisplayName": "EncryptionLib",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

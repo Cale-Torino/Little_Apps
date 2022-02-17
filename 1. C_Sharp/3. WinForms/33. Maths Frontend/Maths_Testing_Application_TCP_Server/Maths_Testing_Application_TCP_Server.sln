@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maths_Testing_Application_T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{DE89F22D-34C6-4A8F-922E-187DEDE061C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncryptionLib", "EncryptionLib\EncryptionLib.csproj", "{95D62EAF-B9C7-461C-985E-6C4CCAF7568D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DE89F22D-34C6-4A8F-922E-187DEDE061C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE89F22D-34C6-4A8F-922E-187DEDE061C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE89F22D-34C6-4A8F-922E-187DEDE061C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95D62EAF-B9C7-461C-985E-6C4CCAF7568D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95D62EAF-B9C7-461C-985E-6C4CCAF7568D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95D62EAF-B9C7-461C-985E-6C4CCAF7568D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95D62EAF-B9C7-461C-985E-6C4CCAF7568D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

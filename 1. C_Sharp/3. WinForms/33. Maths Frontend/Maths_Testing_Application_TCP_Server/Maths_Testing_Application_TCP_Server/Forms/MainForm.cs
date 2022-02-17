@@ -78,7 +78,8 @@ namespace Maths_Testing_Application_TCP_Server
                 //string[] data = Encoding.UTF8.GetString(e.Data).Split(',');
                 //string ID = data[1];
                 string ID = Encoding.UTF8.GetString(e.Data);
-                LogstextBox.AppendText($"{DateTime.Now} : {e.IpPort} | {ID}{Environment.NewLine}");
+                string decrypt = EncryptionLib.EncryptionClass.ToInsecureString(EncryptionLib.EncryptionClass.DecryptString(ID));               
+                LogstextBox.AppendText($"{DateTime.Now} : {e.IpPort} | {decrypt}{Environment.NewLine}");
             });
             
         }
@@ -109,7 +110,8 @@ namespace Maths_Testing_Application_TCP_Server
             {
                 if (!string.IsNullOrEmpty(MSGcomboBox.Text) && listBox.SelectedItem != null)
                 {
-                    server.Send(listBox.SelectedItem.ToString(), MSGcomboBox.Text);
+                    string encrypt = EncryptionLib.EncryptionClass.EncryptString(EncryptionLib.EncryptionClass.ToSecureString(MSGcomboBox.Text));
+                    server.Send(listBox.SelectedItem.ToString(), encrypt);
                     LogstextBox.Text += $"{DateTime.Now} : Server sent = {MSGcomboBox.Text}{Environment.NewLine}";
                     //MSGtextBox.Text = string.Empty;
                 }
