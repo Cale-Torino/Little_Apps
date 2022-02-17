@@ -1,0 +1,6 @@
+[2/18/2022 1:11:42 AM] :  *** Application Start [MainForm] ***
+[2/18/2022 1:11:42 AM] :  *** CreateDirectory Success [MainForm] ***
+[2/18/2022 1:11:42 AM] :  *** Load Text [MainForm] ***
+[2/18/2022 1:11:43 AM] :  *** Load TCP [MainForm] ***
+[2/18/2022 1:11:43 AM] :  *** TCP Timer Start [MainForm] ***
+[2/18/2022 1:11:43 AM] :  *** MainForm has loaded: [MainForm_Load] ***

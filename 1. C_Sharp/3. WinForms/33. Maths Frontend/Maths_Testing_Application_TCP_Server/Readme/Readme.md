@@ -39,7 +39,6 @@ The server sends/receives live data to the maths testing client applications.
 
 The server will store this data and compile graphs and spreadsheets of the results once the testing has completed.
 
-
-
+using TLSv1.2 `.pfx` certificate for encryption between server and client.
 
 

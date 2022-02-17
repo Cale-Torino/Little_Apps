@@ -36,7 +36,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icons8_maths_64_Cld_icon.ico</ApplicationIcon>
+    <ApplicationIcon>icons8_maths_64_YIf_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SimpleTcp, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8_maths_64_Cld_icon.ico" />
+    <Content Include="icons8_maths_64_YIf_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

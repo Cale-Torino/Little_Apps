@@ -1,0 +1,6 @@
+[2/18/2022 1:09:23 AM] :  *** Application Start [MainForm] ***
+[2/18/2022 1:09:23 AM] :  *** CreateDirectory Success [MainForm] ***
+[2/18/2022 1:09:23 AM] :  *** Load Text [MainForm] ***
+[2/18/2022 1:09:23 AM] :  *** Error:Authentication failed because the remote party has closed the transport stream. [MainForm] ***
+[2/18/2022 1:09:23 AM] :  *** TCP Timer Start [MainForm] ***
+[2/18/2022 1:09:23 AM] :  *** MainForm has loaded: [MainForm_Load] ***

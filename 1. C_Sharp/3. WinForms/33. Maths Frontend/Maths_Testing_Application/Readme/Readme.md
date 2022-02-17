@@ -61,4 +61,6 @@ This is just an example method in future a propper Diffie–Hellman key exchange
 
 ![Logo](img/encr.jpg)
 
+using TLSv1.2 `.pfx` certificate for encryption between client and server.
+
 

@@ -20,6 +20,7 @@ namespace Maths_Testing_Application_TCP_Server
         {
             CreateFolder();
             SetupTCP();
+            TCPTimerStart();
             Logger.LoggerClass.Logger.WriteLine(" *** Main Form Load Complete [MainForm] ***");
         }
 
@@ -52,11 +53,18 @@ namespace Maths_Testing_Application_TCP_Server
                 Sendbutton.Enabled = false;
                 Disconnectbutton.Enabled = false;
 
-                server = new SimpleTcpServer(IPtextBox.Text);
+                //server = new SimpleTcpServer(IPtextBox.Text);
+                server = new SimpleTcpServer(IPtextBox.Text, true, "simpletcp.pfx", "simpletcp");
                 server.Keepalive.EnableTcpKeepAlives = true;
                 server.Keepalive.TcpKeepAliveInterval = 30;      // seconds to wait before sending subsequent keepalive
                 server.Keepalive.TcpKeepAliveTime = 30;          // seconds to wait before sending a keepalive
                 server.Keepalive.TcpKeepAliveRetryCount = 5;    // number of failed keepalive probes before terminating connection
+
+                //Authenticate
+                //server.Settings.MutuallyAuthenticate = true;
+
+                //Add loger
+                server.Logger = TCPLogger;
 
                 server.Events.ClientConnected += Events_ClientConnected;
                 server.Events.ClientDisconnected += Events_ClientDisconnected;
@@ -68,6 +76,11 @@ namespace Maths_Testing_Application_TCP_Server
                 Logger.LoggerClass.Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
                 return;
             }
+        }
+
+        private void TCPLogger(string msg)
+        {
+            LogstextBox.AppendText($"{DateTime.Now} : TCP LOG :{msg} | {Environment.NewLine}");
         }
 
         private void Events_DataReceived(object sender, DataReceivedEventArgs e)
@@ -160,6 +173,33 @@ namespace Maths_Testing_Application_TCP_Server
             //Open the settings form
             Form f = new SettingsForm();
             f.ShowDialog();
+        }
+
+        private void TCPTimerStart()
+        {
+            try
+            {
+                //Timer start
+                TCPtimer.Enabled = true;
+                TCPtimer.Start();
+                Logger.LoggerClass.Logger.WriteLine(" *** TCP Timer Start [MainForm] ***");
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message, "Load TCP Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LogstextBox.AppendText($"TCP Timer Start Error!{Environment.NewLine} {ex.Message} {Environment.NewLine}");
+                Logger.LoggerClass.Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                return;
+            }
+        }
+
+        private void TCPtimer_Tick(object sender, EventArgs e)
+        {
+            long Received = server.Statistics.ReceivedBytes;
+            long Sent = server.Statistics.SentBytes;
+            TimeSpan UpTime = server.Statistics.UpTime;
+            DateTime StartTime = server.Statistics.StartTime;
+            LogstextBox.AppendText($" {DateTime.Now} | StartTime:{StartTime} UpTime:{UpTime} Received:{Received} Sent:{Sent} {Environment.NewLine}");
         }
     }
 }

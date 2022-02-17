@@ -29,6 +29,7 @@ namespace Maths_Testing_Application_TCP_Server
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Disconnectbutton = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@ namespace Maths_Testing_Application_TCP_Server
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TCPtimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -233,6 +235,12 @@ namespace Maths_Testing_Application_TCP_Server
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
+            // TCPtimer
+            // 
+            this.TCPtimer.Enabled = true;
+            this.TCPtimer.Interval = 1000;
+            this.TCPtimer.Tick += new System.EventHandler(this.TCPtimer_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -281,6 +289,7 @@ namespace Maths_Testing_Application_TCP_Server
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.Timer TCPtimer;
     }
 }
 

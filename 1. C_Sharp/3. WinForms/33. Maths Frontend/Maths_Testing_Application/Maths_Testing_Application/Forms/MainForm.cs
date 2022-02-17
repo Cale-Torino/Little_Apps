@@ -29,6 +29,7 @@ namespace Maths_Testing_Application
             CreateFolder();
             LoadText();
             LoadTCP();
+            TCPTimerStart();
 
             string json = "{\"data1\":\"dataOne\",\"data2\":\"dataTwo\"}";
             var Request = JsonConvert.DeserializeObject<RequestClass>(json);
@@ -36,6 +37,24 @@ namespace Maths_Testing_Application
             tabControl1.TabPages.Remove(tabPage4);
             int _result = Logger.LoggerClass.Logger.WriteLine(" *** MainForm has loaded: [MainForm_Load] ***");
             richTextBox.AppendText($"[{DateTime.Now}] : Application Started" + Environment.NewLine);
+        }
+
+        private void TCPTimerStart()
+        {
+            try
+            {
+                //Timer start
+                TCPtimer.Enabled = true;
+                TCPtimer.Start();
+                Logger.LoggerClass.Logger.WriteLine(" *** TCP Timer Start [MainForm] ***");
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message, "Load TCP Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                richTextBox.AppendText($"TCP Timer Start Error!{Environment.NewLine} {ex.Message} {Environment.NewLine}");
+                Logger.LoggerClass.Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                return;
+            }
         }
 
         private void LoadTCP()
@@ -47,11 +66,18 @@ namespace Maths_Testing_Application
                 //If it is not listening on that port,
                 //either change the port you are sending the packet to to a port that is listening or open the port for listening.
                 // instantiate
-                client = new SimpleTcpClient("127.0.0.1:4953");//0.0.0.0:4953
+                //client = new SimpleTcpClient("127.0.0.1:4953");//0.0.0.0:4953
+                client = new SimpleTcpClient("127.0.0.1:4953", true, "simpletcp.pfx", "simpletcp");//0.0.0.0:4953
                 // set events
                 client.Events.Connected += Connected;
                 client.Events.Disconnected += Disconnected;
                 client.Events.DataReceived += DataReceived;
+
+                //Authenticate
+                //client.Settings.MutuallyAuthenticate = true;
+
+                //Add loger
+                client.Logger = TCPLogger;
 
                 // let's go!
                 client.Connect();
@@ -74,6 +100,12 @@ namespace Maths_Testing_Application
                 return;
             }
         }
+
+        private void TCPLogger(string msg)
+        {
+            richTextBox.AppendText($"{DateTime.Now} : TCP LOG :{msg} | {Environment.NewLine}");
+        }
+
         private void Connected(object sender, ConnectionEventArgs e)
         {     
             Invoke((MethodInvoker)delegate ()
@@ -191,6 +223,15 @@ namespace Maths_Testing_Application
             tabControl1.TabPages.Remove(tabPage4);
             tabControl1.TabPages.Add(tabPage3);
             tabControl1.SelectTab(tabPage3);
+        }
+
+        private void TCPtimer_Tick(object sender, EventArgs e)
+        {
+            long Received = client.Statistics.ReceivedBytes;
+            long Sent = client.Statistics.SentBytes;
+            TimeSpan UpTime = client.Statistics.UpTime;
+            DateTime StartTime = client.Statistics.StartTime;
+            richTextBox.AppendText($" {DateTime.Now} | StartTime:{StartTime} UpTime:{UpTime} Received:{Received} Sent:{Sent} {Environment.NewLine}");
         }
     }
 }

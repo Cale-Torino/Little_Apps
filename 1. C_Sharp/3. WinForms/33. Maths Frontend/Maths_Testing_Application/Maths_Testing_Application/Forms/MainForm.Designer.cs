@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tCPConnectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hTTPConnectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -55,9 +59,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.Backbutton2 = new System.Windows.Forms.Button();
             this.Nextquestionbutton2 = new System.Windows.Forms.Button();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tCPConnectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hTTPConnectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TCPtimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -75,6 +77,7 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(56)))), ((int)(((byte)(85)))));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem,
@@ -93,6 +96,31 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(102, 29);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tCPConnectionToolStripMenuItem,
+            this.hTTPConnectionToolStripMenuItem});
+            this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.settingsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("settingsToolStripMenuItem.Image")));
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 29);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // tCPConnectionToolStripMenuItem
+            // 
+            this.tCPConnectionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tCPConnectionToolStripMenuItem.Image")));
+            this.tCPConnectionToolStripMenuItem.Name = "tCPConnectionToolStripMenuItem";
+            this.tCPConnectionToolStripMenuItem.Size = new System.Drawing.Size(250, 34);
+            this.tCPConnectionToolStripMenuItem.Text = "TCP Connection";
+            // 
+            // hTTPConnectionToolStripMenuItem
+            // 
+            this.hTTPConnectionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("hTTPConnectionToolStripMenuItem.Image")));
+            this.hTTPConnectionToolStripMenuItem.Name = "hTTPConnectionToolStripMenuItem";
+            this.hTTPConnectionToolStripMenuItem.Size = new System.Drawing.Size(250, 34);
+            this.hTTPConnectionToolStripMenuItem.Text = "HTTP Connection";
             // 
             // statusStrip1
             // 
@@ -362,30 +390,11 @@
             this.Nextquestionbutton2.UseVisualStyleBackColor = false;
             this.Nextquestionbutton2.Click += new System.EventHandler(this.Nextquestionbutton2_Click);
             // 
-            // settingsToolStripMenuItem
+            // TCPtimer
             // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tCPConnectionToolStripMenuItem,
-            this.hTTPConnectionToolStripMenuItem});
-            this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.settingsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("settingsToolStripMenuItem.Image")));
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 29);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // tCPConnectionToolStripMenuItem
-            // 
-            this.tCPConnectionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tCPConnectionToolStripMenuItem.Image")));
-            this.tCPConnectionToolStripMenuItem.Name = "tCPConnectionToolStripMenuItem";
-            this.tCPConnectionToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.tCPConnectionToolStripMenuItem.Text = "TCP Connection";
-            // 
-            // hTTPConnectionToolStripMenuItem
-            // 
-            this.hTTPConnectionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("hTTPConnectionToolStripMenuItem.Image")));
-            this.hTTPConnectionToolStripMenuItem.Name = "hTTPConnectionToolStripMenuItem";
-            this.hTTPConnectionToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.hTTPConnectionToolStripMenuItem.Text = "HTTP Connection";
+            this.TCPtimer.Enabled = true;
+            this.TCPtimer.Interval = 1000;
+            this.TCPtimer.Tick += new System.EventHandler(this.TCPtimer_Tick);
             // 
             // MainForm
             // 
@@ -454,6 +463,7 @@
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tCPConnectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hTTPConnectionToolStripMenuItem;
+        private System.Windows.Forms.Timer TCPtimer;
     }
 }
 
