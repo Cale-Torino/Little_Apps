@@ -1,5 +1,7 @@
-﻿using SimpleTcp;
+﻿using Newtonsoft.Json.Linq;
+using SuperSimpleTcp;
 using System;
+using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -61,7 +63,8 @@ namespace Maths_Testing_Application_TCP_Server
                 server.Keepalive.TcpKeepAliveRetryCount = 5;    // number of failed keepalive probes before terminating connection
 
                 //Authenticate
-                //server.Settings.MutuallyAuthenticate = true;
+                server.Settings.MutuallyAuthenticate = true;
+                server.Settings.AcceptInvalidCertificates = true;
 
                 //Add loger
                 server.Logger = TCPLogger;
@@ -80,9 +83,13 @@ namespace Maths_Testing_Application_TCP_Server
 
         private void TCPLogger(string msg)
         {
-            LogstextBox.AppendText($"{DateTime.Now} : TCP LOG :{msg} | {Environment.NewLine}");
+            Invoke((MethodInvoker)delegate ()
+            {
+                LogstextBox.AppendText($"{DateTime.Now} : TCP LOG :{msg} | {Environment.NewLine}");
+            });          
         }
 
+        int i = 0;
         private void Events_DataReceived(object sender, DataReceivedEventArgs e)
         {
             Invoke((MethodInvoker)delegate ()
@@ -91,23 +98,57 @@ namespace Maths_Testing_Application_TCP_Server
                 //string[] data = Encoding.UTF8.GetString(e.Data).Split(',');
                 //string ID = data[1];
                 string ID = Encoding.UTF8.GetString(e.Data);
-                string decrypt = EncryptionLib.EncryptionClass.ToInsecureString(EncryptionLib.EncryptionClass.DecryptString(ID));               
+                string decrypt = EncryptionLib.EncryptionClass.ToInsecureString(EncryptionLib.EncryptionClass.DecryptString(ID));
+                try
+                {
+                    JObject response = JObject.Parse(decrypt);
+
+                    i++;
+                    string[] id = { i.ToString() };
+                    ListViewItem item = new ListViewItem(id, 0, Color.Black, Color.White, null);
+                    item.SubItems.Add((string)response["MachineName"], Color.Black, Color.White, null);
+                    item.SubItems.Add((string)response["Message"], Color.Black, Color.White, null);
+                    item.SubItems.Add((string)response["UserName"], Color.Black, Color.White, null);
+                    item.SubItems.Add((string)response["DateTime"], Color.Black, Color.White, null);
+                    item.SubItems.Add(e.IpPort, Color.Black, Color.White, null);
+                    ListViewItem row = listView1.Items.Add(item);
+                    if (listView1.FindItemWithText(e.IpPort) != row)
+                    {
+                        listView1.Items.Remove(row);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Parse TCP Data Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Logger.LoggerClass.Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                    return;
+                }
+
+
                 LogstextBox.AppendText($"{DateTime.Now} : {e.IpPort} | {decrypt}{Environment.NewLine}");
             });
             
         }
 
-        private void Events_ClientDisconnected(object sender, ClientDisconnectedEventArgs e)
+        private void Events_ClientDisconnected(object sender, ConnectionEventArgs e)
         {
             Invoke((MethodInvoker)delegate ()
             {
                 LogstextBox.Text += $"{DateTime.Now} : {e.IpPort} | Disconnected : {e.Reason}{Environment.NewLine}";
                 listBox.Items.Remove(e.IpPort);
+                //listView1.FindItemWithText(e.IpPort);
+                //listView1.Items.Find(e.IpPort, true)
+                listView1.Items.Remove(listView1.FindItemWithText(e.IpPort));
+                //foreach (var item in listView1.FindItemWithText(e.IpPort))
+                //{
+                    //listView1.Items.Remove(item);
+                //}
+                //listView1.Update();
             });
 
         }
 
-        private void Events_ClientConnected(object sender, ClientConnectedEventArgs e)
+        private void Events_ClientConnected(object sender, ConnectionEventArgs e)
         {
             Invoke((MethodInvoker)delegate ()
             {
@@ -123,7 +164,10 @@ namespace Maths_Testing_Application_TCP_Server
             {
                 if (!string.IsNullOrEmpty(MSGcomboBox.Text) && listBox.SelectedItem != null)
                 {
-                    string encrypt = EncryptionLib.EncryptionClass.EncryptString(EncryptionLib.EncryptionClass.ToSecureString(MSGcomboBox.Text));
+                    string jSon = JSONCommsClass.JSONSending.JSONFormat(MSGcomboBox.Text);
+                    string encrypt = EncryptionLib.EncryptionClass.EncryptString(EncryptionLib.EncryptionClass.ToSecureString(jSon));
+                    //string[] data = listBox.SelectedItem.ToString().Split('|');
+                    //string IpPort = data[1];
                     server.Send(listBox.SelectedItem.ToString(), encrypt);
                     LogstextBox.Text += $"{DateTime.Now} : Server sent = {MSGcomboBox.Text}{Environment.NewLine}";
                     //MSGtextBox.Text = string.Empty;
@@ -152,12 +196,22 @@ namespace Maths_Testing_Application_TCP_Server
                 Connectbutton.Enabled = true;
                 Sendbutton.Enabled = false;
                 LogstextBox.Text += $"{DateTime.Now} : Listening disconnected {Environment.NewLine}";
-                foreach (var listBoxItem in listBox.Items)
+                try
                 {
-                    // use the currently iterated list box item
-                    server.DisconnectClient(listBoxItem.ToString());
+                    //foreach (var listBoxItem in listBox.Items)
+                    //{
+                        // use the currently iterated list box item
+                        //server.DisconnectClient(listBoxItem.ToString());
+                    //}
+                    server.Stop();
+                    server.Dispose();
                 }
-                server.Stop();
+                catch (Exception ex)
+                {
+                    LogstextBox.AppendText($"Disconnect Client Error!{Environment.NewLine} {ex.Message} {Environment.NewLine}");
+                    Logger.LoggerClass.Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                    return;
+                }               
             }
         }
 
@@ -199,7 +253,26 @@ namespace Maths_Testing_Application_TCP_Server
             long Sent = server.Statistics.SentBytes;
             TimeSpan UpTime = server.Statistics.UpTime;
             DateTime StartTime = server.Statistics.StartTime;
-            LogstextBox.AppendText($" {DateTime.Now} | StartTime:{StartTime} UpTime:{UpTime} Received:{Received} Sent:{Sent} {Environment.NewLine}");
+            toolStripStatusLabel.Text = $" StartTime:{StartTime} UpTime:{UpTime} Received:{Received} Sent:{Sent}";
+        }
+
+        private void Sendtoallbutton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (var listBoxItem in listBox.Items)
+                {
+                    string encrypt = EncryptionLib.EncryptionClass.EncryptString(EncryptionLib.EncryptionClass.ToSecureString(JSONCommsClass.JSONSending.JSONFormat(MSGcomboBox.Text)));
+                    server.Send(listBoxItem.ToString(), encrypt);
+                    LogstextBox.Text += $"{DateTime.Now} : Server sent = {MSGcomboBox.Text} | {listBoxItem}{Environment.NewLine}";
+                }
+            }
+            catch (Exception ex)
+            {
+                LogstextBox.AppendText($"Send To All Clients Error!{Environment.NewLine} {ex.Message} {Environment.NewLine}");
+                Logger.LoggerClass.Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                return;
+            }
         }
     }
 }

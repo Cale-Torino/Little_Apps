@@ -60,6 +60,7 @@
             this.Backbutton2 = new System.Windows.Forms.Button();
             this.Nextquestionbutton2 = new System.Windows.Forms.Button();
             this.TCPtimer = new System.Windows.Forms.Timer(this.components);
+            this.ServerChecktimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -396,6 +397,12 @@
             this.TCPtimer.Interval = 1000;
             this.TCPtimer.Tick += new System.EventHandler(this.TCPtimer_Tick);
             // 
+            // ServerChecktimer
+            // 
+            this.ServerChecktimer.Enabled = true;
+            this.ServerChecktimer.Interval = 10000;
+            this.ServerChecktimer.Tick += new System.EventHandler(this.ServerChecktimer_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -464,6 +471,7 @@
         private System.Windows.Forms.ToolStripMenuItem tCPConnectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hTTPConnectionToolStripMenuItem;
         private System.Windows.Forms.Timer TCPtimer;
+        private System.Windows.Forms.Timer ServerChecktimer;
     }
 }
 

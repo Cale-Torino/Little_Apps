@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31515.178
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maths_Testing_Application_TCP_Server", "Maths_Testing_Application_TCP_Server\Maths_Testing_Application_TCP_Server.csproj", "{99600C09-7E0E-4258-9BC2-0D1A2355F6E7}"
 EndProject

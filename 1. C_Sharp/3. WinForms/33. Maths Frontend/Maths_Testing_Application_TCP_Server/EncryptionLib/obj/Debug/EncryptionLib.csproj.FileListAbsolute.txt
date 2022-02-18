@@ -1,5 +1,0 @@
-C:\Users\User501\Documents\GitHub\Little_Apps\1. C_Sharp\3. WinForms\33. Maths Frontend\Maths_Testing_Application_TCP_Server\EncryptionLib\bin\Debug\EncryptionLib.dll
-C:\Users\User501\Documents\GitHub\Little_Apps\1. C_Sharp\3. WinForms\33. Maths Frontend\Maths_Testing_Application_TCP_Server\EncryptionLib\bin\Debug\EncryptionLib.pdb
-C:\Users\User501\Documents\GitHub\Little_Apps\1. C_Sharp\3. WinForms\33. Maths Frontend\Maths_Testing_Application_TCP_Server\EncryptionLib\obj\Debug\EncryptionLib.csproj.CoreCompileInputs.cache
-C:\Users\User501\Documents\GitHub\Little_Apps\1. C_Sharp\3. WinForms\33. Maths Frontend\Maths_Testing_Application_TCP_Server\EncryptionLib\obj\Debug\EncryptionLib.dll
-C:\Users\User501\Documents\GitHub\Little_Apps\1. C_Sharp\3. WinForms\33. Maths Frontend\Maths_Testing_Application_TCP_Server\EncryptionLib\obj\Debug\EncryptionLib.pdb

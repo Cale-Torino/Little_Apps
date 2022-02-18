@@ -1,5 +1,0 @@
-C:\Users\User501\Documents\GitHub\Little_Apps\1. C_Sharp\3. WinForms\33. Maths Frontend\Maths_Testing_Application_TCP_Server\Logger\bin\Debug\Logger.dll
-C:\Users\User501\Documents\GitHub\Little_Apps\1. C_Sharp\3. WinForms\33. Maths Frontend\Maths_Testing_Application_TCP_Server\Logger\bin\Debug\Logger.pdb
-C:\Users\User501\Documents\GitHub\Little_Apps\1. C_Sharp\3. WinForms\33. Maths Frontend\Maths_Testing_Application_TCP_Server\Logger\obj\Debug\Logger.csproj.CoreCompileInputs.cache
-C:\Users\User501\Documents\GitHub\Little_Apps\1. C_Sharp\3. WinForms\33. Maths Frontend\Maths_Testing_Application_TCP_Server\Logger\obj\Debug\Logger.dll
-C:\Users\User501\Documents\GitHub\Little_Apps\1. C_Sharp\3. WinForms\33. Maths Frontend\Maths_Testing_Application_TCP_Server\Logger\obj\Debug\Logger.pdb

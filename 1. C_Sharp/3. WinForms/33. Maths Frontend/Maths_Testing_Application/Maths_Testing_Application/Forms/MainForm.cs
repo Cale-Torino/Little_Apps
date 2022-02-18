@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using SimpleTcp;
+using SuperSimpleTcp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,10 +30,14 @@ namespace Maths_Testing_Application
             LoadText();
             LoadTCP();
             TCPTimerStart();
+            string Msg = "MainForm_Load test";
+            string json = "{\"MachineName\":\"" + Environment.MachineName +
+            "\",\"Message\":\"" + Msg +
+            "\",\"UserName\":\"" + Environment.UserName +
+            "\",\"DateTime\":\"" + DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss") + "\"}";
 
-            string json = "{\"data1\":\"dataOne\",\"data2\":\"dataTwo\"}";
             var Request = JsonConvert.DeserializeObject<RequestClass>(json);
-            Invoke(new MethodInvoker(() => richTextBox.AppendText($"[{DateTime.Now}] : {Request.data1} => {Request.data2} {Environment.NewLine}")));
+            Invoke(new MethodInvoker(() => richTextBox.AppendText($"[{DateTime.Now}] : {Request.Message} => {Request.MachineName} {Environment.NewLine}")));
             tabControl1.TabPages.Remove(tabPage4);
             int _result = Logger.LoggerClass.Logger.WriteLine(" *** MainForm has loaded: [MainForm_Load] ***");
             richTextBox.AppendText($"[{DateTime.Now}] : Application Started" + Environment.NewLine);
@@ -44,8 +48,8 @@ namespace Maths_Testing_Application
             try
             {
                 //Timer start
-                TCPtimer.Enabled = true;
                 TCPtimer.Start();
+                ServerChecktimer.Start();
                 Logger.LoggerClass.Logger.WriteLine(" *** TCP Timer Start [MainForm] ***");
             }
             catch (Exception ex)
@@ -74,7 +78,8 @@ namespace Maths_Testing_Application
                 client.Events.DataReceived += DataReceived;
 
                 //Authenticate
-                //client.Settings.MutuallyAuthenticate = true;
+                client.Settings.MutuallyAuthenticate = true;
+                client.Settings.AcceptInvalidCertificates = true;
 
                 //Add loger
                 client.Logger = TCPLogger;
@@ -83,11 +88,7 @@ namespace Maths_Testing_Application
                 client.Connect();
 
                 // once connected to the server...
-                string greeting = "Hello Server";
-                string jSon = "{\"MachineName\":\""+ Environment.MachineName +
-                    "\",\"Message\":\"" + greeting +
-                    "\",\"UserName\":\"" + Environment.UserName +
-                    "\",\"DateTime\":\"" + DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss") + "\"}";
+                string jSon = JSONCommsClass.JSONSending.JSONFormat("Hello Server");
                 string encrypt = EncryptionLib.EncryptionClass.EncryptString(EncryptionLib.EncryptionClass.ToSecureString($"{jSon}"));
                 client.Send(encrypt);
                 Logger.LoggerClass.Logger.WriteLine(" *** Load TCP [MainForm] ***");
@@ -103,7 +104,10 @@ namespace Maths_Testing_Application
 
         private void TCPLogger(string msg)
         {
-            richTextBox.AppendText($"{DateTime.Now} : TCP LOG :{msg} | {Environment.NewLine}");
+            Invoke((MethodInvoker)delegate ()
+            {
+                richTextBox.AppendText($"{DateTime.Now} : TCP LOG :{msg} | {Environment.NewLine}");
+            });
         }
 
         private void Connected(object sender, ConnectionEventArgs e)
@@ -127,12 +131,13 @@ namespace Maths_Testing_Application
             Invoke((MethodInvoker)delegate ()
             {
                 string decrypt = EncryptionLib.EncryptionClass.ToInsecureString(EncryptionLib.EncryptionClass.DecryptString(Encoding.UTF8.GetString(e.Data)));
-                richTextBox.AppendText($"[{DateTime.Now}] : [{e.IpPort}] { decrypt}" + Environment.NewLine);
-                if (decrypt == "Maths")
+                richTextBox.AppendText($"[{DateTime.Now}] : [{e.IpPort}] {decrypt}" + Environment.NewLine);
+                var Request = JsonConvert.DeserializeObject<RequestClass>(decrypt);
+                if (Request.Message == "Maths")
                 {
                     label1.Text = "Maths";
                 } 
-                else if (decrypt == "Wiskunde") 
+                else if (Request.Message == "Wiskunde") 
                 {
                     label1.Text = "Wiskunde";
                 }
@@ -193,9 +198,9 @@ namespace Maths_Testing_Application
         {
             if (client.IsConnected)
             {
-                //string encrypt = EncryptionLib.EncryptionClass.EncryptString(EncryptionLib.EncryptionClass.ToSecureString("Hello, world infinate!"));
-                //client.Send(encrypt);
-                client.Send("Hello, world infinate!");
+                string jSon = JSONCommsClass.JSONSending.JSONFormat("Hello, world infinate!");
+                string encrypt = EncryptionLib.EncryptionClass.EncryptString(EncryptionLib.EncryptionClass.ToSecureString(jSon));
+                client.Send(encrypt);
             }
             
             tabControl1.SelectTab(1);
@@ -231,7 +236,19 @@ namespace Maths_Testing_Application
             long Sent = client.Statistics.SentBytes;
             TimeSpan UpTime = client.Statistics.UpTime;
             DateTime StartTime = client.Statistics.StartTime;
-            richTextBox.AppendText($" {DateTime.Now} | StartTime:{StartTime} UpTime:{UpTime} Received:{Received} Sent:{Sent} {Environment.NewLine}");
+            toolStripStatusLabel.Text = $" StartTime:{StartTime} UpTime:{UpTime} Received:{Received} Sent:{Sent}";
+        }
+
+        private void ServerChecktimer_Tick(object sender, EventArgs e)
+        {
+            if (!client.IsConnected)
+            {
+                Invoke((MethodInvoker)delegate ()
+                {
+                    client.Dispose();
+                    LoadTCP();
+                });
+            }
         }
     }
 }
