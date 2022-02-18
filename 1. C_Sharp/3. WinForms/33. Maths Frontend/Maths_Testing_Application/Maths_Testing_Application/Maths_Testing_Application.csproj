@@ -137,6 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8_maths_64_Cld_icon.ico" />
+    <Content Include="TermsAndConditions.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EncryptionLib\EncryptionLib.csproj">

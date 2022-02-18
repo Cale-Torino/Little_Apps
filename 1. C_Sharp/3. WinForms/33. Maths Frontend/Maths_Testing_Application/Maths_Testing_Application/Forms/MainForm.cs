@@ -30,6 +30,7 @@ namespace Maths_Testing_Application
             LoadText();
             LoadTCP();
             TCPTimerStart();
+            LoadTandC();
             string Msg = "MainForm_Load test";
             string json = "{\"MachineName\":\"" + Environment.MachineName +
             "\",\"Message\":\"" + Msg +
@@ -41,6 +42,22 @@ namespace Maths_Testing_Application
             tabControl1.TabPages.Remove(tabPage4);
             int _result = Logger.LoggerClass.Logger.WriteLine(" *** MainForm has loaded: [MainForm_Load] ***");
             richTextBox.AppendText($"[{DateTime.Now}] : Application Started" + Environment.NewLine);
+        }
+
+        private void LoadTandC()
+        {
+            try
+            {
+                TandCrichTextBox.Text = File.ReadAllText("TermsAndConditions.txt");
+                Logger.LoggerClass.Logger.WriteLine(" *** LoadTandC Complete [MainForm] ***");
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message, "Load TCP Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                richTextBox.AppendText($"LoadTandC Error!{Environment.NewLine} {ex.Message} {Environment.NewLine}");
+                Logger.LoggerClass.Logger.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                return;
+            }
         }
 
         private void TCPTimerStart()
@@ -150,6 +167,10 @@ namespace Maths_Testing_Application
             try
             {
                 EngLan.HomeText(label1);
+                EngLan.Paragraph1(label2);
+                EngLan.Paragraph2(label3);
+                EngLan.Paragraph3(label4);
+                EngLan.Paragraph4(label5);
                 Logger.LoggerClass.Logger.WriteLine(" *** Load Text [MainForm] ***");
             }
             catch (Exception ex)
