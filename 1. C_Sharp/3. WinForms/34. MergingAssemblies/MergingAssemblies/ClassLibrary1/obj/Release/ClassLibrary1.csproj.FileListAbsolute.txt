@@ -1,0 +1,6 @@
+C:\Users\User501\source\repos\MergingAssemblies\ClassLibrary1\bin\Release\ClassLibrary1.dll
+C:\Users\User501\source\repos\MergingAssemblies\ClassLibrary1\bin\Release\ClassLibrary1.pdb
+C:\Users\User501\source\repos\MergingAssemblies\ClassLibrary1\obj\Release\ClassLibrary1.csproj.AssemblyReference.cache
+C:\Users\User501\source\repos\MergingAssemblies\ClassLibrary1\obj\Release\ClassLibrary1.csproj.CoreCompileInputs.cache
+C:\Users\User501\source\repos\MergingAssemblies\ClassLibrary1\obj\Release\ClassLibrary1.dll
+C:\Users\User501\source\repos\MergingAssemblies\ClassLibrary1\obj\Release\ClassLibrary1.pdb

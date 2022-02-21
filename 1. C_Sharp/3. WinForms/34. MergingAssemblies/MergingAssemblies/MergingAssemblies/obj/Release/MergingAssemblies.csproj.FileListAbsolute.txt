@@ -1,0 +1,16 @@
+C:\Users\User501\source\repos\MergingAssemblies\MergingAssemblies\bin\Release\MergingAssemblies.exe.config
+C:\Users\User501\source\repos\MergingAssemblies\MergingAssemblies\bin\Release\MergingAssemblies.exe
+C:\Users\User501\source\repos\MergingAssemblies\MergingAssemblies\bin\Release\MergingAssemblies.pdb
+C:\Users\User501\source\repos\MergingAssemblies\MergingAssemblies\bin\Release\ClassLibrary1.dll
+C:\Users\User501\source\repos\MergingAssemblies\MergingAssemblies\bin\Release\ClassLibrary2.dll
+C:\Users\User501\source\repos\MergingAssemblies\MergingAssemblies\bin\Release\ClassLibrary1.pdb
+C:\Users\User501\source\repos\MergingAssemblies\MergingAssemblies\bin\Release\ClassLibrary2.pdb
+C:\Users\User501\source\repos\MergingAssemblies\MergingAssemblies\obj\Release\MergingAssemblies.csproj.AssemblyReference.cache
+C:\Users\User501\source\repos\MergingAssemblies\MergingAssemblies\obj\Release\MergingAssemblies.csproj.SuggestedBindingRedirects.cache
+C:\Users\User501\source\repos\MergingAssemblies\MergingAssemblies\obj\Release\MergingAssemblies.MainForm.resources
+C:\Users\User501\source\repos\MergingAssemblies\MergingAssemblies\obj\Release\MergingAssemblies.Properties.Resources.resources
+C:\Users\User501\source\repos\MergingAssemblies\MergingAssemblies\obj\Release\MergingAssemblies.csproj.GenerateResource.cache
+C:\Users\User501\source\repos\MergingAssemblies\MergingAssemblies\obj\Release\MergingAssemblies.csproj.CoreCompileInputs.cache
+C:\Users\User501\source\repos\MergingAssemblies\MergingAssemblies\obj\Release\MergingAssemblies.csproj.CopyComplete
+C:\Users\User501\source\repos\MergingAssemblies\MergingAssemblies\obj\Release\MergingAssemblies.exe
+C:\Users\User501\source\repos\MergingAssemblies\MergingAssemblies\obj\Release\MergingAssemblies.pdb

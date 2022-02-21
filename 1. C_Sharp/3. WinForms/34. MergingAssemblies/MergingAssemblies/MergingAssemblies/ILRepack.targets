@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Target Name="ILRepacker" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
+
+    <ItemGroup>
+		<InputAssemblies Include="$(OutputPath)\$(AssemblyName).exe" />
+        <InputAssemblies Include="$(OutputPath)\ClassLibrary1.dll" />
+        <InputAssemblies Include="$(OutputPath)\ClassLibrary2.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- Must be a fully qualified name -->
+        <DoNotInternalizeAssemblies Include="ExampleAssemblyToMerge3" />
+    </ItemGroup>
+
+    <ILRepack
+        Parallel="true"
+        Internalize="true"
+        InternalizeExclude="@(DoNotInternalizeAssemblies)"
+        InputAssemblies="@(InputAssemblies)"
+        TargetKind="Exe"
+        OutputFile="$(OutputPath)\$(AssemblyName)_ILRepack.exe"
+    />
+
+    </Target>
+</Project>
+<!-- ILRepack https://github.com/ravibpatel/ILRepack.Lib.MSBuild.Task -->
