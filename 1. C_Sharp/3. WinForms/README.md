@@ -35,5 +35,6 @@
 |31.|TWD Frontend|*[TWD Frontend Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/31.%20TWD%20Frontend/TWD)*|
 |32.|Alien Frontend|*[Alien Frontend Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/32.%20Alien%20Frontend/Alien)*|
 |33.|Maths Frontend|*[Maths Frontend Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/33.%20Maths%20Frontend/Maths_Testing_Application)*|
+|34.|MergingAssemblies|*[MergingAssemblies Link]()*|
 
 |00.|0|*[ Link]()*|
