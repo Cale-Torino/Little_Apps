@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace TraceLog
 {
@@ -16,10 +15,12 @@ namespace TraceLog
         /// </summary>
         public static string GetLogPath()
         {
-            Directory.CreateDirectory(Application.StartupPath + @"\Logs");
-            return $"{Application.StartupPath}\\Logs\\{Process.GetCurrentProcess().ProcessName}_{DateTime.Now:yyyy-dd-M--HH-mm-ss}.txt";
-           //return $"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\\Logs\\Output_{DateTime.Now:yyyy-dd-M--HH-mm-ss}.txt";
-
+            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + @"\Logs");
+            using (Process p = Process.GetCurrentProcess())
+            {
+                return $"{AppDomain.CurrentDomain.BaseDirectory}\\Logs\\{p.ProcessName}_{DateTime.Now:yyyy-dd-M--HH-mm-ss}.txt";
+                //return $"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\\Logs\\Output_{DateTime.Now:yyyy-dd-M--HH-mm-ss}.txt";
+            }
         }
         /// <summary>
         /// returnes the TextWriterTraceListener variable
