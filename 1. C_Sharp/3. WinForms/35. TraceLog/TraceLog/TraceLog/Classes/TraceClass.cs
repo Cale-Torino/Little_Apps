@@ -17,7 +17,7 @@ namespace TraceLog
         public static string GetLogPath()
         {
             Directory.CreateDirectory(Application.StartupPath + @"\Logs");
-            return $"{Application.StartupPath}\\Logs\\Output_{DateTime.Now:yyyy-dd-M--HH-mm-ss}.txt";
+            return $"{Application.StartupPath}\\Logs\\{Process.GetCurrentProcess().ProcessName}_{DateTime.Now:yyyy-dd-M--HH-mm-ss}.txt";
            //return $"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\\Logs\\Output_{DateTime.Now:yyyy-dd-M--HH-mm-ss}.txt";
 
         }
