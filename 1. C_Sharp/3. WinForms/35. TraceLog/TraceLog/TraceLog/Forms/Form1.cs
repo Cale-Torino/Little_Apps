@@ -34,17 +34,17 @@ namespace TraceLog
         {
             InitalizeLog();
 
-            TraceClass.LogWrite("This is a log trace :) ", 0);//info
-            TraceClass.LogWrite("This is a log trace :) ", 1);//warning
-            TraceClass.LogWrite("This is a log trace :) ", 2);//error
-            TraceClass.LogWrite("This is a log trace :) ", 3);//debug
+            TraceClass.LogWrite("This is a log trace :) ", (int)TraceClass.State.Info));//info
+            TraceClass.LogWrite("This is a log trace :) ", (int)TraceClass.State.Warning));//warning
+            TraceClass.LogWrite("This is a log trace :) ", (int)TraceClass.State.Error));//error
+            TraceClass.LogWrite("This is a log trace :) ", (int)TraceClass.State.Debug));//debug
         }
 
         int i = 0;
         private void Logbutton_Click(object sender, EventArgs e)
         {
             i++;
-            TraceClass.LogWrite($"{i} log trace :) ", 0);
+            TraceClass.LogWrite($"{i} log trace :) ", (int)TraceClass.State.Info));
         }
 
         private void newFormToolStripMenuItem_Click(object sender, EventArgs e)

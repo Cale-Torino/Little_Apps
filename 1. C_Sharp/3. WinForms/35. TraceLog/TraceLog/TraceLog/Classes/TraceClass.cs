@@ -58,5 +58,16 @@ namespace TraceLog
             }
 
         }
+
+        /// <summary>
+        /// State as an enum, 0=Info; 1=Warning; 2=Error; 3=Debug;
+        /// </summary>
+        public enum State
+        {
+            Info = 0,
+            Warning = 1,
+            Error = 2,
+            Debug = 3
+        }
     }
 }
