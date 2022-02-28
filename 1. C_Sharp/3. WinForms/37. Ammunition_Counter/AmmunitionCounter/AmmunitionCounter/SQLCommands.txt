@@ -1,0 +1,12 @@
+﻿CREATE TABLE "bullets" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"caliber"	TEXT NOT NULL,
+	"brand"	TEXT NOT NULL,
+	"grain"	TEXT NOT NULL,
+	"shot"	TEXT NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+
+
+
+
