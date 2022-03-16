@@ -1,0 +1,16 @@
+C:\Users\User48\source\repos\ConsoleApp_NetCore\ConsoleApp_NetCore\bin\Debug\net5.0\ConsoleApp_NetCore.exe
+C:\Users\User48\source\repos\ConsoleApp_NetCore\ConsoleApp_NetCore\bin\Debug\net5.0\ConsoleApp_NetCore.deps.json
+C:\Users\User48\source\repos\ConsoleApp_NetCore\ConsoleApp_NetCore\bin\Debug\net5.0\ConsoleApp_NetCore.runtimeconfig.json
+C:\Users\User48\source\repos\ConsoleApp_NetCore\ConsoleApp_NetCore\bin\Debug\net5.0\ConsoleApp_NetCore.runtimeconfig.dev.json
+C:\Users\User48\source\repos\ConsoleApp_NetCore\ConsoleApp_NetCore\bin\Debug\net5.0\ConsoleApp_NetCore.dll
+C:\Users\User48\source\repos\ConsoleApp_NetCore\ConsoleApp_NetCore\bin\Debug\net5.0\ref\ConsoleApp_NetCore.dll
+C:\Users\User48\source\repos\ConsoleApp_NetCore\ConsoleApp_NetCore\bin\Debug\net5.0\ConsoleApp_NetCore.pdb
+C:\Users\User48\source\repos\ConsoleApp_NetCore\ConsoleApp_NetCore\obj\Debug\net5.0\ConsoleApp_NetCore.csproj.AssemblyReference.cache
+C:\Users\User48\source\repos\ConsoleApp_NetCore\ConsoleApp_NetCore\obj\Debug\net5.0\ConsoleApp_NetCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User48\source\repos\ConsoleApp_NetCore\ConsoleApp_NetCore\obj\Debug\net5.0\ConsoleApp_NetCore.AssemblyInfoInputs.cache
+C:\Users\User48\source\repos\ConsoleApp_NetCore\ConsoleApp_NetCore\obj\Debug\net5.0\ConsoleApp_NetCore.AssemblyInfo.cs
+C:\Users\User48\source\repos\ConsoleApp_NetCore\ConsoleApp_NetCore\obj\Debug\net5.0\ConsoleApp_NetCore.csproj.CoreCompileInputs.cache
+C:\Users\User48\source\repos\ConsoleApp_NetCore\ConsoleApp_NetCore\obj\Debug\net5.0\ConsoleApp_NetCore.dll
+C:\Users\User48\source\repos\ConsoleApp_NetCore\ConsoleApp_NetCore\obj\Debug\net5.0\ref\ConsoleApp_NetCore.dll
+C:\Users\User48\source\repos\ConsoleApp_NetCore\ConsoleApp_NetCore\obj\Debug\net5.0\ConsoleApp_NetCore.pdb
+C:\Users\User48\source\repos\ConsoleApp_NetCore\ConsoleApp_NetCore\obj\Debug\net5.0\ConsoleApp_NetCore.genruntimeconfig.cache
