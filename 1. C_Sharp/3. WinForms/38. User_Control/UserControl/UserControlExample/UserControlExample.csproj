@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>img\icons8_control_panel_48_CVS_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="UserControlExample\**" />
+    <EmbeddedResource Remove="UserControlExample\**" />
+    <None Remove="UserControlExample\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="img\icons8_control_panel_48_CVS_icon.ico" />
+  </ItemGroup>
+
+</Project>
