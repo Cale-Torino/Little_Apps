@@ -1,0 +1,10 @@
+C:\Users\User48\source\repos\ListViewStyle\ListViewStyle\bin\Debug\ListViewStyle.exe.config
+C:\Users\User48\source\repos\ListViewStyle\ListViewStyle\bin\Debug\ListViewStyle.exe
+C:\Users\User48\source\repos\ListViewStyle\ListViewStyle\bin\Debug\ListViewStyle.pdb
+C:\Users\User48\source\repos\ListViewStyle\ListViewStyle\obj\Debug\ListViewStyle.csproj.AssemblyReference.cache
+C:\Users\User48\source\repos\ListViewStyle\ListViewStyle\obj\Debug\ListViewStyle.Form1.resources
+C:\Users\User48\source\repos\ListViewStyle\ListViewStyle\obj\Debug\ListViewStyle.Properties.Resources.resources
+C:\Users\User48\source\repos\ListViewStyle\ListViewStyle\obj\Debug\ListViewStyle.csproj.GenerateResource.cache
+C:\Users\User48\source\repos\ListViewStyle\ListViewStyle\obj\Debug\ListViewStyle.csproj.CoreCompileInputs.cache
+C:\Users\User48\source\repos\ListViewStyle\ListViewStyle\obj\Debug\ListViewStyle.exe
+C:\Users\User48\source\repos\ListViewStyle\ListViewStyle\obj\Debug\ListViewStyle.pdb
