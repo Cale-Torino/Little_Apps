@@ -22,7 +22,7 @@ namespace Steganography
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            string sourceDir = $"{AppDomain.CurrentDomain.BaseDirectory}\\app";
+            string sourceDir = $"{AppDomain.CurrentDomain.BaseDirectory}\\temp";
             string destDir = $"{AppDomain.CurrentDomain.BaseDirectory}\\done";
             Directory.CreateDirectory(sourceDir);
             Directory.CreateDirectory(destDir);
@@ -53,15 +53,15 @@ namespace Steganography
         {
             try
             {
-                string sourceDir = $"{AppDomain.CurrentDomain.BaseDirectory}\\app";
-                string destDir = $"{AppDomain.CurrentDomain.BaseDirectory}\\done";
-                if (!File.Exists("foldername.zip"))
+                string tempDir = $"{AppDomain.CurrentDomain.BaseDirectory}temp\\";
+                string fileDir = $"{AppDomain.CurrentDomain.BaseDirectory}file\\";
+                if (!File.Exists($"{tempDir}temp.zip"))
                 {
-                    ZipFile.CreateFromDirectory(sourceDir, "foldername.zip");
+                    ZipFile.CreateFromDirectory(fileDir, $"{tempDir}temp.zip", CompressionLevel.NoCompression,false,Encoding.UTF8);
                 }
 
                 //CMDStartServer($"/k ipconfig", @"C:\Users\User48\source\repos\Steganography\Steganography\bin\Debug");
-                CMDStartServer($"/k copy /b picture.png + foldername.zip outputfilename.jpg", AppDomain.CurrentDomain.BaseDirectory);
+                CMDStartServer($"/c copy /b {textBox.Text} + {tempDir}temp.zip {tempDir}outputfilename.jpg", AppDomain.CurrentDomain.BaseDirectory);
             }
             catch (Exception ex)
             {
@@ -75,15 +75,29 @@ namespace Steganography
             try
             {
                 string sourceDir = $"{AppDomain.CurrentDomain.BaseDirectory}";
-                string destDir = $"{AppDomain.CurrentDomain.BaseDirectory}done";
-                string fName = "picture.png";
-                CMDStartServer($"/k ren outputfilename.jpg outputfilename.zip", AppDomain.CurrentDomain.BaseDirectory);
-                ZipFile.ExtractToDirectory(sourceDir + fName, destDir);
+                string destDir = $"{AppDomain.CurrentDomain.BaseDirectory}done\\";
+                string tempDir = $"{AppDomain.CurrentDomain.BaseDirectory}temp\\";
+                string a = $"/c ren outputfilename.jpg outputfilename.zip";
+                MessageBox.Show(a);
+                CMDStartServer(a, tempDir);
+                CMDStartServer($"/c {sourceDir}WinRAR\\WinRAR.exe x {tempDir}outputfilename.zip *.* {destDir}", sourceDir);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
                 return;
+            }
+        }
+
+        private void Browsebutton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open_dialog = new OpenFileDialog();
+            open_dialog.Filter = "Image Files (*.jpeg; *.png; *.bmp)|*.jpg; *.png; *.bmp";
+
+            if (open_dialog.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox.Image = Image.FromFile(open_dialog.FileName);
+                textBox.Text = open_dialog.FileName;
             }
         }
     }
