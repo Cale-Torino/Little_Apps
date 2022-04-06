@@ -1,0 +1,10 @@
+C:\Users\User48\Downloads\sourcecode\Steganography\bin\Debug\Steganography.exe.config
+C:\Users\User48\Downloads\sourcecode\Steganography\bin\Debug\Steganography.exe
+C:\Users\User48\Downloads\sourcecode\Steganography\bin\Debug\Steganography.pdb
+C:\Users\User48\Downloads\sourcecode\Steganography\obj\x86\Debug\Steganography.csproj.AssemblyReference.cache
+C:\Users\User48\Downloads\sourcecode\Steganography\obj\x86\Debug\Steganography.Steganography.resources
+C:\Users\User48\Downloads\sourcecode\Steganography\obj\x86\Debug\Steganography.Properties.Resources.resources
+C:\Users\User48\Downloads\sourcecode\Steganography\obj\x86\Debug\Steganography.csproj.GenerateResource.cache
+C:\Users\User48\Downloads\sourcecode\Steganography\obj\x86\Debug\Steganography.csproj.CoreCompileInputs.cache
+C:\Users\User48\Downloads\sourcecode\Steganography\obj\x86\Debug\Steganography.exe
+C:\Users\User48\Downloads\sourcecode\Steganography\obj\x86\Debug\Steganography.pdb
