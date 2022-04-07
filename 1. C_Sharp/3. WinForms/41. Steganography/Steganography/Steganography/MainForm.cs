@@ -100,5 +100,10 @@ namespace Steganography
                 textBox.Text = open_dialog.FileName;
             }
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
