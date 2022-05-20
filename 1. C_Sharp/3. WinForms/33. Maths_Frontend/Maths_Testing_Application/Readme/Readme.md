@@ -41,6 +41,18 @@ Once the student has been helped a resume button can be clicked and the test wil
        
 All events are logged in a log file for further analysis.
 
+## Sections
+
+Geometry
+Trigonometry
+Calculus
+Euclidian Geometry
+Statistics
+Probability
+Number patterns
+Graphs
+
+
 ## Choosing a class library
 
 ![Logo](img/Choose_class_library.jpg)
