@@ -13,6 +13,8 @@ namespace Playing_MP3
 {
     public partial class MainForm : Form
     {
+        //private readonly Classes.Mp3Class _mp3player;
+        //private readonly int _handel;
         public MainForm()
         {
             InitializeComponent();
@@ -37,6 +39,11 @@ namespace Playing_MP3
         }
         private void Stopbutton_Click(object sender, EventArgs e)
         {
+            // close the form on the forms thread
+            //if (_mp3player != null)
+            //{
+            //_mp3player.Dispose();
+            //}
             mciSendString(@"close temp_alias", null, 0, IntPtr.Zero);
         }
 
@@ -52,6 +59,22 @@ namespace Playing_MP3
         }
         private void PlayOnce()
         {
+            //_mp3player = new Classes.Mp3Class(@"Music\theme.mp3");//MPEGVideo
+            //if (_mp3player != null)
+            //{
+            //MessageBox.Show("hello");
+            //_mp3player.Play();
+            //}
+
+            //--------------
+
+            /*          BassClass.BASS_Init(-1, 44100, DeviceInitFlagsClass.DeviceInitFlags.Default, IntPtr.Zero);
+                        int _handel = BassClass.BASS_StreamCreateFile(false, "Music\\theme.mp3", 0L, 0L, BassFlagsClass.BassFlags.Default);
+                        BassClass.BASS_ChannelPlay(_handel, false);
+                        // free the stream 
+                        BassClass.BASS_StreamFree(_handel);
+                        // free BASS 
+                        BassClass.BASS_Free();*/
             mciSendString(@"close temp_alias", null, 0, IntPtr.Zero);
             mciSendString(@"open ""next-chapter-piano-ident-21438.mp3"" alias temp_alias", null, 0, IntPtr.Zero);
             mciSendString("play temp_alias", null, 0, IntPtr.Zero);
