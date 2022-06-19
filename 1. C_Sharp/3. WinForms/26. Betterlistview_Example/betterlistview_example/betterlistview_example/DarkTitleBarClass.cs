@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace betterlistview_example
 {
     internal class DarkTitleBarClass
     {
-        [DllImport("dwmapi.dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport("dwmapi.dll", SetLastError = true, ExactSpelling = true, CharSet = CharSet.Unicode)]
         internal static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int attrValue, int attrSize);
         [DllImport("uxtheme.dll", SetLastError = true, ExactSpelling = true, CharSet = CharSet.Unicode)]
         internal static extern int SetWindowTheme(IntPtr hWnd, string pszSubAppName, string pszSubIdList);

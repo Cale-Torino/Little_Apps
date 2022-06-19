@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace betterlistview_example
 {
+    //http://objectlistview.sourceforge.net/cs/index.html
     public partial class Form1 : Form
     {
         public Form1()
@@ -98,8 +99,8 @@ namespace betterlistview_example
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DarkTitleBarClass.SetWindowTheme(listView1.Handle, "DarkMode_Explorer", null);
             DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
+            DarkTitleBarClass.SetWindowTheme(listView1.Handle, "DarkMode_Explorer", null);
         }
     }
 }

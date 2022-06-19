@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Hello");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Hello 2");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Hello 3");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Hello 4");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Hello");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Hello 2");
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Hello 3");
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Hello 4");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -80,19 +80,19 @@
             this.listView1.HideSelection = false;
             this.listView1.HotTracking = true;
             this.listView1.HoverSelection = true;
-            listViewItem1.StateImageIndex = 0;
-            listViewItem1.ToolTipText = "Hello";
-            listViewItem2.StateImageIndex = 0;
-            listViewItem2.ToolTipText = "Hello 2";
-            listViewItem3.StateImageIndex = 0;
-            listViewItem3.ToolTipText = " 3Hello";
-            listViewItem4.StateImageIndex = 0;
-            listViewItem4.ToolTipText = "Hello 4";
+            listViewItem5.StateImageIndex = 0;
+            listViewItem5.ToolTipText = "Hello";
+            listViewItem6.StateImageIndex = 0;
+            listViewItem6.ToolTipText = "Hello 2";
+            listViewItem7.StateImageIndex = 0;
+            listViewItem7.ToolTipText = " 3Hello";
+            listViewItem8.StateImageIndex = 0;
+            listViewItem8.ToolTipText = "Hello 4";
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4});
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8});
             this.listView1.Location = new System.Drawing.Point(4, 24);
             this.listView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listView1.MultiSelect = false;
@@ -541,7 +541,10 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
