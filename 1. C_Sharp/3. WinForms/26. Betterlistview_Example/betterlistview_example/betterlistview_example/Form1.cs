@@ -95,5 +95,11 @@ namespace betterlistview_example
                 listView1.Items.Add(lst);
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            DarkTitleBarClass.SetWindowTheme(listView1.Handle, "DarkMode_Explorer", null);
+            DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
+        }
     }
 }

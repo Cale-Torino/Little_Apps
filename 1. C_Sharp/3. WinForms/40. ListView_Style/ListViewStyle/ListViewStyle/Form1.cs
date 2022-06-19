@@ -17,14 +17,15 @@ namespace ListViewStyle
         {
             InitializeComponent();
             // removes the ugly dotted line around focused item
+            DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
             ListViewImprovedClass.SendMessage(Handle, 0x127, ListViewImprovedClass.MakeLong(1, 0x1), 0);
-            ListViewImprovedClass.SetWindowTheme(listView1.Handle, "Explorer", null);
+            //ListViewImprovedClass.SetWindowTheme(listView1.Handle, "Explorer", null);
         }
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            DarkTitleBarClass.SetWindowTheme(listView1.Handle, "DarkMode_Explorer", null);
         }
     }
 }
