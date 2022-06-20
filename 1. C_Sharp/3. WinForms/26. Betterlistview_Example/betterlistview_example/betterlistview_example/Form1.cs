@@ -101,6 +101,8 @@ namespace betterlistview_example
         {
             DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
             DarkTitleBarClass.SetWindowTheme(listView1.Handle, "DarkMode_Explorer", null);
+            DarkTitleBarClass.SetWindowTheme(dataGridView1.Handle, "DarkMode_Explorer", null);
         }
     }
 }
+ 
