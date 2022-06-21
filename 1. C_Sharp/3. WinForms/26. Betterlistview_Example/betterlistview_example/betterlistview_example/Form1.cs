@@ -17,6 +17,7 @@ namespace betterlistview_example
         public Form1()
         {
             InitializeComponent();
+            //HeaderClass.colorListViewHeader(ref listView1, Color.Black, Color.DarkOrange);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -88,20 +89,53 @@ namespace betterlistview_example
             //http://free.ipwhois.io/json/102.249.0.85
             listView1.SmallImageList = imageList1;
             int length = 5;
+            int count = 0;
             for (int i = 0; i < length; i++)
-            {
+            {             
                 ListViewItem lst = new ListViewItem(new[] { "Mike Gold", "Praveen Kumar", "Raj Beniwal", "Raj Beniwal" });
                 lst.Text = " - Country";
                 lst.ImageIndex = i;
+                if (count++ % 2 == 0)
+                { lst.BackColor = Color.DarkSlateGray; }
                 listView1.Items.Add(lst);
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            listView1.Columns.Add("", 100, HorizontalAlignment.Left);
+
             DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
             DarkTitleBarClass.SetWindowTheme(listView1.Handle, "DarkMode_Explorer", null);
-            DarkTitleBarClass.SetWindowTheme(dataGridView1.Handle, "DarkMode_Explorer", null);
+            listBox1.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            DarkTitleBarClass.SetWindowTheme(listBox1.Handle, "DarkMode_Explorer", null);
+        }
+
+        private void listView1_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            //var brush = new SolidBrush(Color.FromArgb(255, 25, 25, 25));
+            e.Graphics.FillRectangle(Brushes.DimGray, e.Bounds);
+            //e.Header.AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+            //e.Header.Width.CompareTo(e.Bounds.Width);
+            //e.Header.Width = 100;
+            e.DrawText();
+        }
+
+        private void listView1_DrawItem(object sender, DrawListViewItemEventArgs e)
+        {
+            e.DrawDefault = true;
         }
     }
 }
