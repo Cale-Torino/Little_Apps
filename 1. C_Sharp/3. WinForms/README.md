@@ -39,11 +39,14 @@
 |35.|TraceLog|*[TraceLog Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/35.%20TraceLog/TraceLog)*|
 |36.|Protobuf_Example|*[Protobuf_Example Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/36.%20Protobuf_Example/Protobufexample)*|
 |37.|Ammunition_Counter|*[Ammunition_Counter Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/37.%20Ammunition_Counter/AmmunitionCounter)*|
-|38.|User_Control|*[User_Control Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/38.%20User_Control/UserControl)*|
-|39.|Star_Animation|*[Star_Animation Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/39.%20Star_Animation/SpaceExample)*|
-|40.|ListView_Style|*[ListView_Style Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/40.%20ListView_Style/ListViewStyle)*|
+|38.|User_Control|*[User Control Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/38.%20User_Control/UserControl)*|
+|39.|Star_Animation|*[Star Animation Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/39.%20Star_Animation/SpaceExample)*|
+|40.|ListView_Style|*[ListView Style Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/40.%20ListView_Style/ListViewStyle)*|
 |41.|Steganography|*[Steganography Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/41.%20Steganography)*|
 |42.|Nyan|*[Nyan Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/42.%20Nyan/Nyan)*|
-|43.|Playing_MP3|*[Playing_MP3 Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/43.%20Playing_MP3/Playing_MP3)*|
+|43.|Playing_MP3|*[Playing MP3 Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/43.%20Playing_MP3/Playing_MP3)*|
+|44.|0|*[MusicIntensity Link]()*|
+|45.|0|*[ZeroDepJson Example Link]()*|
+|46.|0|*[Internet Network Monitor Link]()*|
 
 |00.|0|*[ Link]()*|

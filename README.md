@@ -10,3 +10,6 @@ A repository containing many small example apps to be used in bigger projects
 |3.|Java|*[Java Link](https://github.com/Cale-Torino/Little_Apps/tree/main/3.%20Java)*|
 |4.|Python|*[Python Link](https://github.com/Cale-Torino/Little_Apps/tree/main/4.%20Python)*|
 |5.|Misc|*[Misc Link](https://github.com/Cale-Torino/Little_Apps/tree/main/5.%20Misc)*|
+|6.|Usefull Apps|*[Usefull Apps Link](https://github.com/Cale-Torino/Little_Apps/tree/main/6.%20Usefull_Apps)*|
+
+|0.|null|*[null Link](null)*|
