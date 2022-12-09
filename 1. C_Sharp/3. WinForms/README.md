@@ -45,8 +45,8 @@
 |41.|Steganography|*[Steganography Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/41.%20Steganography)*|
 |42.|Nyan|*[Nyan Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/42.%20Nyan/Nyan)*|
 |43.|Playing_MP3|*[Playing MP3 Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/43.%20Playing_MP3/Playing_MP3)*|
-|44.|0|*[MusicIntensity Link]()*|
-|45.|0|*[ZeroDepJson Example Link]()*|
-|46.|0|*[Internet Network Monitor Link]()*|
+|44.|0|*[MusicIntensity Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/44.%20MusicIntensity/MusicIntense)*|
+|45.|0|*[ZeroDepJson Example Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/45.%20ZeroDepJson_Example/NoDepJson)*|
+|46.|0|*[Internet Network Monitor Link](https://github.com/Cale-Torino/Little_Apps/tree/main/1.%20C_Sharp/3.%20WinForms/46.%20Internet_Network_Monitor/Internet_Network_Monitor)*|
 
 |00.|0|*[ Link]()*|
