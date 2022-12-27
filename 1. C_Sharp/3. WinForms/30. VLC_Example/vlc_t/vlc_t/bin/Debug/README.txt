@@ -25,3 +25,4 @@ https://tutorials.techrad.co.za/
 http://patorjk.com/software/taag/#p=testall&f=Thick&t=radical%20technology
 
 
+don't forget vlc's licensing if you are using it in an app

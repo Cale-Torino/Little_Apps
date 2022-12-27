@@ -1,15 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vlc.DotNet.Forms;
 
 namespace vlc_t
 {
@@ -36,7 +26,7 @@ namespace vlc_t
 
         private void button1_Click(object sender, EventArgs e)
         {
-            vlcControl1.Play(new Uri("http://cms.safe-tvigil.com/mediastorage/5cf00194a091e1.76284585.mp4"));
+            vlcControl1.Play(new Uri("https://www.youtube.com/watch?v=FeOeGXQ4Ulw"));
         }
 
         private void button3_Click(object sender, EventArgs e)
