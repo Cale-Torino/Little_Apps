@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Vlc.DotNet.Forms;
 
 namespace vlc_t
 {
@@ -26,7 +27,7 @@ namespace vlc_t
 
         private void button1_Click(object sender, EventArgs e)
         {
-            vlcControl1.Play(new Uri("https://www.youtube.com/watch?v=FeOeGXQ4Ulw"));
+            vlcControl1.Play(new Uri("https://github.com/Cale-Torino/Little_Apps/raw/main/1.%20C_Sharp/3.%20WinForms/30.%20VLC_Example/vlc_t/vlc_t/media/big_buck_bunny_480p_surround-fix.avi.mp4"));
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -53,7 +54,7 @@ namespace vlc_t
             //vlcControl1.Video.AspectRatio = "16.9";
             vlcControl1.Focus();
             vlcControl1.Video.FullScreen = true;
-
+            vlcControl1.Update();
         }
     }
 }
