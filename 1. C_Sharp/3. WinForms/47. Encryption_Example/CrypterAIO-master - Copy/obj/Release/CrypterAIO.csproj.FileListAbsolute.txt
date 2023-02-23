@@ -1,0 +1,10 @@
+C:\Users\asdiff\Downloads\CrypterAIO-master\CrypterAIO-master\bin\Release\CrypterAIO.exe
+C:\Users\asdiff\Downloads\CrypterAIO-master\CrypterAIO-master\bin\Release\CrypterAIO.pdb
+C:\Users\asdiff\Downloads\CrypterAIO-master\CrypterAIO-master\bin\Release\MessagingToolkit.QRCode.dll
+C:\Users\asdiff\Downloads\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.Form1.resources
+C:\Users\asdiff\Downloads\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.Properties.Resources.resources
+C:\Users\asdiff\Downloads\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.csproj.GenerateResource.cache
+C:\Users\asdiff\Downloads\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.csproj.CoreCompileInputs.cache
+C:\Users\asdiff\Downloads\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.csproj.CopyComplete
+C:\Users\asdiff\Downloads\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.exe
+C:\Users\asdiff\Downloads\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.pdb

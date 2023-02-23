@@ -1,0 +1,13 @@
+F:\Visual_studio_Busy\CrypterAIO-master\CrypterAIO-master\bin\Release\CrypterAIO.exe
+F:\Visual_studio_Busy\CrypterAIO-master\CrypterAIO-master\bin\Release\CrypterAIO.pdb
+F:\Visual_studio_Busy\CrypterAIO-master\CrypterAIO-master\bin\Release\MessagingToolkit.QRCode.dll
+F:\Visual_studio_Busy\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.csprojAssemblyReference.cache
+F:\Visual_studio_Busy\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.Form2.resources
+F:\Visual_studio_Busy\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.Form1.resources
+F:\Visual_studio_Busy\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.Form3.resources
+F:\Visual_studio_Busy\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.Properties.Resources.resources
+F:\Visual_studio_Busy\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.csproj.GenerateResource.cache
+F:\Visual_studio_Busy\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.csproj.CoreCompileInputs.cache
+F:\Visual_studio_Busy\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.csproj.CopyComplete
+F:\Visual_studio_Busy\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.exe
+F:\Visual_studio_Busy\CrypterAIO-master\CrypterAIO-master\obj\Release\CrypterAIO.pdb
