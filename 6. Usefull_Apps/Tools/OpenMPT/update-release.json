@@ -1,0 +1,275 @@
+{
+ "OpenMPT 1.31": {
+  "version": "1.31.02.00",
+  "date": "2023-05-07T12:13:46.752952",
+  "announcement_url": "https://openmpt.org/openmpt-1-31-02-00-released",
+  "changelog_url": "https://openmpt.org/release_notes/History.txt",
+  "downloads": {
+   "installer": {
+    "url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-Setup.update.json",
+    "download_url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-Setup.exe",
+    "type": "installer",
+    "can_autoupdate": true,
+    "autoupdate_minversion": "1.30.00.08",
+    "os": "windows",
+    "required_windows_version": {
+     "version_major": 6,
+     "version_minor": 1,
+     "servicepack_major": 1,
+     "servicepack_minor": 0,
+     "build": 0,
+     "wine_major": 1,
+     "wine_minor": 8,
+     "wine_update": 0
+    },
+    "required_architectures": {
+     "x86": true
+    },
+    "supported_architectures": {
+     "x86": true,
+     "amd64": true,
+     "arm": true,
+     "arm64": true
+    },
+    "required_processor_features": {
+     "x86": {
+      "sse2": true
+     },
+     "amd64": {
+      "sse2": true
+     }
+    }
+   },
+   "portable-x86": {
+    "url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-portable-x86.update.json",
+    "download_url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-portable-x86.zip",
+    "type": "archive",
+    "can_autoupdate": true,
+    "autoupdate_minversion": "1.30.00.08",
+    "os": "windows",
+    "required_windows_version": {
+     "version_major": 10,
+     "version_minor": 0,
+     "servicepack_major": 0,
+     "servicepack_minor": 0,
+     "build": 19044,
+     "wine_major": 1,
+     "wine_minor": 8,
+     "wine_update": 0
+    },
+    "required_architectures": {},
+    "supported_architectures": {
+     "x86": true
+    },
+    "required_processor_features": {
+     "x86": {
+      "sse2": true
+     }
+    }
+   },
+   "portable-x86-legacy": {
+    "url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-portable-x86-legacy.update.json",
+    "download_url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-portable-x86-legacy.zip",
+    "type": "archive",
+    "can_autoupdate": true,
+    "autoupdate_minversion": "1.30.00.08",
+    "os": "windows",
+    "required_windows_version": {
+     "version_major": 6,
+     "version_minor": 1,
+     "servicepack_major": 0,
+     "servicepack_minor": 0,
+     "build": 0,
+     "wine_major": 1,
+     "wine_minor": 8,
+     "wine_update": 0
+    },
+    "required_architectures": {},
+    "supported_architectures": {
+     "x86": true
+    },
+    "required_processor_features": {
+     "x86": {
+      "sse2": true
+     }
+    }
+   },
+   "portable-amd64": {
+    "url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-portable-amd64.update.json",
+    "download_url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-portable-amd64.zip",
+    "type": "archive",
+    "can_autoupdate": true,
+    "autoupdate_minversion": "1.30.00.08",
+    "os": "windows",
+    "required_windows_version": {
+     "version_major": 10,
+     "version_minor": 0,
+     "servicepack_major": 0,
+     "servicepack_minor": 0,
+     "build": 19044,
+     "wine_major": 1,
+     "wine_minor": 8,
+     "wine_update": 0
+    },
+    "required_architectures": {},
+    "supported_architectures": {
+     "amd64": true
+    },
+    "required_processor_features": {
+     "amd64": {
+      "sse2": true
+     }
+    }
+   },
+   "portable-amd64-legacy": {
+    "url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-portable-amd64-legacy.update.json",
+    "download_url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-portable-amd64-legacy.zip",
+    "type": "archive",
+    "can_autoupdate": true,
+    "autoupdate_minversion": "1.30.00.08",
+    "os": "windows",
+    "required_windows_version": {
+     "version_major": 6,
+     "version_minor": 1,
+     "servicepack_major": 0,
+     "servicepack_minor": 0,
+     "build": 0,
+     "wine_major": 1,
+     "wine_minor": 8,
+     "wine_update": 0
+    },
+    "required_architectures": {},
+    "supported_architectures": {
+     "amd64": true
+    },
+    "required_processor_features": {
+     "amd64": {
+      "sse2": true
+     }
+    }
+   },
+   "portable-arm": {
+    "url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-portable-arm.update.json",
+    "download_url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-portable-arm.zip",
+    "type": "archive",
+    "can_autoupdate": true,
+    "autoupdate_minversion": "1.30.00.08",
+    "os": "windows",
+    "required_windows_version": {
+     "version_major": 10,
+     "version_minor": 0,
+     "servicepack_major": 0,
+     "servicepack_minor": 0,
+     "build": 19044,
+     "wine_major": 1,
+     "wine_minor": 8,
+     "wine_update": 0
+    },
+    "required_architectures": {},
+    "supported_architectures": {
+     "arm": true
+    },
+    "required_processor_features": {
+     "arm": {}
+    }
+   },
+   "portable-arm64": {
+    "url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-portable-arm64.update.json",
+    "download_url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-portable-arm64.zip",
+    "type": "archive",
+    "can_autoupdate": true,
+    "autoupdate_minversion": "1.30.00.08",
+    "os": "windows",
+    "required_windows_version": {
+     "version_major": 10,
+     "version_minor": 0,
+     "servicepack_major": 0,
+     "servicepack_minor": 0,
+     "build": 19044,
+     "wine_major": 1,
+     "wine_minor": 8,
+     "wine_update": 0
+    },
+    "required_architectures": {},
+    "supported_architectures": {
+     "arm64": true
+    },
+    "required_processor_features": {
+     "arm64": {}
+    }
+   },
+   "retro-installer": {
+    "url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-RETRO-Setup.update.json",
+    "download_url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-RETRO-Setup.exe",
+    "type": "installer",
+    "can_autoupdate": true,
+    "autoupdate_minversion": "1.30.00.08",
+    "os": "windows",
+    "required_windows_version": {
+     "version_major": 5,
+     "version_minor": 1,
+     "servicepack_major": 3,
+     "servicepack_minor": 0,
+     "build": 0,
+     "wine_major": 1,
+     "wine_minor": 8,
+     "wine_update": 0
+    },
+    "required_architectures": {
+     "x86": true
+    },
+    "supported_architectures": {
+     "x86": true,
+     "amd64": true
+    },
+    "required_processor_features": {}
+   },
+   "retro-portable-x86": {
+    "url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-RETRO-portable-x86.update.json",
+    "download_url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-RETRO-portable-x86.zip",
+    "type": "archive",
+    "can_autoupdate": true,
+    "autoupdate_minversion": "1.30.00.08",
+    "os": "windows",
+    "required_windows_version": {
+     "version_major": 5,
+     "version_minor": 1,
+     "servicepack_major": 3,
+     "servicepack_minor": 0,
+     "build": 0,
+     "wine_major": 1,
+     "wine_minor": 8,
+     "wine_update": 0
+    },
+    "required_architectures": {},
+    "supported_architectures": {
+     "x86": true
+    },
+    "required_processor_features": {}
+   },
+   "retro-portable-amd64": {
+    "url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-RETRO-portable-amd64.update.json",
+    "download_url": "https://download.openmpt.org/archive/openmpt/1.31/OpenMPT-1.31.02.00-RETRO-portable-amd64.zip",
+    "type": "archive",
+    "can_autoupdate": true,
+    "autoupdate_minversion": "1.30.00.08",
+    "os": "windows",
+    "required_windows_version": {
+     "version_major": 5,
+     "version_minor": 2,
+     "servicepack_major": 2,
+     "servicepack_minor": 0,
+     "build": 0,
+     "wine_major": 1,
+     "wine_minor": 8,
+     "wine_update": 0
+    },
+    "required_architectures": {},
+    "supported_architectures": {
+     "amd64": true
+    },
+    "required_processor_features": {}
+   }
+  }
+ }
+}
