@@ -1,0 +1,14 @@
+
+
+
+check if it's running
+
+Dism /Online /Get-Featureinfo /Featurename:Recall 
+
+disable recall
+
+Dism /Online /Disable-Feature /Featurename:Recall 
+
+enable recall
+
+Dism /Online /Enable-Feature /Featurename:Recall
